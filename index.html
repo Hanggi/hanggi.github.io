@@ -3,6 +3,17 @@
     <title>Hanggi.me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/ng/styles.css">
+    <link rel="stylesheet" href="/public/css/master.css">
+
+    </head>
+    <body>
+        <header class="top-header">
+
+        </header>
+
+        <my-app>Loading...</my-app>
+    </body>
+
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="/public/js/ngie/es6-shim.min.js"></script>
@@ -30,9 +41,5 @@
       System.import('ng/app/main')
             .then(null, console.error.bind(console));
     </script>
-    </head>
     <!-- 3. Display the application -->
-    <body>
-    <my-app>Loading...</my-app>
-    </body>
 </html>
