@@ -9,7 +9,7 @@ html, body {margin:0;padding:0;background-color:$main-background-color;}
     position:relative;
     width: 100%;
     height: 520px;
-    background-color: #fff;
+    background-color: $main-background-color;
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
