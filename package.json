@@ -1,0 +1,22 @@
+{
+  "name": "hanggi",
+  "version": "1.0.0",
+  "description": "app for hanggi.github.com",
+  "main": "app.js",
+  "dependencies": {
+    "koa": "*"
+  },
+  "devDependencies": {
+
+  },
+  "scripts": {
+    "test": "test.js"
+  },
+  "keywords": [
+    "koa",
+    "node",
+    "angular2"
+  ],
+  "author": "Hanggi",
+  "license": "ISC"
+}
