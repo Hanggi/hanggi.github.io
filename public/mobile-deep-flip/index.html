@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta charset="UTF-8">
+	<title>Deep Flip - by Hanggi</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="wrapper">
+	<div class="page-one p1">
+		<p class="zindex"></p>
+		<p>페지 No.1 연시화면</p>
+		<br>
+		<p>페지 No.1 연시화면</p>
+		<br>
+		<p>페지 No.1 연시화면</p>
+		<br>
+		<p>페지 No.1 연시화면</p>
+		<br>
+		<p>페지 No.1 연시화면</p>
+		<br>
+		<p>페지 No.1 연시화면</p>
+		<br>
+		<p>페지 No.1 연시화면</p>
+		<br>
+		<p class="zindex"></p>
+	</div>
+	<div class="page-one p2">
+		<p class="zindex"></p>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p>페지 No.2 연시화면</p>
+		<br>
+		<p class="zindex"></p>
+	</div>
+	<div class="page-one p3">
+		<p class="zindex"></p>
+		<p>페지 No.3 연시화면</p>
+		<br>
+		<p>페지 No.3 연시화면</p>
+		<br>
+		<p>페지 No.3 연시화면</p>
+		<br>
+		<p>페지 No.3 연시화면</p>
+		<p class="zindex"></p>
+	</div>
+	<div class="page-one p4">
+		<p class="zindex"></p>
+		<p>페지 No.4 연시화면</p>
+		<br>
+		<p>페지 No.4 연시화면</p>
+		<br>
+		<p>페지 No.4 연시화면</p>
+		<br>
+		<p>페지 No.4 연시화면</p>
+		<p class="zindex"></p>
+	</div>
+	<div class="page-one p5">
+		<p class="zindex"></p>
+		<p>페지 No.5 연시화면</p>
+		<br>
+		<p>페지 No.5 연시화면</p>
+		<br>
+		<p>페지 No.5 연시화면</p>
+		<br>
+		<p>페지 No.5 연시화면</p>
+		<p class="zindex"></p>
+	</div>
+	
+</div>
+	
+</body>
+
+<script src="js/z.js"></script>
+<script>
+	var wHeight = $(window).height();
+	
+	$('#wrapper').css({'-webkit-perspective': wHeight*2 + 'px'});
+	var $page = $('.page-one');
+	var index = 0;
+	var num = $page.length;
+	$page.eq(index).show().css({'z-index':1000});
+	
+	var touchV;
+	// 터치스타트 사건
+	$(window).bind('touchstart', function (e) {
+		timeStart = new Date() * 1;
+		touchS = e.targetTouches[0].pageY;
+		touchV = 0;
+	});
+	
+	// 터치무브 사건
+	$(window).bind('touchmove', function (e) {
+		e.preventDefault();
+		$page.css('-webkit-transition', 'none');
+		var touchNow = e.targetTouches[0].pageY;
+		touchV = touchS - touchNow;
+		
+		var opacityScale = 0.9;
+		
+		// 올리바다 당깁니다
+		if (touchV > 0 && index < num-1){
+			$page.eq(index).css('z-index', 300);
+			$page.eq(index-1).hide();
+			$page.eq(index+1).show().css('z-index', 500);
+			//$page.eq(index-1).find('.zindex').html(500)
+			
+			// 현재 이동중의 면의 위치 *******************************************************************
+			var opa = Math.abs(touchV)/wHeight;
+			opa = 1 - opa * opacityScale;
+			$page.eq(index).css({'-webkit-transform': 'translate3d(0, 0px, ' + -touchV/2 + 'px)', 'opacity': opa});
+			
+			// 다음 면의 위치 *******************************************************************
+			var y = wHeight-touchV;
+			$page.eq(index+1).css({'-webkit-transform': 'translate3d(0, ' + y + 'px, 0px)'});
+		}
+		// 내리바다 당깁니다
+		if (touchV < 0 && index > 0){
+			$page.eq(index).css('z-index', 500);
+			$page.eq(index-1).show().css('z-index', 300);
+			//$page.eq(index+1).find('.zindex').html(500)
+			
+			// 현재 이동중의 면의 위치 *******************************************************************
+			var opa = Math.abs(touchV)/wHeight;
+			opa = 1 - opa * opacityScale;
+			$page.eq(index).css({'-webkit-transform': 'translate3d(0, ' + -touchV + 'px, 0px)'});
+			
+			// 전의 면의 위치 *******************************************************************
+			var z = -wHeight/2-touchV/2;
+			var opa = Math.abs(touchV)/wHeight;
+			opa = (1-opacityScale) + opa * opacityScale;
+			$page.eq(index-1).css({'-webkit-transform': 'translate3d(0, ' + -0 + 'px, ' + z + 'px)', 'opacity': opa});
+		}
+		if ((touchV < 0 && index <= 0) || (touchV > 0 && index >= num-1)){
+			$page.eq(index).css({'-webkit-transform': 'translate3d(0, ' + -touchV/6 + 'px, 0px)'});
+		}
+	});
+	//터치 앤더 사건
+	$(window).bind('touchend', function (e) {
+		if (touchV == 0) return;
+		var timeEnd = new Date() * 1;
+		// 조작 속도로 사건 측정
+		if (timeEnd - timeStart > 500) {
+			// 늦은 속도의 조작
+			if (touchV > wHeight/3) {
+				go('next');
+			}else if (touchV < -wHeight/3) {
+				go('prev');
+			}else {
+				go();
+			}
+		}else {
+			// 빠른 속도의 조작
+			if (touchV > 50) {
+				go('next');
+			}else if (touchV < -50) {
+				go('prev');
+			}else {
+				go();
+			}
+		}
+	});
+	
+	function go(to) {
+		// 자~ 다음 페지로 갑니다
+		$page.css('-webkit-transition', '-webkit-transform ease-out 0.15s');
+		
+		if ((to == 'next' || to > 0) && index < num - 1) {
+			//console.log('next')
+			// 다음 페지
+			$page.css('z-index', 'auto');
+			$page.eq(index).css({'-webkit-transform': 'translate3d(0, 0px, ' + -wHeight/2 + 'px)', 'z-index': '400'});
+			$page.eq(index+1).css({'-webkit-transform': 'translate3d(0, 0px, 0px)', 'z-index': '500'});
+			$page.eq(index-1).hide();
+			index++;
+		}else if ((to == 'prev' || to < 0) && index > 0) {
+			//console.log('prev')
+			// 전의 페지
+			$page.css('z-index', 'auto');
+			$page.eq(index).css({'-webkit-transform': 'translate3d(0, ' + wHeight + 'px, 0px)', 'z-index': '500'});
+			$page.eq(index-1).css({'-webkit-transform': 'translate3d(0, 0px, 0px)', 'z-index': '400'});
+			$page.eq(index+1).hide();
+			index--;
+		}else if (touchV > 0){
+			//console.log('back')
+			// 원 위치로 돌아 갑니다
+			$page.eq(index).css({'-webkit-transform': 'translate3d(0, 0px, 0px)', 'opacity': 1, 'z-index': 400});
+			$page.eq(index+1).css({'-webkit-transform': 'translate3d(0, ' + wHeight + 'px, 0px)', 'z-index': '500'});
+		}else {
+			//console.log('back2')
+			$page.eq(index).css({'-webkit-transform': 'translate3d(0, 0px, 0px)', 'opacity': 1, 'z-index': 1000});
+			$page.eq(index-1).css({'-webkit-transform': 'translate3d(0, 0px, ' + -wHeight/2 + 'px)', 'z-index': '400'});
+		}
+		
+		setTimeout(function () {
+			$page.eq(index).css({'z-index':1000, 'opacity': 1});
+			//$page.eq(index).find('.zindex').html(1000)
+		}, 150);
+		
+	}
+</script>
+</html>
