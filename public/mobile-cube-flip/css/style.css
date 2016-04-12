@@ -1,0 +1,14 @@
+* {margin:0;padding:0;box-sizing:border-box;}
+html,body {height:100%;overflow:hidden;}
+html {background-color:#1d1d1d;}
+#wrapper {-webkit-perspective:960px;position: relative;height:100%;}
+
+.page-one {height:100%;width:100%;border:3px solid #fff;position:absolute;padding:20px;z-index:100;display:none;}
+
+#focus {-webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0, 0, 0);z-index:1000;}
+
+.p1 {background-color:rgba(255, 0, 255, 1);background:url(http://eput.com/upload/photos/2014/1118/thumb/10cf6af03a337bf2159585e19a16b490.jpg);color:#fff}
+.p2 {background-color:rgba(0, 0, 255, 1);background:url(http://eput.com/upload/photos/2014/1119/sumb/b7a7f673589f7f2a38e8d29c96a56f9f.jpg);border:3px solid #ff0;color:#fff}
+.p3 {background-color:rgba(0, 255, 0, 1);color:#fff;background:url(http://eput.com/upload/photos/2014/1112/thumb/39fc84937c85bb9b9efa67a2b4040ee1.jpg);}
+.p4 {background-color:rgba(250, 240, 250, 1);color:#fff;background:url(http://eput.com/upload/photos/2014/1115/sumb/978fe164df65ef4bb1a64364f7cca16f.jpg);}
+.p5 {background-color:#bbb;color:#fff;background:url(http://eput.com/upload/photos/2014/1112/thumb/875d2dc38d8652f7acbba8d96adbfe08.jpg);}
