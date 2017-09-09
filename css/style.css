@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 .outer {
-  max-width: 1220px;
+  max-width: 1020px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -143,8 +143,8 @@ body {
 .inner {
   display: inline;
   float: left;
-  width: 98.33333333333333%;
-  margin: 0 0.833333333333333%;
+  width: 98%;
+  margin: 0 1%;
 }
 .left,
 .alignleft {
@@ -183,8 +183,8 @@ body {
   #main {
     display: inline;
     float: left;
-    width: 73.33333333333333%;
-    margin: 0 0.833333333333333%;
+    width: 68%;
+    margin: 0 1%;
   }
 }
 .article-date,
@@ -207,7 +207,7 @@ body {
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   border: 1px solid rgba(0,0,0,0.09);
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .article-entry h1,
 .widget h1 {
@@ -553,7 +553,7 @@ body {
 }
 .article-title {
   text-decoration: none;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   margin-bottom: 24px;
   color: #555;
@@ -1309,8 +1309,8 @@ pre .javascript .function {
   #sidebar {
     display: inline;
     float: left;
-    width: 23.333333333333332%;
-    margin: 0 0.833333333333333%;
+    width: 28.000000000000004%;
+    margin: 0 1%;
   }
 }
 .widget-wrap {
@@ -1320,11 +1320,11 @@ pre .javascript .function {
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   border: 1px solid rgba(0,0,0,0.09);
   padding: 15px;
+  border-radius: 5px;
 }
 .widget {
   color: #777;
   text-shadow: 0 1px #fff;
-  border-radius: 3px;
 }
 .widget a {
   color: #258fb8;
