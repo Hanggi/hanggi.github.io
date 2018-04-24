@@ -5,16 +5,16 @@
   
   <title>postgresql-tutorial | Hanggi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="theme creating ...">
+  <meta name="description" content="PostgreSQL是自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD风格许可证下发行。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="postgresql-tutorial">
 <meta property="og:url" content="http://blog.hanggi.me/2018/04/24/postgresql-tutorial/index.html">
 <meta property="og:site_name" content="Hanggi">
-<meta property="og:description" content="theme creating ...">
-<meta property="og:updated_time" content="2018-04-24T04:21:51.160Z">
+<meta property="og:description" content="PostgreSQL是自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD风格许可证下发行。">
+<meta property="og:updated_time" content="2018-04-24T04:59:44.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="postgresql-tutorial">
-<meta name="twitter:description" content="theme creating ...">
+<meta name="twitter:description" content="PostgreSQL是自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD风格许可证下发行。">
   
     <link rel="alternate" href="/atom.xml" title="Hanggi" type="application/atom+xml">
   
@@ -108,7 +108,18 @@
     <!-- </div> -->
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>PostgreSQL是自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD风格许可证下发行。</p>
+<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>macOS:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install postgresql</div></pre></td></tr></table></figure>
+<p>ubuntu:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install postgresql</div></pre></td></tr></table></figure>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>首先要进入postgres的用户来管理数据库。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo su postgres</div></pre></td></tr></table></figure>
+<p>这时候可能会遇到 <code>FATAL: role “postgres” does not exist</code>，输入以下命令解决：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ CREATE USER postgres SUPERUSER;</div></pre></td></tr></table></figure>
+<p>然后是常用的一些命令集合：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">\l              // List of databases</div><div class="line"></div><div class="line">craete table posts (title varchar(64), content text);       // 创建表</div><div class="line"></div><div class="line">\dt             // List of relations, 就是列出表</div></pre></td></tr></table></figure>
       
 
       
@@ -232,23 +243,6 @@
 <script src="/js/script.js"></script>
 
 		</div>
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</body>
+	</body>
 
 	</html>
