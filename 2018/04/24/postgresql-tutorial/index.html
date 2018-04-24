@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.hanggi.me/2018/04/24/postgresql-tutorial/index.html">
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="PostgreSQL是自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD风格许可证下发行。">
-<meta property="og:updated_time" content="2018-04-24T05:02:22.777Z">
+<meta property="og:updated_time" content="2018-04-24T05:02:53.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="postgreSQL-基本">
 <meta name="twitter:description" content="PostgreSQL是自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD风格许可证下发行。">
@@ -117,9 +117,9 @@
 <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>首先要进入postgres的用户来管理数据库。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo su postgres</div></pre></td></tr></table></figure>
 <p>这时候可能会遇到 <code>FATAL: role “postgres” does not exist</code>，输入以下命令解决：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ CREATE USER postgres SUPERUSER;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">CREATE</span> <span class="keyword">USER</span> postgres SUPERUSER;</div></pre></td></tr></table></figure>
 <p>然后是常用的一些命令集合：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">\l              // List of databases</div><div class="line"></div><div class="line">craete table posts (title varchar(64), content text);       // 创建表</div><div class="line"></div><div class="line">\dt             // List of relations, 就是列出表</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">\l              // List of databases</div><div class="line"></div><div class="line">craete table posts (title varchar(64), content text);       // 创建表</div><div class="line"></div><div class="line">\dt             // List of relations, 就是列出表</div></pre></td></tr></table></figure>
       
 
       
