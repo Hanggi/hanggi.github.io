@@ -1113,8 +1113,6 @@ a.article-title:hover {
 .article-entry .highlight {
   background: #2d2d2d;
   margin: 0;
-  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: 6px;
   padding: 10px;
   border-style: solid;
@@ -1142,6 +1140,10 @@ a.article-title:hover {
   background: none;
   text-shadow: none;
   padding: 0;
+}
+.article-entry .highlight {
+  -webkit-box-shadow: 1px 1px 1px #000;
+  box-shadow: 1px 1px 1px #000;
 }
 .article-entry .highlight pre {
   border: none;
