@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>angular-cheats | Hanggi</title>
+  <title>Angular Cheats | Hanggi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Angular 一些使用技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angular-cheats">
+<meta property="og:title" content="Angular Cheats">
 <meta property="og:url" content="http://blog.hanggi.me/2018/05/05/angular-cheats/index.html">
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="Angular 一些使用技巧">
-<meta property="og:updated_time" content="2018-05-05T15:26:00.383Z">
+<meta property="og:updated_time" content="2018-05-05T15:27:05.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angular-cheats">
+<meta name="twitter:title" content="Angular Cheats">
 <meta name="twitter:description" content="Angular 一些使用技巧">
   
     <link rel="alternate" href="/atom.xml" title="Hanggi" type="application/atom+xml">
@@ -89,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      angular-cheats
+      Angular Cheats
     </h1>
   
 
@@ -119,13 +119,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng build --prod --base-href=<span class="regexp">/ng --deploy-url=/</span>dist/</div></pre></td></tr></table></figure>
 <hr>
 <p>有一个经常遇到的问题就是，你绑定了一个数据到页面，例如：<code></code>。但是这个数据可能还没有收到请求，这样这部分数据就会报错，虽然并无大碍，因为数据返回后就会更新出来。<br>这时候一个简单的方法就是在数据上价格问好</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	&#123;&#123;data?.name&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  &#123;&#123;data?.name&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>这样就不会报错了。</p>
 <hr>
 <p>在开发中，我们经常会使用 <code>ng serve</code> 来辅助我们，非常好用，他不仅会开启一个 :4200 端口的本地服务，还会进行实时脏检查，堪称神器。<br>但是我们经常会遇到一个棘手的问题就是，ng serve 监听4200端口，而应用中的请求也会发送给4200端口，但是本地服务程序不可能再设在4200端口了。悲催的我们只能把请求改成 <code>localhost:3000/</code> 然后发布前改回来。千万不要这么做，因为我们可以把指定请求转发给别的端口：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ng serve --proxy-config proxy.conf.json</div></pre></td></tr></table></figure>
 <p>首先设置一个proxy，文件就放在当前目录。内容：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"/v1/*"</span>: &#123;</div><div class="line">		<span class="attr">"target"</span>: <span class="string">"http://localhost:3000"</span>,</div><div class="line">		<span class="attr">"secure"</span>: <span class="literal">false</span>,</div><div class="line">		<span class="attr">"logLevel"</span>: <span class="string">"debug"</span>,</div><div class="line">		<span class="attr">"changeOrigin"</span>: <span class="literal">true</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"/v1/*"</span>: &#123;</div><div class="line">    <span class="attr">"target"</span>: <span class="string">"http://localhost:3000"</span>,</div><div class="line">    <span class="attr">"secure"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"logLevel"</span>: <span class="string">"debug"</span>,</div><div class="line">    <span class="attr">"changeOrigin"</span>: <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>意思就是说，所有api版本为1的请求都转发到3000端口。</p>
 
       
@@ -199,7 +199,7 @@
       <ul>
         
           <li>
-            <a href="/2018/05/05/angular-cheats/">angular-cheats</a>
+            <a href="/2018/05/05/angular-cheats/">Angular Cheats</a>
           </li>
         
           <li>
