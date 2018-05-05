@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.hanggi.me/2018/05/05/angular-cheats/index.html">
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="Angular 一些使用技巧">
-<meta property="og:updated_time" content="2018-05-05T15:27:19.588Z">
+<meta property="og:updated_time" content="2018-05-05T15:35:34.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Cheats">
 <meta name="twitter:description" content="Angular 一些使用技巧">
@@ -113,7 +113,7 @@
 <p>我们可以使用<code>ng-cli</code>生成编译文件，但这个过程会产生几个问题：</p>
 <ol>
 <li>首先是需要生产环境模式，这样出来的文件优化得也更好。这个可以使用<code>--prod</code>选项实现。</li>
-<li>其次是，我们有可能并没有使用 angular 开发整个网站，而是在某个子路由下，这时候可以使用 <code>--base-href=/ng</code> 命令修改 index.html 中的 <base> 标签内容。</li>
+<li>其次是，我们有可能并没有使用 angular 开发整个网站，而是在某个子路由下，这时候可以使用 <code>--base-href=/ng</code> 命令修改 index.html 中的 \<base\> 标签内容。</base\></li>
 <li>最后是生成文件的静态内容的地址问题，很多情况下这些静态内容并不会放在静态页面的根目录下。这时可以使用部署地址命令 <code>--deploy-url=/ng_static/</code>，这样 angular 就会去这个目录查找你的文件了。</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng build --prod --base-href=<span class="regexp">/ng --deploy-url=/</span>dist/</div></pre></td></tr></table></figure>
