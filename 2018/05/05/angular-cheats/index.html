@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/9 | Hanggi</title>
+  <title>angular-cheats | Hanggi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="theme creating ...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hanggi">
-<meta property="og:url" content="http://blog.hanggi.me/archives/2017/09/index.html">
+  <meta name="description" content="Angular 一些使用技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular-cheats">
+<meta property="og:url" content="http://blog.hanggi.me/2018/05/05/angular-cheats/index.html">
 <meta property="og:site_name" content="Hanggi">
-<meta property="og:description" content="theme creating ...">
+<meta property="og:description" content="Angular 一些使用技巧">
+<meta property="og:updated_time" content="2018-05-05T15:18:10.456Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hanggi">
-<meta name="twitter:description" content="theme creating ...">
+<meta name="twitter:title" content="angular-cheats">
+<meta name="twitter:description" content="Angular 一些使用技巧">
   
     <link rel="alternate" href="/atom.xml" title="Hanggi" type="application/atom+xml">
   
@@ -79,39 +80,75 @@
 </div>
 					<div class="outer">
 						<section id="main">
-							
-	
-	
-		
-		
-			
-		
-		<section class="archives-wrap">
-			<div class="archive-year-wrap">
-				<a href="/archives/2017" class="archive-year">2017</a>
-			</div>
-			<div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/08/MD样式测试文章/" class="archive-article-date">
-  <time datetime="2017-09-08T01:21:48.000Z" itemprop="datePublished">Sep 8</time>
-</a>
-      
+							<article id="post-angular-cheats" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/08/MD样式测试文章/">MD样式测试文章</a>
+  <div class="article-inner">
+	
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angular-cheats
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-meta">
+        
+        <a href="/2018/05/05/angular-cheats/" class="article-date">
+  <time datetime="2018-05-05T14:53:35.000Z" itemprop="datePublished">2018-05-05</time>
+</a>
+        
+        
+    </div>
+    <!-- <div class="gallery" style="display: flex;align-items: center;max-height: 250px;overflow:hidden;"> -->
+        
+    <!-- </div> -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Angular 一些使用技巧</p>
+<a id="more"></a>
+<p>我们可以使用<code>ng-cli</code>生成编译文件，但这个过程会产生几个问题：</p>
+<ol>
+<li>首先是需要生产环境模式，这样出来的文件优化得也更好。这个可以使用<code>--prod</code>选项实现。</li>
+<li>其次是，我们有可能并没有使用 angular 开发整个网站，而是在某个子路由下，这时候可以使用 <code>--base-href=/ng</code> 命令修改 index.html 中的 <base> 标签内容。</li>
+<li>最后是生成文件的静态内容的地址问题，很多情况下这些静态内容并不会放在静态页面的根目录下。这时可以使用部署地址命令 <code>--deploy-url=/ng_static/</code>，这样 angular 就会去这个目录查找你的文件了。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng build --prod --base-href=<span class="regexp">/ng --deploy-url=/</span>dist/</div></pre></td></tr></table></figure>
+<hr>
+<p>有一个经常遇到的问题就是，你绑定了一个数据到页面，例如：<code></code>。但是这个数据可能还没有收到请求，这样这部分数据就会报错，虽然并无大碍，因为数据返回后就会更新出来。<br>这时候一个简单的方法就是在数据上价格问好</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	&#123;&#123;data?.name&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这样就不会报错了。</p>
+<hr>
+
+      
+
+      
+          
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.hanggi.me/2018/05/05/angular-cheats/" data-id="cjgtj986v0000sv53pa9h2ie9" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/24/postgresql-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">postgreSQL-基本</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-	
-	
-		</div></section>
-	
 
 
 						</section>
