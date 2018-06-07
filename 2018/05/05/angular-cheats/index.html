@@ -11,6 +11,7 @@
 <meta property="og:url" content="http://blog.hanggi.me/2018/05/05/angular-cheats/index.html">
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="Angular 一些使用技巧">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-05-06T01:51:43.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Cheats">
@@ -71,7 +72,7 @@
     </nav>
     <nav id="sub-nav">
       
-          <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
     </nav>
     <div id="search-form-wrap">
       <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.hanggi.me"></form>
@@ -116,16 +117,16 @@
 <li>其次是，我们有可能并没有使用 angular 开发整个网站，而是在某个子路由下，这时候可以使用 <code>--base-href=/ng</code> 命令修改 index.html 中的 <code>&lt;base&gt;</code> 标签内容。</li>
 <li>最后是生成文件的静态内容的地址问题，很多情况下这些静态内容并不会放在静态页面的根目录下。这时可以使用部署地址命令 <code>--deploy-url=/ng_static/</code>，这样 angular 就会去这个目录查找你的文件了。</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng build --prod --base-href=<span class="regexp">/ng --deploy-url=/</span>dist/</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng build --prod --base-href=<span class="regexp">/ng --deploy-url=/</span>dist/</span><br></pre></td></tr></table></figure>
 <hr>
 <p>有一个经常遇到的问题就是，你绑定了一个数据到页面，例如：<strong></strong>。但是这个数据可能还没有收到请求，这样这部分数据就会报错，虽然并无大碍，因为数据返回后就会更新出来。<br>这时候一个简单的方法就是在数据上价格问好</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  &#123;&#123;data?.name&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;&#123;data?.name&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这样就不会报错了。</p>
 <hr>
 <p>在开发中，我们经常会使用 <code>ng serve</code> 来辅助我们，非常好用，他不仅会开启一个 :4200 端口的本地服务，还会进行实时脏检查，堪称神器。<br>但是我们经常会遇到一个棘手的问题就是，ng serve 监听4200端口，而应用中的请求也会发送给4200端口，但是本地服务程序不可能再设在4200端口了。悲催的我们只能把请求改成 <code>localhost:3000/</code> 然后发布前改回来。千万不要这么做，因为我们可以把指定请求转发给别的端口：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ng serve --proxy-config proxy.conf.json</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng serve --proxy-config proxy.conf.json</span><br></pre></td></tr></table></figure>
 <p>首先设置一个proxy，文件就放在当前目录。内容：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"/v1/*"</span>: &#123;</div><div class="line">    <span class="attr">"target"</span>: <span class="string">"http://localhost:3000"</span>,</div><div class="line">    <span class="attr">"secure"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"logLevel"</span>: <span class="string">"debug"</span>,</div><div class="line">    <span class="attr">"changeOrigin"</span>: <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"/v1/*"</span>: &#123;</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"http://localhost:3000"</span>,</span><br><span class="line">    <span class="attr">"secure"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"logLevel"</span>: <span class="string">"debug"</span>,</span><br><span class="line">    <span class="attr">"changeOrigin"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>意思就是说，所有api版本为1的请求都转发到3000端口。</p>
 
       
@@ -135,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.hanggi.me/2018/05/05/angular-cheats/" data-id="cjgtk161k0002ru53rsvjsgiq" class="article-share-link">Partager</a>
+      <a data-url="http://blog.hanggi.me/2018/05/05/angular-cheats/" data-id="cji3wutxx00049k53zetccc3l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,9 +145,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2018/05/21/BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          BB
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/04/24/postgresql-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">postgreSQL-基本</div>
     </a>
   
@@ -165,7 +175,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li></ul>
     </div>
@@ -175,7 +185,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/test/" style="font-size: 10px;">test</a>
     </div>
@@ -194,9 +204,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/21/BB/">BB</a>
+          </li>
         
           <li>
             <a href="/2018/05/05/angular-cheats/">Angular Cheats</a>
@@ -227,7 +241,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Hanggi<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
@@ -251,23 +265,6 @@
 <script src="/js/script.js"></script>
 
 		</div>
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</body>
+	</body>
 
 	</html>
