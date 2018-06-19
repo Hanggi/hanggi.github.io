@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="Angular 一些使用技巧">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-06T01:51:43.829Z">
+<meta property="og:updated_time" content="2018-06-19T08:54:46.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Cheats">
 <meta name="twitter:description" content="Angular 一些使用技巧">
@@ -128,7 +128,15 @@
 <p>首先设置一个proxy，文件就放在当前目录。内容：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"/v1/*"</span>: &#123;</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"http://localhost:3000"</span>,</span><br><span class="line">    <span class="attr">"secure"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"logLevel"</span>: <span class="string">"debug"</span>,</span><br><span class="line">    <span class="attr">"changeOrigin"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>意思就是说，所有api版本为1的请求都转发到3000端口。</p>
-
+<p>===================================</p>
+<h2 id="Angular-with-elec"><a href="#Angular-with-elec" class="headerlink" title="Angular with elec"></a>Angular with elec</h2><p>首先下载elec的快速启动包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/electron/electron-quick-start</span><br><span class="line"><span class="built_in">cd</span> electron-quick-start</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure>
+<p>这样一个快速启动的elec安装完成，接下来新建angular：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new angular</span><br></pre></td></tr></table></figure>
+<p>需要设置几个简单的东西。一个是ng的分发设置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"dist": "ng build --prod --output-path=../dist --base-href=./ &amp;&amp; cp ../dist/index.html ../"</span><br></pre></td></tr></table></figure>
+<p>还有就是elec的启动文件目录：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">mainWindow.loadFile(<span class="string">'dist/index.html'</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
       
 
       
@@ -136,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.hanggi.me/2018/05/05/angular-cheats/" data-id="cji3wutxx00049k53zetccc3l" class="article-share-link">Share</a>
+      <a data-url="http://blog.hanggi.me/2018/05/05/angular-cheats/" data-id="cjilgdkzr0000dd53sw0g4me1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,7 +204,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
     </div>
   </div>
 
@@ -207,6 +215,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/06/07/electron-note/">electron-note</a>
+          </li>
         
           <li>
             <a href="/2018/05/21/BB/">BB</a>
@@ -222,10 +234,6 @@
         
           <li>
             <a href="/2018/04/23/nginx-configuration/">Nginx 基本配置</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/08/MD样式测试文章/">Markdown样式测试文章</a>
           </li>
         
       </ul>
