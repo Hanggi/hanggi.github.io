@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="Angular 一些使用技巧">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-19T08:54:46.371Z">
+<meta property="og:updated_time" content="2018-06-19T09:49:36.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Cheats">
 <meta name="twitter:description" content="Angular 一些使用技巧">
@@ -137,6 +137,16 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"dist": "ng build --prod --output-path=../dist --base-href=./ &amp;&amp; cp ../dist/index.html ../"</span><br></pre></td></tr></table></figure>
 <p>还有就是elec的启动文件目录：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">mainWindow.loadFile(<span class="string">'dist/index.html'</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="Angular-material"><a href="#Angular-material" class="headerlink" title="Angular material"></a>Angular material</h2><p>基本安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save @angular/material @angular/cdk @angular/animations</span><br></pre></td></tr></table></figure>
+<p>在style.css里加载基本主题</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">"~@angular/material/prebuilt-themes/indigo-pink.css"</span>;</span><br></pre></td></tr></table></figure>
+<p>hammerjs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save hammerjs</span><br></pre></td></tr></table></figure>
+<p>并加载到 <code>src/main.ts</code> 里 ： <code>import &#39;hammerjs&#39;;</code></p>
+<p>index.html 里加上icons：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/icon?family=Material+Icons"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -273,6 +283,23 @@
 <script src="/js/script.js"></script>
 
 		</div>
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
 
 	</html>
