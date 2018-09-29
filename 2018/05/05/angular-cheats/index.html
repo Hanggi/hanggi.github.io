@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="Angular 一些使用技巧">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-19T09:49:36.774Z">
+<meta property="og:updated_time" content="2018-09-29T14:07:20.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular Cheats">
 <meta name="twitter:description" content="Angular 一些使用技巧">
@@ -137,6 +137,8 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"dist": "ng build --prod --output-path=../dist --base-href=./ &amp;&amp; cp ../dist/index.html ../"</span><br></pre></td></tr></table></figure>
 <p>还有就是elec的启动文件目录：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">mainWindow.loadFile(<span class="string">'dist/index.html'</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>更改默认样式文件格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng config defaults.styleExt=scss</span><br></pre></td></tr></table></figure>
 <h2 id="Angular-material"><a href="#Angular-material" class="headerlink" title="Angular material"></a>Angular material</h2><p>基本安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save @angular/material @angular/cdk @angular/animations</span><br></pre></td></tr></table></figure>
 <p>在style.css里加载基本主题</p>
@@ -154,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.hanggi.me/2018/05/05/angular-cheats/" data-id="cjilgdkzr0000dd53sw0g4me1" class="article-share-link">Share</a>
+      <a data-url="http://blog.hanggi.me/2018/05/05/angular-cheats/" data-id="cjmnipc6h0004q8v5xxwehrog" class="article-share-link">Share</a>
       
       
     </footer>
@@ -214,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
     </div>
   </div>
 
@@ -227,6 +229,14 @@
       <ul>
         
           <li>
+            <a href="/2018/09/29/ethereum-web3/">ethereum-web3</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/26/security/">security</a>
+          </li>
+        
+          <li>
             <a href="/2018/06/07/electron-note/">electron-note</a>
           </li>
         
@@ -236,14 +246,6 @@
         
           <li>
             <a href="/2018/05/05/angular-cheats/">Angular Cheats</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/24/postgresql-tutorial/">postgreSQL-基本</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/23/nginx-configuration/">Nginx 基本配置</a>
           </li>
         
       </ul>
@@ -297,9 +299,7 @@
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 	</html>
