@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ethereum-web3 | Hanggi</title>
+  <title>以太坊开发——web3 | Hanggi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract (scripting) functionality. It supports a modified version of Nakamoto">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ethereum-web3">
+<meta property="og:title" content="以太坊开发——web3">
 <meta property="og:url" content="http://blog.hanggi.me/2018/09/29/ethereum-web3/index.html">
 <meta property="og:site_name" content="Hanggi">
 <meta property="og:description" content="Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract (scripting) functionality. It supports a modified version of Nakamoto">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-29T14:37:51.607Z">
+<meta property="og:updated_time" content="2018-09-29T14:43:13.374Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ethereum-web3">
+<meta name="twitter:title" content="以太坊开发——web3">
 <meta name="twitter:description" content="Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract (scripting) functionality. It supports a modified version of Nakamoto">
   
     <link rel="alternate" href="/atom.xml" title="Hanggi" type="application/atom+xml">
@@ -90,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ethereum-web3
+      以太坊开发——web3
     </h1>
   
 
@@ -114,8 +114,10 @@
 <p>直入主题：</p>
 <p>为了进行以太坊开发我们需要一个 以太坊JS接口库 —— <a href="https://github.com/ethereum/web3.js/" title="web3" target="_blank" rel="noopener">web3.js</a></p>
 <p>安装 web3 模块：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install web3 --save</span><br></pre></td></tr></table></figure></p>
-<p>创建实例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> web3 = <span class="keyword">new</span> Web3(<span class="keyword">new</span> Web3.providers.HttpProvider(<span class="string">"https://kovan.infura.io/&lt;API KEY&gt;"</span>));</span><br></pre></td></tr></table></figure></p>
+<p>创建实例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Web3    = <span class="built_in">require</span>(<span class="string">'web3'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> web3 = <span class="keyword">new</span> Web3(</span><br><span class="line">    <span class="keyword">new</span> Web3.providers.HttpProvider(<span class="string">"https://kovan.infura.io/&lt;API KEY&gt;"</span>));</span><br></pre></td></tr></table></figure></p>
 <p>这里创建web3实例时可以使用本地节点也可以用远程节点，这里使用测试网络为例。</p>
+<p>官方创建实例方法如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> web3 !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">    web3 = <span class="keyword">new</span> Web3(web3.currentProvider);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// Set the provider you want from Web3.providers</span></span><br><span class="line">    web3 = <span class="keyword">new</span> Web3(<span class="keyword">new</span> Web3.providers.HttpProvider(<span class="string">"http://localhost:8545"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>================================================</p>
 
       
 
@@ -188,7 +190,7 @@
       <ul>
         
           <li>
-            <a href="/2018/09/29/ethereum-web3/">ethereum-web3</a>
+            <a href="/2018/09/29/ethereum-web3/">以太坊开发——web3</a>
           </li>
         
           <li>
