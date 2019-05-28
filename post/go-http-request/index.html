@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-05-27T16:55:50&#43;09:00" />
 <meta itemprop="dateModified" content="2019-05-27T16:55:50&#43;09:00" />
-<meta itemprop="wordCount" content="216">
+<meta itemprop="wordCount" content="258">
 
 
 
@@ -142,6 +142,10 @@
 <ul>
 <li><a href="#get-method">GET Method</a></li>
 <li><a href="#post-method">POST Method</a></li>
+</ul></li>
+<li><a href="#gorequest">GOREQUEST</a>
+<ul>
+<li><a href="#get-method-1">GET Method</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -254,7 +258,7 @@
 <span class="o">...</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>if you want to send <code>Content-Type: &quot;pplication/json&quot;</code> request:</p>
+<p>if you want to send <code>Content-Type: application/json</code> request:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
@@ -290,6 +294,29 @@
 	<span class="k">defer</span> <span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
 	<span class="nx">bodyBytes</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
 	<span class="k">return</span> <span class="nb">string</span><span class="p">(</span><span class="nx">bodyBytes</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="gorequest">GOREQUEST</h1>
+
+<p>GoRequest &ndash; Simplified HTTP client ( inspired by famous SuperAgent lib in Node.js )</p>
+
+<p>With GoRequest things become easier.</p>
+
+<h2 id="get-method-1">GET Method</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">request</span> <span class="o">:=</span> <span class="nx">gorequest</span><span class="p">.</span><span class="nf">New</span><span class="p">()</span>
+<span class="nx">resp</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">request</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;https://postman-echo.com/get?foo1=bar1&amp;foo2=bar2&#34;</span><span class="p">).</span><span class="nf">End</span><span class="p">()</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
