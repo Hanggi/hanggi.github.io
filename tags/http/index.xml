@@ -17,9 +17,7 @@
       <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
       
       <guid>http://localhost:1313/post/go-http-request/</guid>
-      <description>Golang http request.
-1  var hi = &amp;#34;hi&amp;#34;;   1 2 3 4 5 6 7 8  &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;#34;summary&amp;#34;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt;   To send a http request, easily use &amp;quot;net/http&amp;quot; module.
-GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.</description>
+      <description>&lt;p&gt;Golang http request demo code.&lt;/p&gt;</description>
     </item>
     
   </channel>

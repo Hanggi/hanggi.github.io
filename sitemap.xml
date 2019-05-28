@@ -8,13 +8,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/go/</loc>
+    <loc>http://localhost:1313/categories/go/</loc>
     <lastmod>2019-05-28T15:40:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/go/</loc>
+    <loc>http://localhost:1313/tags/go/</loc>
     <lastmod>2019-05-28T15:40:03+09:00</lastmod>
     <priority>0</priority>
   </url>

@@ -16,9 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Hanggi" /><meta name="description" content="Golang http request.
-1  var hi = &amp;#34;hi&amp;#34;;   1 2 3 4 5 6 7 8  &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;#34;summary&amp;#34;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt;   To send a http request, easily use &amp;quot;net/http&amp;quot; module.
-GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Hanggi" /><meta name="description" content="Golang http request demo code.
+" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -41,32 +40,26 @@ GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { res
 
 
 <meta property="og:title" content="Go Http Request" />
-<meta property="og:description" content="Golang http request.
-1  var hi = &#34;hi&#34;;   1 2 3 4 5 6 7 8  &lt;section id=&#34;main&#34;&gt; &lt;div&gt; &lt;h1 id=&#34;title&#34;&gt;{{ .Title }}&lt;/h1&gt; {{ range .Pages }} {{ .Render &#34;summary&#34;}} {{ end }} &lt;/div&gt; &lt;/section&gt;   To send a http request, easily use &quot;net/http&quot; module.
-GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http." />
+<meta property="og:description" content="Golang http request demo code." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/go-http-request/" />
 <meta property="article:published_time" content="2019-05-27T16:55:50&#43;09:00"/>
 <meta property="article:modified_time" content="2019-05-27T16:55:50&#43;09:00"/>
 
 <meta itemprop="name" content="Go Http Request">
-<meta itemprop="description" content="Golang http request.
-1  var hi = &#34;hi&#34;;   1 2 3 4 5 6 7 8  &lt;section id=&#34;main&#34;&gt; &lt;div&gt; &lt;h1 id=&#34;title&#34;&gt;{{ .Title }}&lt;/h1&gt; {{ range .Pages }} {{ .Render &#34;summary&#34;}} {{ end }} &lt;/div&gt; &lt;/section&gt;   To send a http request, easily use &quot;net/http&quot; module.
-GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.">
+<meta itemprop="description" content="Golang http request demo code.">
 
 
 <meta itemprop="datePublished" content="2019-05-27T16:55:50&#43;09:00" />
 <meta itemprop="dateModified" content="2019-05-27T16:55:50&#43;09:00" />
-<meta itemprop="wordCount" content="110">
+<meta itemprop="wordCount" content="80">
 
 
 
 <meta itemprop="keywords" content="Go,http,requests," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go Http Request"/>
-<meta name="twitter:description" content="Golang http request.
-1  var hi = &#34;hi&#34;;   1 2 3 4 5 6 7 8  &lt;section id=&#34;main&#34;&gt; &lt;div&gt; &lt;h1 id=&#34;title&#34;&gt;{{ .Title }}&lt;/h1&gt; {{ range .Pages }} {{ .Render &#34;summary&#34;}} {{ end }} &lt;/div&gt; &lt;/section&gt;   To send a http request, easily use &quot;net/http&quot; module.
-GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http."/>
+<meta name="twitter:description" content="Golang http request demo code."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -154,43 +147,7 @@ GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { res
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>Golang http request.</p>
-
-<!-- more -->
-
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">hi</span> <span class="p">=</span> <span class="s">&#34;hi&#34;</span><span class="p">;</span></code></pre></td></tr></table>
-</div>
-</div>
-
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;main&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;title&#34;</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-    {{ range .Pages }}
-      {{ .Render &#34;summary&#34;}}
-    {{ end }}
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span></code></pre></td></tr></table>
-</div>
-</div>
+      <p>Golang http request demo code.</p>
 
 <p>To send a http request, easily use <code>&quot;net/http&quot;</code> module.</p>
 
