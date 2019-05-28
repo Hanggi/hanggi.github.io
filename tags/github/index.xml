@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Hanggi - NGNL</title>
+    <link>http://localhost:1313/tags/github/</link>
+    <description>Recent content in github on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 May 2019 15:40:03 +0900</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Awesome</title>
+      <link>http://localhost:1313/post/go-awesome/</link>
+      <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
+      
+      <guid>http://localhost:1313/post/go-awesome/</guid>
+      <description>Some summary of go awesome projects, personally recommend:
+JSON jsoniter
+A high-performance 100% compatible drop-in replacement of &#34;encoding/json&#34;.  [Github]
+[Homepage]
+HTTP Request GoRequest
+GoRequest -- Simplified HTTP client ( inspired by nodejs SuperAgent )  [Github]
+[Homepage]</description>
+    </item>
+    
+  </channel>
+</rss>

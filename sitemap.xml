@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/go/</loc>
+    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/go/</loc>
+    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/go-awesome/</loc>
     <lastmod>2019-05-28T15:40:03+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -21,8 +39,20 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/go/</loc>
-    <lastmod>2019-05-27T16:55:50+09:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/github/</loc>
+    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/requests/</loc>
+    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -34,25 +64,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-05-27T16:55:50+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/http/</loc>
     <lastmod>2019-05-27T16:55:50+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/requests/</loc>
-    <lastmod>2019-05-27T16:55:50+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/</loc>
     <priority>0</priority>
   </url>
   

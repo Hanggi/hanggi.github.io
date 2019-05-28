@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 May 2019 16:55:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 15:40:03 +0900</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,27 @@
     <item>
       <title>Go</title>
       <link>http://localhost:1313/tags/go/</link>
-      <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
+      <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
       <guid>http://localhost:1313/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>http://localhost:1313/tags/github/</link>
+      <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>requests</title>
+      <link>http://localhost:1313/tags/requests/</link>
+      <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/requests/</guid>
       <description></description>
     </item>
     
@@ -26,15 +44,6 @@
       <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
       
       <guid>http://localhost:1313/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>requests</title>
-      <link>http://localhost:1313/tags/requests/</link>
-      <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
-      
-      <guid>http://localhost:1313/tags/requests/</guid>
       <description></description>
     </item>
     
