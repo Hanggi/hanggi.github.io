@@ -6,18 +6,24 @@
     <description>Recent content on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 May 2019 16:55:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 15:40:03 +0900</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Theme preview</title>
-      <link>http://localhost:1313/post/markdown-preview/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      <title>Go Awesome</title>
+      <link>http://localhost:1313/post/go-awesome/</link>
+      <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/markdown-preview/</guid>
-      <description>Based on MarkdownPreview test.md. Markdown 1 2 3 4 5 6 7 8 # H1 ## HH2 ### HHH3 #### HHHH4 ##### HHHHH5 ###### HHHHHH6 ### Duplicate Header ### Duplicate Header H1 H2 H3 H4 H5 H6 Duplicate Header Duplicate Header Paragraphs 1 2 3 4 This is a paragraph. I am still part of the paragraph. New paragraph. This is a paragraph. I am still part of the paragraph.</description>
+      <guid>http://localhost:1313/post/go-awesome/</guid>
+      <description>Some summary of go awesome projects, personally recommend:
+JSON jsoniter
+A high-performance 100% compatible drop-in replacement of &#34;encoding/json&#34;.  [Github]
+[Homepage]
+HTTP Request GoRequest
+GoRequest -- Simplified HTTP client ( inspired by nodejs SuperAgent )  [Github]
+[Homepage]</description>
     </item>
     
     <item>
@@ -27,9 +33,8 @@
       
       <guid>http://localhost:1313/post/go-http-request/</guid>
       <description>Golang http request.
-To send a http request, easily use &amp;quot;net/http&amp;quot; module.
-GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.Get(url) if err != nil { log.Fatal(err) } defer response.Body.Close() bodyBytes, err := ioutil.ReadAll(response.Body) if err != nil { log.Fatal(err) } return string(bodyBytes) }   or use
-1 2 3  client := http.</description>
+1  var hi = &amp;#34;hi&amp;#34;;   1 2 3 4 5 6 7 8  &amp;lt;section id=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;h1 id=&amp;#34;title&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt; {{ range .Pages }} {{ .Render &amp;#34;summary&amp;#34;}} {{ end }} &amp;lt;/div&amp;gt; &amp;lt;/section&amp;gt;   To send a http request, easily use &amp;quot;net/http&amp;quot; module.
+GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.</description>
     </item>
     
   </channel>
