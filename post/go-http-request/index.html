@@ -17,7 +17,9 @@
 
 
 <meta name="author" content="Hanggi" /><meta name="description" content="Golang http request.
-This is content" /><meta name="keywords" content="Hugo, theme, even" />
+To send a http request, easily use &amp;quot;net/http&amp;quot; module.
+GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.Get(url) if err != nil { log.Fatal(err) } defer response.Body.Close() bodyBytes, err := ioutil.ReadAll(response.Body) if err != nil { log.Fatal(err) } return string(bodyBytes) }   or use
+1 2 3  client := http." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -41,7 +43,9 @@ This is content" /><meta name="keywords" content="Hugo, theme, even" />
 
 <meta property="og:title" content="Go Http Request" />
 <meta property="og:description" content="Golang http request.
-This is content" />
+To send a http request, easily use &quot;net/http&quot; module.
+GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.Get(url) if err != nil { log.Fatal(err) } defer response.Body.Close() bodyBytes, err := ioutil.ReadAll(response.Body) if err != nil { log.Fatal(err) } return string(bodyBytes) }   or use
+1 2 3  client := http." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/go-http-request/" />
 <meta property="article:published_time" content="2019-05-27T16:55:50&#43;09:00"/>
@@ -49,12 +53,14 @@ This is content" />
 
 <meta itemprop="name" content="Go Http Request">
 <meta itemprop="description" content="Golang http request.
-This is content">
+To send a http request, easily use &quot;net/http&quot; module.
+GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.Get(url) if err != nil { log.Fatal(err) } defer response.Body.Close() bodyBytes, err := ioutil.ReadAll(response.Body) if err != nil { log.Fatal(err) } return string(bodyBytes) }   or use
+1 2 3  client := http.">
 
 
 <meta itemprop="datePublished" content="2019-05-27T16:55:50&#43;09:00" />
 <meta itemprop="dateModified" content="2019-05-27T16:55:50&#43;09:00" />
-<meta itemprop="wordCount" content="6">
+<meta itemprop="wordCount" content="78">
 
 
 
@@ -62,7 +68,9 @@ This is content">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go Http Request"/>
 <meta name="twitter:description" content="Golang http request.
-This is content"/>
+To send a http request, easily use &quot;net/http&quot; module.
+GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.Get(url) if err != nil { log.Fatal(err) } defer response.Body.Close() bodyBytes, err := ioutil.ReadAll(response.Body) if err != nil { log.Fatal(err) } return string(bodyBytes) }   or use
+1 2 3  client := http."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,17 +144,72 @@ This is content"/>
 
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#get-method">GET Method</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>Golang http request.</p>
+      
+
+<p>Golang http request.</p>
 
 <!-- more -->
 
-<p>This is content</p>
+<p>To send a http request, easily use <code>&quot;net/http&quot;</code> module.</p>
 
+<h2 id="get-method">GET Method</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">httpGet</span><span class="p">(</span> <span class="nx">url</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+	<span class="nx">response</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	
+	<span class="k">defer</span> <span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+	<span class="nx">bodyBytes</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nb">string</span><span class="p">(</span><span class="nx">bodyBytes</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>or use</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">client</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+<span class="nx">request</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;GET&#34;</span><span class="p">,</span> <span class="s">&#34;https://postman-echo.com/get?foo1=bar1&amp;foo2=bar2&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="nx">response</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

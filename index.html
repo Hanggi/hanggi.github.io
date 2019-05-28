@@ -148,7 +148,9 @@
   <div class="post-content">
     <div class="post-summary">
       Golang http request.
-This is content
+To send a http request, easily use &quot;net/http&quot; module.
+GET Method 1 2 3 4 5 6 7 8 9 10 11 12 13  func httpGet( url string) string { response, err := http.Get(url) if err != nil { log.Fatal(err) } defer response.Body.Close() bodyBytes, err := ioutil.ReadAll(response.Body) if err != nil { log.Fatal(err) } return string(bodyBytes) }   or use
+1 2 3  client := http.
     </div>
     <div class="read-more">
       <a href="/post/go-http-request/" class="read-more-link">Read more..</a>
