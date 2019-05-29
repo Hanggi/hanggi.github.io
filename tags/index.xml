@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 May 2019 15:40:03 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 11:41:03 +0900</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Go</title>
       <link>http://localhost:1313/tags/go/</link>
-      <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
+      <pubDate>Wed, 29 May 2019 11:41:03 +0900</pubDate>
       
       <guid>http://localhost:1313/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>json</title>
+      <link>http://localhost:1313/tags/json/</link>
+      <pubDate>Wed, 29 May 2019 11:41:03 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/json/</guid>
       <description></description>
     </item>
     

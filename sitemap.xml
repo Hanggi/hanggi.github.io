@@ -3,19 +3,50 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/go/</loc>
-    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/go/</loc>
-    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/go-json/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/json/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -24,24 +55,6 @@
     <lastmod>2019-05-28T15:40:03+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
