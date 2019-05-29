@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-05-28T15:40:03&#43;09:00" />
 <meta itemprop="dateModified" content="2019-05-28T15:40:03&#43;09:00" />
-<meta itemprop="wordCount" content="147">
+<meta itemprop="wordCount" content="590">
 
 
 
@@ -160,7 +160,7 @@
 <h2 id="json"><strong>JSON</strong></h2>
 
 <p>A good json parser.
-<div class="admonition quote"><p class="admonition-title">jsoniter</p></p>
+<div class="admonition info"><p class="admonition-title">jsoniter</p></p>
 
 <p>A high-performance 100% compatible drop-in replacement of &ldquo;encoding/json&rdquo;.</p>
 
@@ -168,11 +168,32 @@
 
 <p><a href="https://github.com/json-iterator/go">[Github]</a><br />
 <a href="http://jsoniter.com/migrate-from-go-std.html">[Homepage]</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;github.com/json-iterator/go&#34;</span>
+
+<span class="kd">var</span> <span class="nx">json</span> <span class="p">=</span> <span class="nx">jsoniter</span><span class="p">.</span><span class="nx">ConfigCompatibleWithStandardLibrary</span>
+<span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">data</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">json</span> <span class="p">=</span> <span class="nx">jsoniter</span><span class="p">.</span><span class="nx">ConfigCompatibleWithStandardLibrary</span>
+<span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">data</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<hr />
 
 <h2 id="http-request"><strong>HTTP Request</strong></h2>
 
 <p>Well documented go http request library with nice logo.
-<div class="admonition quote"><p class="admonition-title">GoRequest</p></p>
+<div class="admonition info"><p class="admonition-title">GoRequest</p></p>
 
 <p>GoRequest &ndash; Simplified HTTP client ( inspired by nodejs SuperAgent )</p>
 
@@ -180,11 +201,30 @@
 
 <p><a href="https://github.com/parnurzeal/gorequest">[Github]</a><br />
 <a href="http://parnurzeal.github.io/gorequest/">[Homepage]</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">request</span> <span class="o">:=</span> <span class="nx">gorequest</span><span class="p">.</span><span class="nf">New</span><span class="p">()</span>
+<span class="nx">resp</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">errs</span> <span class="o">:=</span> <span class="nx">request</span><span class="p">.</span><span class="nf">Post</span><span class="p">(</span><span class="s">&#34;http://example.com&#34;</span><span class="p">).</span><span class="nf">End</span><span class="p">()</span>
+<span class="c1">// PUT -&gt; request.Put(&#34;http://example.com&#34;).End()
+</span><span class="c1">// DELETE -&gt; request.Delete(&#34;http://example.com&#34;).End()
+</span><span class="c1">// HEAD -&gt; request.Head(&#34;http://example.com&#34;).End()
+</span><span class="c1"></span><span class="o">//</span> <span class="nx">ANYTHING</span> <span class="o">-</span><span class="p">&gt;</span> <span class="nx">request</span><span class="p">.</span><span class="nf">CustomMethod</span><span class="p">(</span><span class="s">&#34;TRACE&#34;</span><span class="p">,</span> <span class="s">&#34;http://example.com&#34;</span><span class="p">).</span><span class="nf">End</span><span class="p">()</span></code></pre></td></tr></table>
+</div>
+</div>
+<hr />
 
 <h2 id="web-framwork"><strong>Web Framwork</strong></h2>
 
 <p>The best go web framework thanks to <a href="https://github.com/julienschmidt/httprouter">httprouter</a>(fastest http router).
-<div class="admonition quote"><p class="admonition-title">gin</p></p>
+<div class="admonition info"><p class="admonition-title">gin</p></p>
 
 <p>Gin is a HTTP web framework written in Go (Golang). It features a Martini-like API with much better performance &ndash; up to 40 times faster. If you need smashing performance, get yourself some Gin.</p>
 
@@ -193,15 +233,233 @@
 <p><a href="https://github.com/gin-gonic/gin">[Github]</a><br />
 <a href="https://gin-gonic.com/">[Homepage]</a><br />
 <a href="https://gin-gonic.com/zh-cn/docs/">[docs]</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Creates a gin router with default middleware:
+</span><span class="c1"></span>    <span class="c1">// logger and recovery (crash-free) middleware
+</span><span class="c1"></span>    <span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+    
+    <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/someGet&#34;</span><span class="p">,</span> <span class="nx">getting</span><span class="p">)</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/somePost&#34;</span><span class="p">,</span> <span class="nx">posting</span><span class="p">)</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nf">PUT</span><span class="p">(</span><span class="s">&#34;/somePut&#34;</span><span class="p">,</span> <span class="nx">putting</span><span class="p">)</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nf">DELETE</span><span class="p">(</span><span class="s">&#34;/someDelete&#34;</span><span class="p">,</span> <span class="nx">deleting</span><span class="p">)</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nf">PATCH</span><span class="p">(</span><span class="s">&#34;/somePatch&#34;</span><span class="p">,</span> <span class="nx">patching</span><span class="p">)</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nf">HEAD</span><span class="p">(</span><span class="s">&#34;/someHead&#34;</span><span class="p">,</span> <span class="nx">head</span><span class="p">)</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nf">OPTIONS</span><span class="p">(</span><span class="s">&#34;/someOptions&#34;</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+	
+    <span class="c1">// This handler will match /user/john but will not match /user/ or /user
+</span><span class="c1"></span>    <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/user/:name&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">name</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Param</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span>
+        <span class="nx">c</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="s">&#34;Hello %s&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span>
+    <span class="p">})</span>
+
+    <span class="c1">// However, this one will match /user/john/ and also /user/john/send
+</span><span class="c1"></span>    <span class="c1">// If no other routers match /user/john, it will redirect to /user/john/
+</span><span class="c1"></span>    <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/user/:name/*action&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">name</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Param</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span>
+        <span class="nx">action</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Param</span><span class="p">(</span><span class="s">&#34;action&#34;</span><span class="p">)</span>
+        <span class="nx">message</span> <span class="o">:=</span> <span class="nx">name</span> <span class="o">+</span> <span class="s">&#34; is &#34;</span> <span class="o">+</span> <span class="nx">action</span>
+        <span class="nx">c</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span>
+    <span class="p">})</span>
+
+    <span class="c1">// For each matched request Context will hold the route definition
+</span><span class="c1"></span>    <span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/user/:name/*action&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">c</span><span class="p">.</span><span class="nf">FullPath</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#34;/user/:name/*action&#34;</span> <span class="c1">// true
+</span><span class="c1"></span>    <span class="p">})</span>
+	
+    <span class="c1">// Query string parameters are parsed using the existing underlying request object.
+</span><span class="c1"></span>    <span class="c1">// The request responds to a url matching:  /welcome?firstname=Jane&amp;lastname=Doe
+</span><span class="c1"></span>    <span class="nx">router</span><span class="p">.</span><span class="nf">GET</span><span class="p">(</span><span class="s">&#34;/welcome&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">firstname</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">DefaultQuery</span><span class="p">(</span><span class="s">&#34;firstname&#34;</span><span class="p">,</span> <span class="s">&#34;Guest&#34;</span><span class="p">)</span>
+        <span class="nx">lastname</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Query</span><span class="p">(</span><span class="s">&#34;lastname&#34;</span><span class="p">)</span> <span class="c1">// shortcut for c.Request.URL.Query().Get(&#34;lastname&#34;)
+</span><span class="c1"></span>
+        <span class="nx">c</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="s">&#34;Hello %s %s&#34;</span><span class="p">,</span> <span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">)</span>
+    <span class="p">})</span>
+
+    <span class="c1">// By default it serves on :8080 unless a
+</span><span class="c1"></span>    <span class="c1">// PORT environment variable was defined.
+</span><span class="c1"></span>    <span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">()</span>
+    <span class="c1">// router.Run(&#34;:3000&#34;) for a hard coded port
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<hr />
 
 <h2 id="task"><strong>Task</strong></h2>
 
 <p>Do tasks at regular intervals
-<div class="admonition quote"><p class="admonition-title">gin</p></p>
+<div class="admonition info"><p class="admonition-title">goCron</p></p>
 
-<p>Gin is a HTTP web framework written in Go (Golang). It features a Martini-like API with much better performance &ndash; up to 40 times faster. If you need smashing performance, get yourself some Gin.</p>
+<p>goCron is a Golang job scheduling package which lets you run Go functions periodically at pre-determined interval using a simple, human-friendly syntax.</p>
 
 <p></div></p>
+
+<p><a href="https://github.com/jasonlvhit/gocron">[Github]</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;github.com/jasonlvhit/gocron&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">task</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;I am runnning task.&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">taskWithParams</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// Do jobs with params
+</span><span class="c1"></span>	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Second</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">taskWithParams</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#34;hello&#34;</span><span class="p">)</span>
+
+	<span class="c1">// Do jobs without params
+</span><span class="c1"></span>	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Second</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">Seconds</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Minute</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">Minutes</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Hour</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">Hours</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Day</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nf">Days</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+
+	<span class="c1">// Do jobs on specific weekday
+</span><span class="c1"></span>	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Monday</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Thursday</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+
+	<span class="c1">// function At() take a string like &#39;hour:min&#39;
+</span><span class="c1"></span>	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Day</span><span class="p">().</span><span class="nf">At</span><span class="p">(</span><span class="s">&#34;10:30&#34;</span><span class="p">).</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">Monday</span><span class="p">().</span><span class="nf">At</span><span class="p">(</span><span class="s">&#34;18:30&#34;</span><span class="p">).</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+
+	<span class="c1">// remove, clear and next_run
+</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">time</span> <span class="o">:=</span> <span class="nx">gocron</span><span class="p">.</span><span class="nf">NextRun</span><span class="p">()</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
+
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="nx">gocron</span><span class="p">.</span><span class="nf">Clear</span><span class="p">()</span>
+
+	<span class="c1">// function Start start all the pending jobs
+</span><span class="c1"></span>	<span class="o">&lt;-</span> <span class="nx">gocron</span><span class="p">.</span><span class="nf">Start</span><span class="p">()</span>
+
+	<span class="c1">// also , you can create a your new scheduler,
+</span><span class="c1"></span>	<span class="c1">// to run two scheduler concurrently
+</span><span class="c1"></span>	<span class="nx">s</span> <span class="o">:=</span> <span class="nx">gocron</span><span class="p">.</span><span class="nf">NewScheduler</span><span class="p">()</span>
+	<span class="nx">s</span><span class="p">.</span><span class="nf">Every</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="nf">Seconds</span><span class="p">().</span><span class="nf">Do</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span>
+	<span class="o">&lt;-</span> <span class="nx">s</span><span class="p">.</span><span class="nf">Start</span><span class="p">()</span>
+
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<hr />
 
 <h3 id="others">Others</h3>
 
