@@ -6,46 +6,10 @@
     <description>Recent content in Posts on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jul 2019 15:45:17 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jul 2019 17:00:01 +0900</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>韩国科技趋势</title>
-      <link>http://localhost:1313/post/korea-technology-trends/</link>
-      <pubDate>Thu, 11 Jul 2019 15:45:17 +0900</pubDate>
-      
-      <guid>http://localhost:1313/post/korea-technology-trends/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>韩国计算机就业</title>
-      <link>http://localhost:1313/post/korea-computer-employment/</link>
-      <pubDate>Thu, 11 Jul 2019 15:44:28 +0900</pubDate>
-      
-      <guid>http://localhost:1313/post/korea-computer-employment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>韩国企业文化</title>
-      <link>http://localhost:1313/post/korea-technology-company/</link>
-      <pubDate>Thu, 11 Jul 2019 15:43:43 +0900</pubDate>
-      
-      <guid>http://localhost:1313/post/korea-technology-company/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>韩国计算机教育</title>
-      <link>http://localhost:1313/post/korea-computer-education/</link>
-      <pubDate>Thu, 11 Jul 2019 15:42:52 +0900</pubDate>
-      
-      <guid>http://localhost:1313/post/korea-computer-education/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Docker Notes</title>
