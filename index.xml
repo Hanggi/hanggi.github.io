@@ -6,7 +6,7 @@
     <description>Recent content on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Aug 2019 15:40:03 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 11:21:49 +0900</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,16 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>About</description>
+    </item>
+    
+    <item>
+      <title>Web 框架所需基本特性</title>
+      <link>http://localhost:1313/post/web-framework-basics/</link>
+      <pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate>
+      
+      <guid>http://localhost:1313/post/web-framework-basics/</guid>
+      <description>&lt;p&gt;整理一个Web框架所需的基本特性。&lt;br /&gt;
+以下为一个Web框架所需的基本功能&lt;/p&gt;</description>
     </item>
     
     <item>
