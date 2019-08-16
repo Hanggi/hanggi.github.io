@@ -9,14 +9,51 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2019-08-14T11:21:49+09:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/kafka-setup/</loc>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-08-14T11:21:49+09:00</lastmod>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/kafka/</loc>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/zookeeper/</loc>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2019-08-15T22:46:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -28,8 +65,26 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
+    <loc>http://localhost:1313/tags/framework/</loc>
+    <lastmod>2019-08-14T11:21:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/http/</loc>
+    <lastmod>2019-08-14T11:21:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/web/</loc>
+    <lastmod>2019-08-14T11:21:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2019-08-14T11:21:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -59,18 +114,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/note/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/centos/</loc>
     <lastmod>2019-08-09T15:40:03+09:00</lastmod>
     <priority>0</priority>
@@ -90,14 +133,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/docker/</loc>
-    <lastmod>2019-07-10T17:00:01+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/docker/</loc>
-    <lastmod>2019-07-10T17:00:01+09:00</lastmod>
+    <loc>http://localhost:1313/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2019-08-09T15:40:03+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -109,8 +146,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/go/</loc>
-    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <loc>http://localhost:1313/tags/docker/</loc>
+    <lastmod>2019-07-10T17:00:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -129,6 +166,12 @@
   
   <url>
     <loc>http://localhost:1313/tags/json/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2019-05-29T11:41:03+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -153,16 +196,16 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-05-28T15:40:03+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/go-http-request/</loc>
     <lastmod>2019-05-27T16:55:50+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/http/</loc>
-    <lastmod>2019-05-27T16:55:50+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

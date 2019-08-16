@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Aug 2019 15:40:03 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 22:46:44 +0900</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>kafka</title>
+      <link>http://localhost:1313/tags/kafka/</link>
+      <pubDate>Thu, 15 Aug 2019 22:46:44 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zookeeper</title>
+      <link>http://localhost:1313/tags/zookeeper/</link>
+      <pubDate>Thu, 15 Aug 2019 22:46:44 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/zookeeper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>framework</title>
+      <link>http://localhost:1313/tags/framework/</link>
+      <pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>http://localhost:1313/tags/http/</link>
+      <pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate>
+      
+      <guid>http://localhost:1313/tags/web/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>IDEA</title>
@@ -57,7 +102,7 @@
     </item>
     
     <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Wed, 10 Jul 2019 17:00:01 +0900</pubDate>
       
@@ -98,15 +143,6 @@
       <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
       <guid>http://localhost:1313/tags/requests/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>http</title>
-      <link>http://localhost:1313/tags/http/</link>
-      <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
-      
-      <guid>http://localhost:1313/tags/http/</guid>
       <description></description>
     </item>
     
