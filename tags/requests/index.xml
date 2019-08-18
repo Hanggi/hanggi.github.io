@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>requests on Hanggi - NGNL</title>
-    <link>http://localhost:1313/tags/requests/</link>
+    <link>http://hanggi.me/tags/requests/</link>
     <description>Recent content in requests on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 May 2019 15:40:03 +0900</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/requests/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://hanggi.me/tags/requests/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go Awesome</title>
-      <link>http://localhost:1313/post/golang/go-awesome/</link>
+      <link>http://hanggi.me/post/golang/go-awesome/</link>
       <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/golang/go-awesome/</guid>
+      <guid>http://hanggi.me/post/golang/go-awesome/</guid>
       <description>&lt;p&gt;Some summary of go awesome projects, personally recommend:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Go Http Request</title>
-      <link>http://localhost:1313/post/golang/go-http-request/</link>
+      <link>http://hanggi.me/post/golang/go-http-request/</link>
       <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/golang/go-http-request/</guid>
+      <guid>http://hanggi.me/post/golang/go-http-request/</guid>
       <description>&lt;p&gt;Golang http request demo code.&lt;/p&gt;</description>
     </item>
     
