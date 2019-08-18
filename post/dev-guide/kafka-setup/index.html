@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Web 框架所需基本特性 - Hanggi - NGNL</title>
+  <title>Kafka 安装配置 - Hanggi - NGNL</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Hanggi" /><meta name="description" content="整理一个Web框架所需的基本特性。
-以下为一个Web框架所需的基本功能
+<meta name="author" content="Hanggi" /><meta name="description" content="Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -28,7 +27,7 @@
 <meta name="generator" content="Hugo 0.57.2 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://hanggi.me/post/web-framework-basics/" />
+<link rel="canonical" href="http://hanggi.me/post/dev-guide/kafka-setup/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,29 +39,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Web 框架所需基本特性" />
-<meta property="og:description" content="整理一个Web框架所需的基本特性。
-以下为一个Web框架所需的基本功能" />
+<meta property="og:title" content="Kafka 安装配置" />
+<meta property="og:description" content="Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://hanggi.me/post/web-framework-basics/" />
-<meta property="article:published_time" content="2019-08-14T11:21:49+09:00" />
-<meta property="article:modified_time" content="2019-08-14T11:21:49+09:00" />
-<meta itemprop="name" content="Web 框架所需基本特性">
-<meta itemprop="description" content="整理一个Web框架所需的基本特性。
-以下为一个Web框架所需的基本功能">
+<meta property="og:url" content="http://hanggi.me/post/dev-guide/kafka-setup/" />
+<meta property="article:published_time" content="2019-08-15T22:46:44+09:00" />
+<meta property="article:modified_time" content="2019-08-15T22:46:44+09:00" />
+<meta itemprop="name" content="Kafka 安装配置">
+<meta itemprop="description" content="Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。">
 
 
-<meta itemprop="datePublished" content="2019-08-14T11:21:49&#43;09:00" />
-<meta itemprop="dateModified" content="2019-08-14T11:21:49&#43;09:00" />
-<meta itemprop="wordCount" content="391">
+<meta itemprop="datePublished" content="2019-08-15T22:46:44&#43;09:00" />
+<meta itemprop="dateModified" content="2019-08-15T22:46:44&#43;09:00" />
+<meta itemprop="wordCount" content="480">
 
 
 
-<meta itemprop="keywords" content="web,http,framework," />
+<meta itemprop="keywords" content="kafka,zookeeper," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Web 框架所需基本特性"/>
-<meta name="twitter:description" content="整理一个Web框架所需的基本特性。
-以下为一个Web框架所需的基本功能"/>
+<meta name="twitter:title" content="Kafka 安装配置"/>
+<meta name="twitter:description" content="Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,12 +125,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Web 框架所需基本特性</h1>
+      <h1 class="post-title">Kafka 安装配置</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-08-14 </span>
+        <span class="post-time"> 2019-08-15 </span>
         <div class="post-category">
-            <a href="/categories/%E6%A6%82%E5%BF%B5/"> 概念 </a>
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"> 开发手册 </a>
             </div>
         
       </div>
@@ -145,70 +141,92 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#路由">路由</a>
+<li><a href="#windows-安装">Windows 安装</a>
 <ul>
-<li><a href="#处理-http-请求">处理 HTTP 请求</a></li>
-<li><a href="#路由parameters解析">路由Parameters解析</a></li>
-<li><a href="#路由query解析">路由Query解析</a></li>
-<li><a href="#表单解析-body解析">表单解析/Body解析</a></li>
+<li><a href="#安装-zookeeper">安装 Zookeeper</a>
+<ul>
+<li><a href="#下载地址">下载地址</a></li>
+<li><a href="#解压并复制到工作目录">解压并复制到工作目录</a></li>
+<li><a href="#修改配置参数">修改配置参数</a></li>
+<li><a href="#添加环境变量">添加环境变量</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>整理一个Web框架所需的基本特性。<br />
-以下为一个Web框架所需的基本功能</p>
+      <p>Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。</p>
 
-<h1 id="路由">路由</h1>
+<h1 id="windows-安装">Windows 安装</h1>
 
-<p>路由是Web框架最基本功能，是Web框架向外释放接口、构建Restful API的基本。</p>
+<p>由于 Kafka 依赖于 ookeeper 所以我们先安装 Zookeeper</p>
 
-<h2 id="处理-http-请求">处理 HTTP 请求</h2>
+<h2 id="安装-zookeeper">安装 Zookeeper</h2>
 
-<p>相关标准可以在以下链接查看：</p>
+<h3 id="下载地址">下载地址</h3>
 
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods">HTTP 请求方法</a></p>
+<p><a href="https://zookeeper.apache.org">Zookeeper官网</a></p>
 
-<p>通常我们会使用GET请求获得某个数据或页面或文件。</p>
+<p><a href="https://zookeeper.apache.org/releases.html">下载地址</a></p>
 
-<p>使用POST请求提交数据，请求服务器生成新的内容。</p>
+<h3 id="解压并复制到工作目录">解压并复制到工作目录</h3>
 
-<h2 id="路由parameters解析">路由Parameters解析</h2>
+<p>我们在这里安装最新的 <code>apache-zookeeper-3.5.5.tar.gz</code>。</p>
 
-<p>动态网站种经常需要接收参数，以获得具体内容。</p>
+<p>复制到工作目录，例如：<code>D:\apache-zookeeper-3.5.5</code></p>
 
-<p>如，需要一个ID为2333的文章，接口通常会这样：</p>
+<h3 id="修改配置参数">修改配置参数</h3>
+
+<p>进到 <code>D:\apache-zookeeper-3.5.5\conf</code>， 复制 <code>zoo_sample.cfg</code> 并重命名为 <code>zoo.cfg</code></p>
+
+<p>编辑 <code>zoo.cfg</code>，修改 dataDir 为：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">GET http://localhost/v1/articles/2333</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">dataDir</span><span class="o">=</span>/apache-zookeeper-3.5.5/data</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="路由query解析">路由Query解析</h2>
-
-<p>Query 通常用于添加特定选项参数。</p>
-
-<p>如，需要第二页的文章列表，每页显示20个：</p>
+<h3 id="添加环境变量">添加环境变量</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ZOOKEEPER_HOME              D:\apache-zookeeper-3.5.5
+path                        %ZOOKEEPER_HOME%\bin</pre></td></tr></table>
+</div>
+</div>
+<p>打开terminal，尝试运行：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">GET http://localhost/v1/articles?page<span class="o">=</span><span class="m">2</span><span class="p">&amp;</span><span class="nv">limit</span><span class="o">=</span><span class="m">20</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ zkserver</code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="表单解析-body解析">表单解析/Body解析</h2>
+<p>&hellip;没有java环境变量？
+<div class="admonition warning"><p class="admonition-title">报错</p></p>
 
-<p>当我们使用POST请求，去生成一个新的内容时我们通常会吧需要生成的内容一同发给服务器。</p>
+<p>我这里提示 <code>Error: JAVA_HOME is not set.</code><br />
+添加一下<code>JAVA_HOME</code>环境变量</p>
 
-<p>服务器需要解析这些请求数据。</p>
+<p></div></p>
 
-<p>通常有两种格式，一种是 json 另一种表单。</p>
+<p>又出错了。。。
+<div class="admonition warning"><p class="admonition-title">报错</p></p>
 
-<p>json 请求通常是：</p>
+<p><code>Error: Could not find or load main class org.apache.zookeeper.server.quorum.QuorumPeerMain</code></p>
+
+<p>中文是</p>
+
+<p><code>错误: 找不到或无法加载主类 org.apache.zookeeper.server.quorum.QuorumPeerMain</code></p>
+
+<p></div></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
@@ -220,28 +238,13 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">POST /post?id<span class="o">=</span><span class="m">1234</span><span class="p">&amp;</span><span class="nv">page</span><span class="o">=</span><span class="m">1</span> HTTP/1.1
-Content-Type: application/json
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ zookeeper-server-start.bat ../../config/zookeeper.properties
+$ kafka-server-start.bat ../../config/server.properties
 
-<span class="o">{</span>
-    <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;manu&#34;</span>,
-    <span class="s2">&#34;message&#34;</span>: <span class="s2">&#34;this_is_great&#34;</span>
-<span class="o">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>form 表单则是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">POST /post?id<span class="o">=</span><span class="m">1234</span><span class="p">&amp;</span><span class="nv">page</span><span class="o">=</span><span class="m">1</span> HTTP/1.1
-Content-Type: application/x-www-form-urlencoded
-
-<span class="nv">name</span><span class="o">=</span>manu<span class="p">&amp;</span><span class="nv">message</span><span class="o">=</span>this_is_great</code></pre></td></tr></table>
+.<span class="se">\b</span>in<span class="se">\w</span>indows<span class="se">\k</span>afka-server-start.bat .<span class="se">\c</span>onfig<span class="se">\s</span>erver.properties
+.<span class="se">\k</span>afka-topics.bat --create --zookeeper localhost:2181 --replication-factor <span class="m">1</span> --partitions <span class="m">1</span> --topic testDemo
+.<span class="se">\k</span>afka-console-producer.bat --broker-list localhost:9092 --topic testDemo
+.<span class="se">\k</span>afka-console-consumer.bat --bootstrap-server localhost:9092 --topic testDemo</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -254,7 +257,7 @@ Content-Type: application/x-www-form-urlencoded
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2019-08-14
+        2019-08-15
         
     </span>
   </p>
@@ -263,18 +266,17 @@ Content-Type: application/x-www-form-urlencoded
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/web/">web</a>
-          <a href="/tags/http/">http</a>
-          <a href="/tags/framework/">framework</a>
+          <a href="/tags/kafka/">kafka</a>
+          <a href="/tags/zookeeper/">zookeeper</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/dev-guide/kafka-setup/">
+        <a class="prev" href="/post/deployment/centos-docker-install/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Kafka 安装配置</span>
+            <span class="prev-text nav-default">CentOS 生产环境安装 Docker</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/dev-guide/idea-java-spring/">
-            <span class="next-text nav-default">IDEA Java Spring 开发环境搭建</span>
+        <a class="next" href="/post/web-framework-basics/">
+            <span class="next-text nav-default">Web 框架所需基本特性</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
