@@ -13,19 +13,19 @@
     
     <item>
       <title>Go Awesome</title>
-      <link>http://localhost:1313/post/go-awesome/</link>
+      <link>http://localhost:1313/post/golang/go-awesome/</link>
       <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/go-awesome/</guid>
+      <guid>http://localhost:1313/post/golang/go-awesome/</guid>
       <description>&lt;p&gt;Some summary of go awesome projects, personally recommend:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Go Http Request</title>
-      <link>http://localhost:1313/post/go-http-request/</link>
+      <link>http://localhost:1313/post/golang/go-http-request/</link>
       <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/go-http-request/</guid>
+      <guid>http://localhost:1313/post/golang/go-http-request/</guid>
       <description>&lt;p&gt;Golang http request demo code.&lt;/p&gt;</description>
     </item>
     

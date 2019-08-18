@@ -13,10 +13,10 @@
     
     <item>
       <title>Go Awesome</title>
-      <link>http://localhost:1313/post/go-awesome/</link>
+      <link>http://localhost:1313/post/golang/go-awesome/</link>
       <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/go-awesome/</guid>
+      <guid>http://localhost:1313/post/golang/go-awesome/</guid>
       <description>&lt;p&gt;Some summary of go awesome projects, personally recommend:&lt;/p&gt;</description>
     </item>
     

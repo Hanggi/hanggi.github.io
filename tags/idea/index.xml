@@ -13,10 +13,10 @@
     
     <item>
       <title>IDEA Java Spring 开发环境搭建</title>
-      <link>http://localhost:1313/post/idea-java-spring/</link>
+      <link>http://localhost:1313/post/development-guide/idea-java-spring/</link>
       <pubDate>Sat, 10 Aug 2019 15:40:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/idea-java-spring/</guid>
+      <guid>http://localhost:1313/post/development-guide/idea-java-spring/</guid>
       <description>&lt;p&gt;尝试一下在IDEA开发Java Spring。
 Spring 整个架构虽然强大，但确实比较重。&lt;/p&gt;</description>
     </item>
