@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-08-18T13:24:00&#43;09:00" />
 <meta itemprop="dateModified" content="2019-08-18T13:24:00&#43;09:00" />
-<meta itemprop="wordCount" content="340">
+<meta itemprop="wordCount" content="560">
 
 
 
@@ -153,6 +153,10 @@
 <li><a href="#linux下安装flutter">Linux下安装Flutter</a>
 <ul>
 <li><a href="#检查flutter">检查flutter</a></li>
+<li><a href="#android-toochain-develop-for-andorid-devices">Android toochain - develop for andorid devices</a></li>
+<li><a href="#xcode-develop-for-ios-and-macos">Xcode - develop for iOS and macOS</a></li>
+<li><a href="#ios-tools-develop-for-ios-devices">iOS tools - develop for iOS devices</a></li>
+<li><a href="#vs-code">VS Code</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -245,7 +249,57 @@ $ unzip ~/Downloads/flutter_macos_v1.7.8+hotfix.4-stable.zip</code></pre></td></
 
 <p><img src="/images/dev-guide/flutter-doctor-noenv.png" alt="Flutter Doctor" title="Flutter Doctor" /></p>
 
-<p>f</p>
+<p>以这张图片为例，环境问题解决方法：</p>
+
+<h3 id="android-toochain-develop-for-andorid-devices">Android toochain - develop for andorid devices</h3>
+
+<p>解决这个问题首先安装 <code>Android Studio</code>：</p>
+
+<p><a href="https://developer.android.com/studio">下载地址</a></p>
+
+<h3 id="xcode-develop-for-ios-and-macos">Xcode - develop for iOS and macOS</h3>
+
+<p>这里按照提示安装Xcode最新版并安装或升级cocoapods</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ brew upgrade cocoapods
+$ pod setup </code></pre></td></tr></table>
+</div>
+</div>
+<p>过程可能稍长，请耐心等待。</p>
+
+<h3 id="ios-tools-develop-for-ios-devices">iOS tools - develop for iOS devices</h3>
+
+<p>这一步只要按提示输入命令即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ brew update
+$ brew install --HEAD usbmuxd
+$ brew link usbmuxd
+$ brew install --HEAD libimobiledevice
+$ brew install ideviceinstaller
+
+$ brew install ios-deploy</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="vs-code">VS Code</h3>
+
+<p>如果不使用 VS Code 这一项将不会影响我们开发，但是为了强迫症患者，我们安装一下。</p>
+
+<p>方法很简单，进到 VS Code 插件市场搜索 Flutter 下载即可。</p>
     </div>
 
     <div class="post-copyright">
