@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Hanggi - NGNL</title>
-    <link>http://localhost:1313/tags/java/</link>
+    <link>http://hanggi.me/tags/java/</link>
     <description>Recent content in Java on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 10 Aug 2019 15:40:03 +0900</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://hanggi.me/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IDEA Java Spring 开发环境搭建</title>
-      <link>http://localhost:1313/post/idea-java-spring/</link>
+      <link>http://hanggi.me/post/dev-guide/idea-java-spring/</link>
       <pubDate>Sat, 10 Aug 2019 15:40:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/idea-java-spring/</guid>
+      <guid>http://hanggi.me/post/dev-guide/idea-java-spring/</guid>
       <description>&lt;p&gt;尝试一下在IDEA开发Java Spring。
 Spring 整个架构虽然强大，但确实比较重。&lt;/p&gt;</description>
     </item>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>http on Hanggi - NGNL</title>
-    <link>http://localhost:1313/tags/http/</link>
+    <link>http://hanggi.me/tags/http/</link>
     <description>Recent content in http on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 14 Aug 2019 11:21:49 +0900</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/http/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://hanggi.me/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web 框架所需基本特性</title>
-      <link>http://localhost:1313/post/web-framework-basics/</link>
+      <link>http://hanggi.me/post/web-framework-basics/</link>
       <pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/web-framework-basics/</guid>
+      <guid>http://hanggi.me/post/web-framework-basics/</guid>
       <description>&lt;p&gt;整理一个Web框架所需的基本特性。&lt;br /&gt;
 以下为一个Web框架所需的基本功能&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Go Http Request</title>
-      <link>http://localhost:1313/post/go-http-request/</link>
+      <link>http://hanggi.me/post/golang/go-http-request/</link>
       <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/go-http-request/</guid>
+      <guid>http://hanggi.me/post/golang/go-http-request/</guid>
       <description>&lt;p&gt;Golang http request demo code.&lt;/p&gt;</description>
     </item>
     

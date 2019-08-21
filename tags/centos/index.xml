@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos on Hanggi - NGNL</title>
-    <link>http://localhost:1313/tags/centos/</link>
+    <link>http://hanggi.me/tags/centos/</link>
     <description>Recent content in centos on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 16 Aug 2019 15:18:23 +0900</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://hanggi.me/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS 生产环境安装 Docker</title>
-      <link>http://localhost:1313/post/centos-docker-install/</link>
+      <link>http://hanggi.me/post/deployment/centos-docker-install/</link>
       <pubDate>Fri, 16 Aug 2019 15:18:23 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/centos-docker-install/</guid>
+      <guid>http://hanggi.me/post/deployment/centos-docker-install/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -32,10 +32,10 @@
     
     <item>
       <title>Vultr搭建CentOS开发环境</title>
-      <link>http://localhost:1313/post/vultr-centos-setup/</link>
+      <link>http://hanggi.me/post/deployment/vultr-centos-setup/</link>
       <pubDate>Fri, 09 Aug 2019 15:40:03 +0900</pubDate>
       
-      <guid>http://localhost:1313/post/vultr-centos-setup/</guid>
+      <guid>http://hanggi.me/post/deployment/vultr-centos-setup/</guid>
       <description>&lt;p&gt;准备在 Vultr 上搭建新的开发环境。&lt;/p&gt;</description>
     </item>
     
