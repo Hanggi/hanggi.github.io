@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 16:44:37 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>微服务</title>
       <link>http://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Wed, 21 Aug 2019 13:51:48 +0900</pubDate>
+      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
       
       <guid>http://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>教程</title>
+      <link>http://hanggi.me/categories/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 19 Aug 2019 16:53:12 +0900</pubDate>
+      
+      <guid>http://hanggi.me/categories/%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
     
@@ -48,20 +57,20 @@
     </item>
     
     <item>
-      <title>教程</title>
-      <link>http://hanggi.me/categories/%E6%95%99%E7%A8%8B/</link>
-      <pubDate>Wed, 29 May 2019 11:41:03 +0900</pubDate>
-      
-      <guid>http://hanggi.me/categories/%E6%95%99%E7%A8%8B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>笔记</title>
       <link>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
       <guid>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theme preview</title>
+      <link>http://hanggi.me/categories/theme-preview/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://hanggi.me/categories/theme-preview/</guid>
       <description></description>
     </item>
     

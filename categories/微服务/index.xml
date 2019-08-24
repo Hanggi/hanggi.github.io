@@ -6,10 +6,19 @@
     <description>Recent content in 微服务 on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 16:44:37 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>go-micro 微服务开发手册【2】：go-micro</title>
+      <link></link>
+      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
+      
+      <guid></guid>
+      <description></description>
+    </item>
     
     <item>
       <title>go-micro 微服务开发手册【1】：介绍</title>

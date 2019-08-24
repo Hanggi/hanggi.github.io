@@ -6,10 +6,19 @@
     <description>Recent content in 教程 on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 May 2019 11:41:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 19 Aug 2019 16:53:12 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GO GRPC 教程</title>
+      <link></link>
+      <pubDate>Mon, 19 Aug 2019 16:53:12 +0900</pubDate>
+      
+      <guid></guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Go Json</title>
