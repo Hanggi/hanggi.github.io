@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 15:31:57 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>snowflake</title>
+      <link>http://hanggi.me/tags/snowflake/</link>
+      <pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate>
+      
+      <guid>http://hanggi.me/tags/snowflake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uid</title>
+      <link>http://hanggi.me/tags/uid/</link>
+      <pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate>
+      
+      <guid>http://hanggi.me/tags/uid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uuid</title>
+      <link>http://hanggi.me/tags/uuid/</link>
+      <pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate>
+      
+      <guid>http://hanggi.me/tags/uuid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xid</title>
+      <link>http://hanggi.me/tags/xid/</link>
+      <pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate>
+      
+      <guid>http://hanggi.me/tags/xid/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Go</title>

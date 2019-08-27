@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link href="/dist/even.e39d8ca3.min.css" rel="stylesheet">
+<link href="/dist/even.bb32da65.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-08-21T13:51:48&#43;09:00" />
 <meta itemprop="dateModified" content="2019-08-21T13:51:48&#43;09:00" />
-<meta itemprop="wordCount" content="1453">
+<meta itemprop="wordCount" content="1587">
 
 
 
@@ -59,6 +59,16 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="go-micro 微服务开发手册【1】：介绍"/>
 <meta name="twitter:description" content="微服务开发手册。"/>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128672771-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128672771-2');
+</script>
+
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,7 +148,7 @@
 
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
+  <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
 <li><a href="#什么是微服务">什么是微服务</a></li>
@@ -152,6 +162,7 @@
 <li><a href="#为什么使用微服务">为什么使用微服务</a></li>
 <li><a href="#为什么是-micro-而不是-go-kit">为什么是 Micro 而不是 Go-Kit</a></li>
 </ul></li>
+<li><a href="#micro-生态">Micro 生态</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -169,8 +180,6 @@
 <p>微服务运用了以业务功能的设计概念，应用程序在设计时就能先以业务功能或流程设计先行分割，将各个业务功能都独立实现成一个能自主运行的个体服务，然后再利用相同的协议将所有应用程序需要的服务都组合起来，形成一个应用程序。若需要针对特定业务功能进行扩展时，只要对该业务功能的服务进行扩展就好，不需要整个应用程序都扩展，同时，由于微服务是以业务功能导向的实现，因此不会受到应用程序的干扰，微服务的管理员可以视运算资源的需要来配置微服务到不同的运算资源内，或是布建新的运算资源并将它配置进去。</p>
 
 <h1 id="micro">Micro</h1>
-
-<p>废话不多说。</p>
 
 <h2 id="什么是-micro">什么是 Micro</h2>
 
@@ -213,6 +222,22 @@
 <h3 id="为什么是-micro-而不是-go-kit">为什么是 Micro 而不是 Go-Kit</h3>
 
 <p><a href="https://gist.github.com/posener/330c2b08aaefdea6f900ff0543773b2e">参考为什么建议避免使用 go-kit</a></p>
+
+<h2 id="micro-生态">Micro 生态</h2>
+
+<p>Micro 项目主要由三个部分组成：</p>
+
+<ul>
+<li><p><strong>go-micro</strong>: 一个可插拔 Go 语言 PRC 框架，用于编写微服务、服务发现、C/S rpc、发布/订阅等。</p></li>
+
+<li><p><strong>micro</strong>: 一个微服务工具包，包含传统的 entry points; API Gateway, CLI, Slack Bot, Proxy 和 Web UI.</p></li>
+
+<li><p><strong>go-plugins</strong>: 为 go-micro 提供插件，包括 etcd, kubernetes, nats, rabbitmq, grpc等。</p></li>
+</ul>
+
+<p>此外还有一个 example 库，方便查找测试案例代码。</p>
+
+<p>接下来的文章也会围绕这三个部分展开。</p>
     </div>
 
     <div class="post-copyright">
@@ -237,7 +262,11 @@
           <a href="/tags/microservice/">Microservice</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/dev-guide/uid-comparison/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">微服务全局唯一 ID</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/dev-guide/flutter-setup/">
             <span class="next-text nav-default">Flutter 安装手册</span>
             <span class="next-text nav-mobile">Next</span>
