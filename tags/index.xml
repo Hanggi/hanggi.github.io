@@ -6,11 +6,7 @@
     <description>Recent content in Tags on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-<<<<<<< HEAD
     <lastBuildDate>Tue, 27 Aug 2019 15:31:57 +0900</lastBuildDate>
-=======
-    <lastBuildDate>Thu, 22 Aug 2019 16:44:37 +0900</lastBuildDate>
->>>>>>> 1d78dc4ea1bcf87b4af49c15b29540337c91c5e3
     
 	<atom:link href="http://hanggi.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -54,7 +50,7 @@
     <item>
       <title>Go</title>
       <link>http://hanggi.me/tags/go/</link>
-      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
+      <pubDate>Wed, 21 Aug 2019 13:51:48 +0900</pubDate>
       
       <guid>http://hanggi.me/tags/go/</guid>
       <description></description>
@@ -63,7 +59,7 @@
     <item>
       <title>Micro</title>
       <link>http://hanggi.me/tags/micro/</link>
-      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
+      <pubDate>Wed, 21 Aug 2019 13:51:48 +0900</pubDate>
       
       <guid>http://hanggi.me/tags/micro/</guid>
       <description></description>
@@ -72,27 +68,9 @@
     <item>
       <title>Microservice</title>
       <link>http://hanggi.me/tags/microservice/</link>
-      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
+      <pubDate>Wed, 21 Aug 2019 13:51:48 +0900</pubDate>
       
       <guid>http://hanggi.me/tags/microservice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GRPC</title>
-      <link>http://hanggi.me/tags/grpc/</link>
-      <pubDate>Mon, 19 Aug 2019 16:53:12 +0900</pubDate>
-      
-      <guid>http://hanggi.me/tags/grpc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Protobuf</title>
-      <link>http://hanggi.me/tags/protobuf/</link>
-      <pubDate>Mon, 19 Aug 2019 16:53:12 +0900</pubDate>
-      
-      <guid>http://hanggi.me/tags/protobuf/</guid>
       <description></description>
     </item>
     
@@ -115,7 +93,7 @@
     </item>
     
     <item>
-      <title>centos</title>
+      <title>CentOS</title>
       <link>http://hanggi.me/tags/centos/</link>
       <pubDate>Fri, 16 Aug 2019 15:18:23 +0900</pubDate>
       
@@ -237,33 +215,6 @@
       <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
       
       <guid>http://hanggi.me/tags/requests/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>preview</title>
-      <link>http://hanggi.me/tags/preview/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
-      
-      <guid>http://hanggi.me/tags/preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-3</title>
-      <link>http://hanggi.me/tags/tag-3/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
-      
-      <guid>http://hanggi.me/tags/tag-3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Theme preview</title>
-      <link>http://hanggi.me/tags/theme-preview/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
-      
-      <guid>http://hanggi.me/tags/theme-preview/</guid>
       <description></description>
     </item>
     
