@@ -56,7 +56,7 @@
 
 <meta itemprop="datePublished" content="2019-08-27T15:31:57&#43;09:00" />
 <meta itemprop="dateModified" content="2019-08-27T15:31:57&#43;09:00" />
-<meta itemprop="wordCount" content="1317">
+<meta itemprop="wordCount" content="1326">
 
 
 
@@ -254,11 +254,15 @@
 <p>综上所述的问题就会发现，我们在分布式系统或者说微服务中需要的 ID 要满足以下特征：</p>
 
 <ul>
-<li>必须是全局唯一的，不会出现重复现象。</li>
-<li>最好是可排序的，方便各种操作。</li>
-<li>最好是有时间顺序的，可读性好，</li>
-<li>不会因为暴露 ID 而担心数据泄漏。</li>
-<li>使用简单，短而精悍。</li>
+<li><p>必须是全局唯一的，不会出现重复现象。</p></li>
+
+<li><p>最好是可排序的，方便各种操作。</p></li>
+
+<li><p>最好是有时间顺序的，可读性好，</p></li>
+
+<li><p>不会因为暴露 ID 而担心数据泄漏。</p></li>
+
+<li><p>使用简单，短而精悍。</p></li>
 </ul>
 
 <p>基于 Go 语言的替代方案不少，如：</p>
@@ -282,10 +286,13 @@
 <p>xid 结构如下：</p>
 
 <ul>
-<li>4字节：值表示自 Unix 时间以来的秒数，</li>
-<li>3字节：机器标识符，</li>
-<li>2字节：进程ID，</li>
-<li>3字节：计数器，以随机值开始。</li>
+<li><p>4字节：值表示自 Unix 时间以来的秒数，</p></li>
+
+<li><p>3字节：机器标识符，</p></li>
+
+<li><p>2字节：进程ID，</p></li>
+
+<li><p>3字节：计数器，以随机值开始。</p></li>
 </ul>
 
 <p>他看起来是这样的：</p>
@@ -344,10 +351,14 @@
 <p><img src="/images/dev-guide/snowflake.jpg" alt="Snowflake" title="Snowflake" /></p>
 
 <ul>
-<li>41bit：时间戳段，使用毫秒单位，那么 2 的 41 次方相当于 25452 天，约 70 年。也就是可以用到2139年。</li>
-<li>工作机器ID：这部分是需要用户自己填的，他占了 10 比特，也就是 1024 个数 0～1023。</li>
+<li><p>41bit：时间戳段，使用毫秒单位，那么 2 的 41 次方相当于 25452 天，约 70 年。也就是可以用到2139年。</p></li>
 
-<li><p>序列号：这个字段用来标注同一毫秒内产生多个 ID 的情况。这一字段 12 比特，也就是每毫秒 4096 个 ID，一秒钟就是 409.6 万个 ID 应该够用了。</p>
+<li><p>工作机器ID：这部分是需要用户自己填的，他占了 10 比特，也就是 1024 个数 0～1023。</p></li>
+
+<li><p>序列号：这个字段用来标注同一毫秒内产生多个 ID 的情况。这一字段 12 比特，也就是每毫秒 4096 个 ID，一秒钟就是 409.6 万个 ID 应该够用了。</p></li>
+</ul>
+
+<p>以下是 Twitter 默认格式。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
@@ -359,9 +370,7 @@
 <span class="p">|</span> <span class="m">1</span> Bit Unused <span class="p">|</span> <span class="m">41</span> Bit Timestamp <span class="p">|</span>  <span class="m">10</span> Bit NodeID  <span class="p">|</span>   <span class="m">12</span> Bit Sequence ID <span class="p">|</span>
 +--------------------------------------------------------------------------+</code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-
+</div>
 <p><a href="https://blog.twitter.com/engineering/en_us/a/2010/announcing-snowflake.html">Slowflake</a> 的算法是公开的，所以任何人都可以使用这套算法生成自己的雪花算法。网上有很多种实现，有些实现还会根据自身需求修改字段长度。</p>
 
 <p>下面以其中一种比较标准的实现库来说明：</p>
