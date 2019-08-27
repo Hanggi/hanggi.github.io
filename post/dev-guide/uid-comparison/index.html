@@ -56,7 +56,11 @@
 
 <meta itemprop="datePublished" content="2019-08-27T15:31:57&#43;09:00" />
 <meta itemprop="dateModified" content="2019-08-27T15:31:57&#43;09:00" />
+<<<<<<< HEAD
 <meta itemprop="wordCount" content="1317">
+=======
+<meta itemprop="wordCount" content="1329">
+>>>>>>> ac3658105c3e1c0308197320e03dbaf98f7dcef5
 
 
 
@@ -193,6 +197,7 @@
 
 <p>如 Mysql 的 Increment ID 或 Postgresql 的 serial 都是典型的自增 ID。</p>
 
+<<<<<<< HEAD
 <p>优势：</p>
 
 <ol>
@@ -212,6 +217,17 @@
 
 <li><p>分布式系统中，全局无法做到唯一。</p></li>
 </ol>
+=======
+<p>优势：
+1. 数据库自动生成，性能好，使用简单，便于理解，直接表示当前数据序号。
+2. 整型数据结构，占用空间小，索引性能好。
+3. 单调递增，顺序存放。</p>
+
+<p>劣势：
+1. 当 ID 被暴露出来时，容易猜测数据增量及总量。
+2. 当数据库需要拆分合并时容易出现重复。
+3. 分布式系统中，全局无法做到唯一。</p>
+>>>>>>> ac3658105c3e1c0308197320e03dbaf98f7dcef5
 
 <p>简单来说就是使用简单、方便，但是对分布式不友好。</p>
 
@@ -225,6 +241,7 @@
 
 <p>其中第三段的第一个数字表示版本，这个 UUID 是 v4。</p>
 
+<<<<<<< HEAD
 <p>优势：</p>
 
 <ol>
@@ -244,6 +261,17 @@
 
 <li><p>影响插入速度和查询速度。</p></li>
 </ol>
+=======
+<p>优势：
+1. 达成全局唯一。
+2. 生成简单（如 Postgresql 甚至内部支持 uuid 类型），使用方便。
+3. 完全无序，基本不用担心 ID 暴露等问题。</p>
+
+<p>劣势：
+1. 长度过长，占用 16 字节，36 字符长度，影响空间使用。特别对创建索引。
+2. 无序，导致数据不可读。
+3. 影响插入速度和查询速度。</p>
+>>>>>>> ac3658105c3e1c0308197320e03dbaf98f7dcef5
 
 <p>总结来就是做到了全局唯一，但是占用空间大，影响性能（实际性能没做比较不知道，但是占空间大是真的。）</p>
 
@@ -341,7 +369,11 @@
 
 <p>会发现他们的 ID 是纯数字的。那是因为 snowflake 结构如下：</p>
 
+<<<<<<< HEAD
 <p><img src="/images/dev-guide/snowflake.jpg" alt="Snowflake" title="Snowflake" /></p>
+=======
+<p><img src="/images/microservice/runtime3.svg" alt="Snowflake" title="Snowflake" /></p>
+>>>>>>> ac3658105c3e1c0308197320e03dbaf98f7dcef5
 
 <ul>
 <li>41bit：时间戳段，使用毫秒单位，那么 2 的 41 次方相当于 25452 天，约 70 年。也就是可以用到2139年。</li>
