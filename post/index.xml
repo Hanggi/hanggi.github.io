@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 15:31:57 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>微服务全局唯一 ID</title>
+      <link>http://hanggi.me/post/dev-guide/uid-comparison/</link>
+      <pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate>
+      
+      <guid>http://hanggi.me/post/dev-guide/uid-comparison/</guid>
+      <description>&lt;p&gt;ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。&lt;/p&gt;
+
+&lt;p&gt;一种全局唯一的 ID 变得不可或缺。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>go-micro 微服务开发手册【1】：介绍</title>
