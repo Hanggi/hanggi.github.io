@@ -56,7 +56,7 @@
 
 <meta itemprop="datePublished" content="2019-08-27T15:31:57&#43;09:00" />
 <meta itemprop="dateModified" content="2019-08-27T15:31:57&#43;09:00" />
-<meta itemprop="wordCount" content="1326">
+<meta itemprop="wordCount" content="1420">
 
 
 
@@ -213,6 +213,10 @@
 <li><p>分布式系统中，全局无法做到唯一。</p></li>
 </ol>
 
+<blockquote>
+<p>对于防止猜测数据基数还有一种方法是，ID 不从1开始，而是从一个很大的随机数开始，如：5201314、20180808&hellip; 当然这种方法并不能防止他人猜测数据增量。</p>
+</blockquote>
+
 <p>简单来说就是使用简单、方便，但是对分布式不友好。</p>
 
 <h2 id="uuid">UUID</h2>
@@ -341,6 +345,10 @@
 <h2 id="snowflake">Snowflake</h2>
 
 <p>Snowflake，也叫雪花算法，是 Twitter 提出的一种分布式自增 ID 算法，用以生成推文 ID。</p>
+
+<p>snowflake 大概长这样：</p>
+
+<p><code>1166604700124975104</code></p>
 
 <p>下面截取一个 NBA 推文地址：</p>
 
