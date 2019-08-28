@@ -6,10 +6,19 @@
     <description>Recent content in 开发手册 on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Aug 2019 15:31:57 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 16:35:17 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>将 Docker 镜像传到 Docker Hub 私有仓库</title>
+      <link>http://hanggi.me/post/dev-guide/docker-repository/</link>
+      <pubDate>Wed, 28 Aug 2019 16:35:17 +0900</pubDate>
+      
+      <guid>http://hanggi.me/post/dev-guide/docker-repository/</guid>
+      <description>&lt;p&gt;做好的 Docker 镜像必须要上传部署到服务器才能发挥它的作用，我们来上传到服务器部署一下。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>微服务全局唯一 ID</title>
@@ -51,7 +60,7 @@ Spring 整个架构虽然强大，但确实比较重。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Docker Notes</title>
+      <title>Docker 开发手册</title>
       <link>http://hanggi.me/post/dev-guide/docker-notes/</link>
       <pubDate>Wed, 10 Jul 2019 17:00:01 +0900</pubDate>
       

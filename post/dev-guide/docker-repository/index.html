@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>将 Docker 镜像传到 Docker Hub 私有仓库 - Hanggi - NGNL</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Hanggi" /><meta name="description" content="做好的 Docker 镜像必须要上传部署到服务器才能发挥它的作用，我们来上传到服务器部署一下。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.57.2 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://hanggi.me/post/dev-guide/docker-repository/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.bb32da65.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="将 Docker 镜像传到 Docker Hub 私有仓库" />
+<meta property="og:description" content="做好的 Docker 镜像必须要上传部署到服务器才能发挥它的作用，我们来上传到服务器部署一下。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hanggi.me/post/dev-guide/docker-repository/" />
+<meta property="article:published_time" content="2019-08-28T16:35:17+09:00" />
+<meta property="article:modified_time" content="2019-08-28T16:35:17+09:00" />
+<meta itemprop="name" content="将 Docker 镜像传到 Docker Hub 私有仓库">
+<meta itemprop="description" content="做好的 Docker 镜像必须要上传部署到服务器才能发挥它的作用，我们来上传到服务器部署一下。">
+
+
+<meta itemprop="datePublished" content="2019-08-28T16:35:17&#43;09:00" />
+<meta itemprop="dateModified" content="2019-08-28T16:35:17&#43;09:00" />
+<meta itemprop="wordCount" content="787">
+
+
+
+<meta itemprop="keywords" content="docker,docker hub," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="将 Docker 镜像传到 Docker Hub 私有仓库"/>
+<meta name="twitter:description" content="做好的 Docker 镜像必须要上传部署到服务器才能发挥它的作用，我们来上传到服务器部署一下。"/>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128672771-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128672771-2');
+</script>
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Hanggi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Hanggi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">将 Docker 镜像传到 Docker Hub 私有仓库</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-28 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"> 开发手册 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#docker-镜像导入导出">Docker 镜像导入导出</a>
+<ul>
+<li><a href="#制作镜像">制作镜像</a></li>
+<li><a href="#导出镜像">导出镜像</a></li>
+<li><a href="#导入镜像">导入镜像</a>
+<ul>
+<li><a href="#修改-tag">修改 tag</a></li>
+</ul></li>
+<li><a href="#导出容器">导出容器</a></li>
+<li><a href="#导入容器">导入容器</a></li>
+</ul></li>
+<li><a href="#docker-hub-私有仓库">Docker Hub 私有仓库</a>
+<ul>
+<li><a href="#创建-docker-hub-账号">创建 Docker Hub 账号。</a></li>
+<li><a href="#创建仓库">创建仓库</a></li>
+<li><a href="#上传镜像">上传镜像</a>
+<ul>
+<li><a href="#验证登陆">验证登陆</a></li>
+<li><a href="#push-镜像到-docker-hub-仓库">push 镜像到 Docker Hub 仓库</a></li>
+<li><a href="#验证成功-docker-hub">验证成功 Docker Hub</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>做好的 Docker 镜像必须要上传部署到服务器才能发挥它的作用，我们来上传到服务器部署一下。</p>
+
+<p>如果需要 Docker 使用教程，看这里：<a href="/post/dev-guide/docker-notes/">Docker 开发手册</a></p>
+
+<p>如果需要在 CentOS 安装 Docker，请看这里：<a href="/post/deployment/centos-docker-install/">CentOS 生产环境安装 Docker</a></p>
+
+<h1 id="docker-镜像导入导出">Docker 镜像导入导出</h1>
+
+<p>开始之前我们尝试一下 Docker 镜像的导入导出。</p>
+
+<h2 id="制作镜像">制作镜像</h2>
+
+<p>我们省略这一步骤，直接查看一下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+koa-ts              latest              1794b0361317        <span class="m">11</span> seconds ago      135MB</code></pre></td></tr></table>
+</div>
+</div>
+<p>我们这里有一个 typescript + koa2 的 Node.js 服务程序。</p>
+
+<h2 id="导出镜像">导出镜像</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker save <span class="m">1794</span> &gt;&gt; koa-ts.tar
+$ ll
+total <span class="m">327808</span>
+-rw-r--r--  <span class="m">1</span> hanggi  hanggi   145M Aug <span class="m">28</span> <span class="m">16</span>:58 koa-ts.tar</code></pre></td></tr></table>
+</div>
+</div>
+<p>可以看出我们导出一个 tar 镜像文件。</p>
+
+<h2 id="导入镜像">导入镜像</h2>
+
+<p>把文件上传到服务器（具体怎么做就不解释了，git, ftp, scp&hellip; 都可以）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker load &lt; koa-ts.tar
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+&lt;none&gt;              &lt;none&gt;              1794b0361317        <span class="m">10</span> minutes ago      135MB</code></pre></td></tr></table>
+</div>
+</div>
+<p>成功导入，我们尝试运行一下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker run <span class="m">1794</span>
+Listening at prot: <span class="m">8080</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>成功了。</p>
+
+<h3 id="修改-tag">修改 tag</h3>
+
+<p>导入进来的镜像没有 tag，运行下列代码添加 tag</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker tag <span class="m">1794</span> koa-ts:latest</code></pre></td></tr></table>
+</div>
+</div>
+<p>这样就有标签了。</p>
+
+<h2 id="导出容器">导出容器</h2>
+
+<p>我们也可以把一个容器导出称镜像。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                                                NAMES
+db2c9ba87e08        koa-ts              <span class="s2">&#34;npm start&#34;</span>         <span class="m">11</span> seconds ago      Up <span class="m">9</span> seconds        <span class="m">80</span>/tcp, <span class="m">443</span>/tcp, <span class="m">43554</span>/tcp, <span class="m">0</span>.0.0.0:8080-&gt;8080/tcp   thirsty_taussig</code></pre></td></tr></table>
+</div>
+</div>
+<p>正好有一个正在运行的容器，是上一步中使用的镜像生成的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker <span class="nb">export</span> db2c &gt; koa-ts.tar
+$ ll
+total <span class="m">295936</span>
+-rw-r--r--  <span class="m">1</span> hanggi  hanggi   143M Aug <span class="m">28</span> <span class="m">17</span>:08 koa-ts.tar</code></pre></td></tr></table>
+</div>
+</div>
+<p>成功生成了镜像，容器导出的文件比镜像导出的还小一些。</p>
+
+<h2 id="导入容器">导入容器</h2>
+
+<p>我们用 import 导入容器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker import koa-ts.tar</code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="docker-hub-私有仓库">Docker Hub 私有仓库</h1>
+
+<p>使用 Docker Hub 私有仓库上传镜像</p>
+
+<h2 id="创建-docker-hub-账号">创建 Docker Hub 账号。</h2>
+
+<p><a href="https://hub.docker.com/signup">注册地址</a></p>
+
+<p>具体怎么注册就不解释了，记住用户名、密码、邮箱。</p>
+
+<h2 id="创建仓库">创建仓库</h2>
+
+<p>登陆你的 Docker hub 点击 <code>Create Repository</code>：</p>
+
+<p><img src="/images/dev-guide/docker-create-repository.png" alt="CreateRepository" title="CreateRepository" /></p>
+
+<p>这里，填写一下仓库名，我们使用 <code>deployment</code>，因为要用作部署。</p>
+
+<p>可见选私有，会发现每个账号只能创建一个私有仓库，如果要增加私有仓库数量需要收费。</p>
+
+<h2 id="上传镜像">上传镜像</h2>
+
+<p>上传镜像使用以下命令：</p>
+
+<p><code>docker tag &lt;existing-image&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]</code></p>
+
+<p>我们还是接上个例子里的程序：假设我们叫 <code>harry</code>，那么</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker tag koa-ts harry/deployment:koa-ts</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="验证登陆">验证登陆</h3>
+
+<p>最好使用 Docker 桌面登陆一下，这样就可以直接输入以下代码登陆：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker login
+Authenticating with existing credentials...
+Login Succeeded</code></pre></td></tr></table>
+</div>
+</div>
+<p>非常方便。</p>
+
+<h3 id="push-镜像到-docker-hub-仓库">push 镜像到 Docker Hub 仓库</h3>
+
+<p>我们使用以下命令：</p>
+
+<p><code>docker push &lt;hub-user&gt;/&lt;repo-name&gt;:&lt;tag&gt;</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker push harry/deployment:koa-ts</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="验证成功-docker-hub">验证成功 Docker Hub</h3>
+
+<p>到网站上刷新查看一下把。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Hanggi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-08-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/docker/">docker</a>
+          <a href="/tags/docker-hub/">docker hub</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/dev-guide/uid-comparison/">
+            <span class="next-text nav-default">微服务全局唯一 ID</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="hanggicrown@gemail.com" class="iconfont icon-email" title="email"></a>
+  <a href="http://hanggi.me/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Hanggi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

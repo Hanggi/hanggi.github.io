@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker hub on Hanggi - NGNL</title>
+    <link>http://hanggi.me/tags/docker-hub/</link>
+    <description>Recent content in docker hub on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Aug 2019 16:35:17 +0900</lastBuildDate>
+    
+	<atom:link href="http://hanggi.me/tags/docker-hub/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将 Docker 镜像传到 Docker Hub 私有仓库</title>
+      <link>http://hanggi.me/post/dev-guide/docker-repository/</link>
+      <pubDate>Wed, 28 Aug 2019 16:35:17 +0900</pubDate>
+      
+      <guid>http://hanggi.me/post/dev-guide/docker-repository/</guid>
+      <description>&lt;p&gt;做好的 Docker 镜像必须要上传部署到服务器才能发挥它的作用，我们来上传到服务器部署一下。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

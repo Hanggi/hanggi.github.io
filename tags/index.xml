@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Aug 2019 15:31:57 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 16:35:17 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>http://hanggi.me/tags/docker/</link>
+      <pubDate>Wed, 28 Aug 2019 16:35:17 +0900</pubDate>
+      
+      <guid>http://hanggi.me/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker hub</title>
+      <link>http://hanggi.me/tags/docker-hub/</link>
+      <pubDate>Wed, 28 Aug 2019 16:35:17 +0900</pubDate>
+      
+      <guid>http://hanggi.me/tags/docker-hub/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>snowflake</title>
@@ -93,20 +111,11 @@
     </item>
     
     <item>
-      <title>centos</title>
+      <title>CentOS</title>
       <link>http://hanggi.me/tags/centos/</link>
       <pubDate>Fri, 16 Aug 2019 15:18:23 +0900</pubDate>
       
       <guid>http://hanggi.me/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>http://hanggi.me/tags/docker/</link>
-      <pubDate>Fri, 16 Aug 2019 15:18:23 +0900</pubDate>
-      
-      <guid>http://hanggi.me/tags/docker/</guid>
       <description></description>
     </item>
     

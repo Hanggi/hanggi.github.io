@@ -10,34 +10,62 @@
   
   <url>
     <loc>http://hanggi.me/categories/</loc>
-    <lastmod>2019-08-27T15:31:57+09:00</lastmod>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://hanggi.me/tags/docker/</loc>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://hanggi.me/tags/docker-hub/</loc>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/</loc>
-    <lastmod>2019-08-27T15:31:57+09:00</lastmod>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/post/</loc>
-    <lastmod>2019-08-27T15:31:57+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/snowflake/</loc>
-    <lastmod>2019-08-27T15:31:57+09:00</lastmod>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/</loc>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://hanggi.me/post/dev-guide/docker-repository/</loc>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://hanggi.me/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2019-08-28T16:35:17+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://hanggi.me/tags/snowflake/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -59,13 +87,6 @@
   
   <url>
     <loc>http://hanggi.me/tags/xid/</loc>
-    <lastmod>2019-08-27T15:31:57+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -143,13 +164,6 @@
   
   <url>
     <loc>http://hanggi.me/post/deployment/centos-docker-install/</loc>
-    <lastmod>2019-08-16T15:18:23+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/docker/</loc>
     <lastmod>2019-08-16T15:18:23+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
