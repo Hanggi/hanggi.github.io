@@ -56,7 +56,7 @@
 
 <meta itemprop="datePublished" content="2019-08-27T15:31:57&#43;09:00" />
 <meta itemprop="dateModified" content="2019-08-27T15:31:57&#43;09:00" />
-<meta itemprop="wordCount" content="1420">
+<meta itemprop="wordCount" content="1549">
 
 
 
@@ -176,6 +176,7 @@
 <li><a href="#使用-1">使用</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#总结">总结</a></li>
 </ul>
 </nav>
   </div>
@@ -476,6 +477,14 @@
 </div>
 </div>
 <p>go snowflake Github 地址： <a href="https://github.com/bwmarrin/snowflake">Snowflake</a></p>
+
+<h1 id="总结">总结</h1>
+
+<p>自增 ID 因其数据库默认、使用方便、直观、性能好等优点，依然是使用很广泛数据表的主键。</p>
+
+<p>如果对数据总量和增量比较敏感或需要全局唯一，UUID 依然是比较常用的选择。</p>
+
+<p>如果觉得 UUID 太大、无序、性能慢，想要用于分布式切数据生成频繁，Snowflake 或 xid 将是不错的选择。</p>
     </div>
 
     <div class="post-copyright">
