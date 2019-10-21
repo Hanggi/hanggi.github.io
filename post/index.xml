@@ -88,16 +88,6 @@
     </item>
     
     <item>
-      <title>IDEA Java Spring 开发环境搭建</title>
-      <link>http://hanggi.me/post/dev-guide/idea-java-spring/</link>
-      <pubDate>Sat, 10 Aug 2019 15:40:03 +0900</pubDate>
-      
-      <guid>http://hanggi.me/post/dev-guide/idea-java-spring/</guid>
-      <description>&lt;p&gt;尝试一下在IDEA开发Java Spring。
-Spring 整个架构虽然强大，但确实比较重。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Vultr搭建CentOS开发环境</title>
       <link>http://hanggi.me/post/deployment/vultr-centos-setup/</link>
       <pubDate>Fri, 09 Aug 2019 15:40:03 +0900</pubDate>

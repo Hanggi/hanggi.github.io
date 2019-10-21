@@ -11,37 +11,43 @@
   <url>
     <loc>http://hanggi.me/categories/</loc>
     <lastmod>2019-08-28T16:35:17+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/docker/</loc>
     <lastmod>2019-08-28T16:35:17+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/docker-hub/</loc>
     <lastmod>2019-08-28T16:35:17+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/</loc>
     <lastmod>2019-08-28T16:35:17+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/post/</loc>
     <lastmod>2019-08-28T16:35:17+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/</loc>
     <lastmod>2019-08-28T16:35:17+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -54,31 +60,36 @@
   <url>
     <loc>http://hanggi.me/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2019-08-28T16:35:17+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/snowflake/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/uid/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/uuid/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/xid/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -90,26 +101,9 @@
   
   <url>
     <loc>http://hanggi.me/tags/go/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/micro/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/microservice/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -120,27 +114,31 @@
   </url>
   
   <url>
-    <loc>http://hanggi.me/tags/grpc/</loc>
-    <lastmod>2019-08-19T16:53:12+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://hanggi.me/tags/micro/</loc>
+    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://hanggi.me/tags/protobuf/</loc>
-    <lastmod>2019-08-19T16:53:12+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://hanggi.me/tags/microservice/</loc>
+    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://hanggi.me/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2019-08-19T16:53:12+09:00</lastmod>
-    <priority>0</priority>
+    <loc>http://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/flutter/</loc>
     <lastmod>2019-08-18T13:24:00+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -153,13 +151,15 @@
   <url>
     <loc>http://hanggi.me/tags/mobile/</loc>
     <lastmod>2019-08-18T13:24:00+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/centos/</loc>
     <lastmod>2019-08-16T15:18:23+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -172,13 +172,15 @@
   <url>
     <loc>http://hanggi.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2019-08-16T15:18:23+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/kafka/</loc>
     <lastmod>2019-08-15T22:46:44+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -191,25 +193,29 @@
   <url>
     <loc>http://hanggi.me/tags/zookeeper/</loc>
     <lastmod>2019-08-15T22:46:44+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/framework/</loc>
     <lastmod>2019-08-14T11:21:49+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/http/</loc>
     <lastmod>2019-08-14T11:21:49+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/web/</loc>
     <lastmod>2019-08-14T11:21:49+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -222,38 +228,15 @@
   <url>
     <loc>http://hanggi.me/categories/%E6%A6%82%E5%BF%B5/</loc>
     <lastmod>2019-08-14T11:21:49+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/idea/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/post/dev-guide/idea-java-spring/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://hanggi.me/tags/java/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/spring/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://hanggi.me/tags/vultr/</loc>
     <lastmod>2019-08-09T15:40:03+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -280,13 +263,22 @@
   <url>
     <loc>http://hanggi.me/tags/json/</loc>
     <lastmod>2019-05-29T11:41:03+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://hanggi.me/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/tags/github/</loc>
     <lastmod>2019-05-28T15:40:03+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -299,13 +291,15 @@
   <url>
     <loc>http://hanggi.me/tags/requests/</loc>
     <lastmod>2019-05-28T15:40:03+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-05-28T15:40:03+09:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -313,30 +307,6 @@
     <lastmod>2019-05-27T16:55:50+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/preview/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/tag-3/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/categories/theme-preview/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://hanggi.me/tags/theme-preview/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
