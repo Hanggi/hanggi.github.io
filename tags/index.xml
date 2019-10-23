@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Hanggi - NGNL</title>
@@ -111,7 +111,7 @@
     </item>
     
     <item>
-      <title>centos</title>
+      <title>CentOS</title>
       <link>http://hanggi.me/tags/centos/</link>
       <pubDate>Fri, 16 Aug 2019 15:18:23 +0900</pubDate>
       
