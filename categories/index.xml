@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Aug 2019 16:35:17 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2019 11:12:54 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>笔记</title>
+      <link>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 13 Nov 2019 11:12:54 +0900</pubDate>
+      
+      <guid>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>开发手册</title>
@@ -53,15 +62,6 @@
       <pubDate>Wed, 29 May 2019 11:41:03 +0900</pubDate>
       
       <guid>http://hanggi.me/categories/%E6%95%99%E7%A8%8B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>笔记</title>
-      <link>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate>
-      
-      <guid>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     

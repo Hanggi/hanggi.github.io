@@ -6,10 +6,19 @@
     <description>Recent content in Go on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2019 11:12:54 +0900</lastBuildDate>
     
 	<atom:link href="http://hanggi.me/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用 Makefile 构建 Golang</title>
+      <link>http://hanggi.me/post/golang/makefile-for-golang/</link>
+      <pubDate>Wed, 13 Nov 2019 11:12:54 +0900</pubDate>
+      
+      <guid>http://hanggi.me/post/golang/makefile-for-golang/</guid>
+      <description>&lt;p&gt;用 Makefile 构建 go 程序&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>go-micro 微服务开发手册【1】：介绍</title>

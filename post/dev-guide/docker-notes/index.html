@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.0 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.59.1 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://hanggi.me/post/dev-guide/docker-notes/" />
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-10T17:00:01&#43;09:00" />
 <meta itemprop="dateModified" content="2019-07-10T17:00:01&#43;09:00" />
-<meta itemprop="wordCount" content="439">
+<meta itemprop="wordCount" content="443">
 
 
 
@@ -314,22 +314,44 @@ Hello World</code></pre></td></tr></table>
 </div>
 </div>
 <p>创建 <code>Dockerfile</code> 文件：</p>
-# Start from golang image
-FROM golang:1.12.7
-
-LABEL maintainer="Hanggi"
-
-# Copy everything from the current directory to the /app inside the container
-COPY .. /app
-
-# Set the Current Working Directory to /app inside the container
-WORKDIR /app
-
-# Install the packages and build
-RUN go build main.go
-
-# Run the executable
-CMD ["./main"]
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="c"># Start from golang image</span><span class="err">
+</span><span class="err"></span><span class="k">FROM</span><span class="s"> golang:1.12.7</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">LABEL</span> <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;Hanggi&#34;</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Copy everything from the current directory to the /app inside the container</span><span class="err">
+</span><span class="err"></span><span class="k">COPY</span> .. /app<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Set the Current Working Directory to /app inside the container</span><span class="err">
+</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /app</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Install the packages and build</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> go build main.go<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c"># Run the executable</span><span class="err">
+</span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;./main&#34;</span><span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>如果有需要可以添加 <code>.dockerignore</code> 来忽略一些不必要的文件，用法与 <code>.gitignore</code> 相同。</p>
 
 <p>运行 image 文件：</p>

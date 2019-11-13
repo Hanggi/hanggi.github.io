@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>用 Makefile 构建 Golang - Hanggi - NGNL</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Hanggi" /><meta name="description" content="用 Makefile 构建 go 程序
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://hanggi.me/post/golang/makefile-for-golang/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.9c148519.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="用 Makefile 构建 Golang" />
+<meta property="og:description" content="用 Makefile 构建 go 程序" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hanggi.me/post/golang/makefile-for-golang/" />
+<meta property="article:published_time" content="2019-11-13T11:12:54+09:00" />
+<meta property="article:modified_time" content="2019-11-13T11:12:54+09:00" />
+<meta itemprop="name" content="用 Makefile 构建 Golang">
+<meta itemprop="description" content="用 Makefile 构建 go 程序">
+
+
+<meta itemprop="datePublished" content="2019-11-13T11:12:54&#43;09:00" />
+<meta itemprop="dateModified" content="2019-11-13T11:12:54&#43;09:00" />
+<meta itemprop="wordCount" content="1010">
+
+
+
+<meta itemprop="keywords" content="Go,Makefile," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用 Makefile 构建 Golang"/>
+<meta name="twitter:description" content="用 Makefile 构建 go 程序"/>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128672771-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128672771-2');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3918716559292650",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Hanggi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Hanggi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">用 Makefile 构建 Golang</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-13 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%AC%94%E8%AE%B0/"> 笔记 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#基本命令">基本命令</a>
+<ul>
+<li><a href="#基本规则">基本规则</a></li>
+<li><a href="#伪目标">伪目标</a></li>
+<li><a href="#命令">命令</a></li>
+<li><a href="#变量与控制">变量与控制</a></li>
+</ul></li>
+<li><a href="#用-makefile-构建-go-程序">用 Makefile 构建 go 程序</a></li>
+</ul>
+</nav>
+  </div>
+
+  <br>
+
+  
+  <div style="max-height:270px !important;">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:180px;height:200px"
+         data-ad-client="ca-pub-3918716559292650"
+         data-ad-slot="3814804548"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+
+    <div class="post-content">
+      <p>用 Makefile 构建 go 程序</p>
+
+<h1 id="基本命令">基本命令</h1>
+
+<h2 id="基本规则">基本规则</h2>
+
+<p>Makefile 基本规则如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">&lt;target&gt;</span><span class="o">:</span> &lt;<span class="n">prerequisites</span>&gt;
+<span class="err">[tab]</span>   <span class="err">&lt;commands&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>在 <code>:</code> 前面的部分成为目标，我们通常会指定特定的目标进行特定的任务。如：<code>build:</code>、<code>clean:</code>、<code>install:</code>等，通过 <code>make build</code>、<code>make clean</code>、<code>make install</code>命令执行指定目标。</p>
+
+<p>直接运行 <code>make</code> 命令且不带目标，Makefile 默认执行第一个目标。所以我们通常将 <code>all:</code> 目标作为约定放在第一位，用于编译整个程序。</p>
+
+<p>第二行的命令部分前面必须用 tab 开头，否则会出错。<br />
+而 commands 中可以直接执行 shell 命令。</p>
+
+<p>所以可以简单执行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">hello</span><span class="o">:</span>
+    <span class="nb">echo</span> hello world
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>执行 <code>make hello</code> 就会看到：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">echo hello world
+hello world</pre></td></tr></table>
+</div>
+</div>
+<p>会发现执行的命令也会输出，如果不想看到命令本身，只要在前面加一个 <code>@</code> 符号就可以了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">hello</span><span class="o">:</span>
+    @echo hello world
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="伪目标">伪目标</h2>
+
+<p>编写 C语言程序时我们经常会清理 <code>.o</code> 目标文件、或者其他临时文件。这时我们通常会写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">clean</span><span class="o">:</span>
+    rm *.o temp
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>但是，如果当前目录下已经存在一个叫 <code>clean</code> 的文件，那么这个目标不会执行。因为 Makefile 会认为 clean 这个文件已经存在路，不需要重新构建。</p>
+
+<p>为了避免这种情况发生，可以声明 <code>clean</code> 为&rdquo;伪命令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">clean</span>
+<span class="nf">clean</span><span class="o">:</span>
+    rm *.o temp
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="命令">命令</h2>
+
+<p>每行命令之前必须有一个tab键。如果想用其他键，可以用内置变量.RECIPEPREFIX声明。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nv">.RECIPEPREFIX</span> <span class="o">=</span> &gt;
+<span class="nf">all</span><span class="o">:</span>
+<span class="err">&gt;</span> <span class="err">echo</span> <span class="err">Hello,</span> <span class="err">world</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>需要注意的是，每行命令在一个单独的shell中执行。这些Shell之间没有继承关系。</p>
+
+<p>所以为了继承上一个命令可以将：</p>
+
+<ol>
+<li>两个命令卸载一行并用 <code>;</code> 隔开。</li>
+<li>在换行符前面加一个反斜杠 <code>\</code>。</li>
+<li>用 <code>.ONESHELL:</code> 命令。</li>
+</ol>
+
+<h2 id="变量与控制">变量与控制</h2>
+
+<p>Makefile 还支持变量、条件判断和循环。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nv">txt</span> <span class="o">=</span> Hello World
+<span class="nf">test</span><span class="o">:</span>
+    @echo <span class="k">$(</span>txt<span class="k">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nv">LIST</span> <span class="o">=</span> one two three
+<span class="nf">all</span><span class="o">:</span>
+    <span class="k">for</span> i in <span class="k">$(</span>LIST<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="se">\
+</span><span class="se"></span>        <span class="nb">echo</span> <span class="nv">$$</span>i<span class="p">;</span> <span class="se">\
+</span><span class="se"></span>    <span class="k">done</span>
+
+<span class="c"># 等同于
+</span><span class="c"></span>
+<span class="nf">all</span><span class="o">:</span>
+    <span class="k">for</span> i in one two three<span class="p">;</span> <span class="k">do</span> <span class="se">\
+</span><span class="se"></span>        <span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span> <span class="se">\
+</span><span class="se"></span>    <span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="err">ifeq</span> <span class="err">(</span><span class="k">$(</span><span class="nv">CC</span><span class="k">)</span><span class="err">,gcc)</span>
+  <span class="nv">libs</span><span class="o">=</span><span class="k">$(</span>libs_for_gcc<span class="k">)</span>
+<span class="err">else</span>
+  <span class="nv">libs</span><span class="o">=</span><span class="k">$(</span>normal_libs<span class="k">)</span>
+<span class="err">endif</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>还有一些自动变亮：</p>
+
+<blockquote>
+<p>$* 　　不包含扩展名的目标文件名称。<br />
+$+ 　　所有的依赖文件，以空格分开，并以出现的先后为序，可能包含重复的依赖文件。<br />
+$&lt; 　　第一个依赖文件的名称。<br />
+$? 　　所有的依赖文件，以空格分开，这些依赖文件的修改日期比目标的创建日期晚。<br />
+$@ 　  目标的完整名称。<br />
+$^ 　　所有的依赖文件，以空格分开，不包含重复的依赖文件。<br />
+$%    如果目标是归档成员，则该变量表示目标的归档成员名称。</p>
+</blockquote>
+
+<h1 id="用-makefile-构建-go-程序">用 Makefile 构建 go 程序</h1>
+
+<p>以下是一个 go 程序的 Makefile 可以作为参考</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">all</span> <span class="n">clean</span> <span class="n">test</span> <span class="n">docker</span> <span class="n">latest</span> <span class="n">init</span>
+
+<span class="k">export </span><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span>
+<span class="k">export </span><span class="nv">GOOS</span><span class="o">=</span>linux
+<span class="k">export </span><span class="nv">GOARCH</span><span class="o">=</span>amd64
+
+<span class="nv">BINARY</span><span class="o">=</span>go-realworld-clean
+<span class="nv">VERSION</span><span class="o">=</span><span class="k">$(</span>shell git describe --abbrev<span class="o">=</span><span class="m">0</span> --tags <span class="m">2</span>&gt; /dev/null <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&#34;0.1.0&#34;</span><span class="k">)</span>
+<span class="nv">BUILD</span><span class="o">=</span><span class="k">$(</span>shell git rev-parse HEAD <span class="m">2</span>&gt; /dev/null <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&#34;undefined&#34;</span><span class="k">)</span>
+<span class="nv">LDFLAGS</span><span class="o">=</span>-ldflags <span class="s2">&#34;-X main.Version=</span><span class="k">$(</span>VERSION<span class="k">)</span><span class="s2"> -X main.Build=</span><span class="k">$(</span>BUILD<span class="k">)</span><span class="s2">&#34;</span>
+
+<span class="nf">all</span><span class="o">:</span>
+	go build -o <span class="k">$(</span>BINARY<span class="k">)</span> <span class="k">$(</span>LDFLAGS<span class="k">)</span>
+
+<span class="nf">init</span><span class="o">:</span>
+	git config core.hooksPath .githooks
+
+<span class="nf">docker</span><span class="o">:</span>
+	docker build <span class="se">\
+</span><span class="se"></span>		-t <span class="k">$(</span>BINARY<span class="k">)</span>:latest <span class="se">\
+</span><span class="se"></span>		-t <span class="k">$(</span>BINARY<span class="k">)</span>:<span class="k">$(</span>VERSION<span class="k">)</span> <span class="se">\
+</span><span class="se"></span>		--build-arg <span class="nv">build</span><span class="o">=</span><span class="k">$(</span>BUILD<span class="k">)</span> --build-arg <span class="nv">version</span><span class="o">=</span><span class="k">$(</span>VERSION<span class="k">)</span> <span class="se">\
+</span><span class="se"></span>		-f Dockerfile --no-cache .
+
+<span class="nf">latest</span><span class="o">:</span>
+	docker build <span class="se">\
+</span><span class="se"></span>		-t <span class="k">$(</span>BINARY<span class="k">)</span>:latest <span class="se">\
+</span><span class="se"></span>		--build-arg <span class="nv">build</span><span class="o">=</span><span class="k">$(</span>BUILD<span class="k">)</span> --build-arg <span class="nv">version</span><span class="o">=</span><span class="k">$(</span>VERSION<span class="k">)</span> <span class="se">\
+</span><span class="se"></span>		-f Dockerfile --no-cache .
+
+<span class="nf">test</span><span class="o">:</span>
+	go <span class="nb">test</span> ./...
+
+<span class="nf">clean</span><span class="o">:</span>
+	<span class="k">if</span> <span class="o">[</span> -f <span class="k">$(</span>BINARY<span class="k">)</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> rm <span class="k">$(</span>BINARY<span class="k">)</span> <span class="p">;</span> <span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Hanggi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-11-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/go/">Go</a>
+          <a href="/tags/makefile/">Makefile</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/dev-guide/docker-repository/">
+            <span class="next-text nav-default">将 Docker 镜像传到 Docker Hub 私有仓库</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3918716559292650"
+     data-ad-slot="6364112114"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div class="social-links">
+      <a href="hanggicrown@gemail.com" class="iconfont icon-email" title="email"></a>
+  <a href="http://hanggi.me/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Hanggi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
