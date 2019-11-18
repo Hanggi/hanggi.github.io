@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Drone.io - 搭建基于 Docker 的持续集成环境 - Hanggi - NGNL</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Hanggi" /><meta name="description" content="如果项目有持续集成的需求，对于开源项目直接上 Travis 就好了，还能显示个 build pass。国内的话可能会用 Jenkins，好处是免费、可定制化。最近也有很多公司从 Jenkins 转到 Buildkite，有兴趣的可以上网查查。
+有没有一种部署简单、支持私有仓库，且基于容器的持续集成工具呢？Drone.io 可能是最好的选择。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://hanggi.me/post/deployment/drone-ci/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.9c148519.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Drone.io - 搭建基于 Docker 的持续集成环境" />
+<meta property="og:description" content="如果项目有持续集成的需求，对于开源项目直接上 Travis 就好了，还能显示个 build pass。国内的话可能会用 Jenkins，好处是免费、可定制化。最近也有很多公司从 Jenkins 转到 Buildkite，有兴趣的可以上网查查。
+
+有没有一种部署简单、支持私有仓库，且基于容器的持续集成工具呢？Drone.io 可能是最好的选择。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hanggi.me/post/deployment/drone-ci/" />
+<meta property="article:published_time" content="2019-11-15T11:14:23+09:00" />
+<meta property="article:modified_time" content="2019-11-15T11:14:23+09:00" />
+<meta itemprop="name" content="Drone.io - 搭建基于 Docker 的持续集成环境">
+<meta itemprop="description" content="如果项目有持续集成的需求，对于开源项目直接上 Travis 就好了，还能显示个 build pass。国内的话可能会用 Jenkins，好处是免费、可定制化。最近也有很多公司从 Jenkins 转到 Buildkite，有兴趣的可以上网查查。
+
+有没有一种部署简单、支持私有仓库，且基于容器的持续集成工具呢？Drone.io 可能是最好的选择。">
+
+
+<meta itemprop="datePublished" content="2019-11-15T11:14:23&#43;09:00" />
+<meta itemprop="dateModified" content="2019-11-15T11:14:23&#43;09:00" />
+<meta itemprop="wordCount" content="1083">
+
+
+
+<meta itemprop="keywords" content="Drone.io,docker,CI," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Drone.io - 搭建基于 Docker 的持续集成环境"/>
+<meta name="twitter:description" content="如果项目有持续集成的需求，对于开源项目直接上 Travis 就好了，还能显示个 build pass。国内的话可能会用 Jenkins，好处是免费、可定制化。最近也有很多公司从 Jenkins 转到 Buildkite，有兴趣的可以上网查查。
+
+有没有一种部署简单、支持私有仓库，且基于容器的持续集成工具呢？Drone.io 可能是最好的选择。"/>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128672771-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128672771-2');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3918716559292650",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Hanggi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Hanggi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Drone.io - 搭建基于 Docker 的持续集成环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-15 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"> 持续集成 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#配置">配置</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+
+  <br>
+
+  
+  <div style="max-height:270px !important;">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:180px;height:200px"
+         data-ad-client="ca-pub-3918716559292650"
+         data-ad-slot="3814804548"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+
+    <div class="post-content">
+      <p>如果项目有持续集成的需求，对于开源项目直接上 Travis 就好了，还能显示个 build pass。国内的话可能会用 Jenkins，好处是免费、可定制化。最近也有很多公司从 Jenkins 转到 Buildkite，有兴趣的可以上网查查。</p>
+
+<p>有没有一种部署简单、支持私有仓库，且基于容器的持续集成工具呢？Drone.io 可能是最好的选择。</p>
+
+<p>先附上官网和github：</p>
+
+<ul>
+<li><a href="https://drone.io/">[官网]</a></li>
+<li><a href="https://github.com/drone/drone">[Github]</a></li>
+<li><a href="https://docs.drone.io/">[文档]</a></li>
+</ul>
+
+<h2 id="安装">安装</h2>
+
+<p>这里安装就不细说了，官网有教程。<a href="https://docs.drone.io/installation/overview/">[安装]</a><br />
+可以注意到 Drone 分为两个部分，一个 Drone Server和一个（或多个）runner(s)。</p>
+
+<p>Drone server 是一个基于容器的，且提供可视化界面的集成管理服务，可以从官网提供的例子查看效果：<br />
+<a href="https://cloud.drone.io/">[Drone Server]</a><br />
+值得一提的是 Drone 不仅支持很多流行的代码托管服务商（如，Github、Gitlab、Bitbucket），还支持如 Gitea 等自建服务。</p>
+
+<p>Runner 是安装在远程服务器上的独立守护进程，用于执行工作任务。</p>
+
+<h2 id="配置">配置</h2>
+
+<p>安装教程里有配置参数，这里不赘述了。</p>
+
+<p>网上有很多基于 docker-compose 运行 Drone 的例子，但是绝大部分例子中使用的都是 drone:0.8，而官网例子中使用的是 drone:1。</p>
+
+<p>下面用较新的 drone 版本，并基于 Github 跑一个 Drone 服务。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">version<span class="p">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>services<span class="p">:</span><span class="w">
+</span><span class="w">  </span>drone-server<span class="p">:</span><span class="w">
+</span><span class="w">    </span>image<span class="p">:</span><span class="w"> </span>drone/drone<span class="p">:</span><span class="m">1.6</span><span class="w">                  </span><span class="c"># drone 服务采用 1.6 版本</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span>ports<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span><span class="m">8080</span><span class="p">:</span><span class="m">80</span><span class="w">                             </span><span class="c"># 这里意为将容器的 80 端口映射到本机的 8080 端口</span><span class="w">
+</span><span class="w">    </span>volumes<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>/var/lib/drone<span class="p">:</span>/data<span class="w">
+</span><span class="w">    </span>restart<span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span>environment<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_AGENTS_ENABLED=<span class="kc">true</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_GITHUB_SERVER=https<span class="p">:</span>//github.com<span class="w">                    </span><span class="c"># 基于 GIthub</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_GITHUB_CLIENT_ID=${DRONE_GITHUB_CLIENT_ID}<span class="w">          </span><span class="c"># 这个是教程中申请好的 id</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_GITHUB_CLIENT_SECRET=${DRONE_GITHUB_CLIENT_SECRET}<span class="w">  </span><span class="c"># 这个是教程中申请好的 secret</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_RPC_SECRET=${DRONE_RPC_SECRET}<span class="w">                      </span><span class="c"># 这个是自己生成的 secret，教程中也有案例。</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_SERVER_HOST=${DRONE_SERVER_HOST}<span class="w">                    </span><span class="c"># 这个是你创建 Github OAuth 的时候输入的地址。</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_SERVER_PROTO=${DRONE_SERVER_PROTO}<span class="w">                  </span><span class="c"># 这里输入 http 或 https</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_LOGS_TRACE=<span class="kc">true</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span>drone-agent<span class="p">:</span><span class="w">
+</span><span class="w">    </span>image<span class="p">:</span><span class="w"> </span>drone/agent<span class="p">:</span><span class="m">1.6</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span>command<span class="p">:</span><span class="w"> </span>agent<span class="w">
+</span><span class="w">    </span>restart<span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span>depends_on<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>drone-server<span class="w">
+</span><span class="w">    </span>volumes<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>/var/run/docker.sock<span class="p">:</span>/var/run/docker.sock<span class="w">
+</span><span class="w">    </span>environment<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_RPC_PROTO=${DRONE_SERVER_PROTO}<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_RPC_HOST=${DRONE_SERVER_HOST}<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_RPC_SECRET=${DRONE_RPC_SECRET}<span class="w">        </span><span class="c"># 此处要与上面的 rpc secret 一致</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_RUNNER_CAPACITY=<span class="m">2</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_RUNNER_NAME=${HOSTNAME}<span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>DRONE_LOGS_TRACE=<span class="kc">true</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>如果需要初始化管理员可以添加这一行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">      </span>-<span class="w"> </span>DRONE_USER_CREATE=username<span class="p">:</span>octocat<span class="p">,</span>admin<span class="p">:</span><span class="kc">true</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>后台运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker-compose up -d</code></pre></td></tr></table>
+</div>
+</div>
+<p>访问你的集成服务地址，同步并且选择激活你的项目（激活的同时，你激活的项目会添加一个 webhook，可以去你的 Github 查看）。所以每当你推送新的代码的时候，Github 会向你的集成服务器发起推送，服务器在接到推送后会根据项目中 <code>.drone.yaml</code> 文件开始执行各种任务。</p>
+
+<p>下面是一个简单的测试案例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
+</span><span class="w"></span>kind<span class="p">:</span><span class="w"> </span>pipeline<span class="w">
+</span><span class="w"></span>type<span class="p">:</span><span class="w"> </span>docker<span class="w">
+</span><span class="w"></span>name<span class="p">:</span><span class="w"> </span>default<span class="w">
+</span><span class="w">
+</span><span class="w"></span>steps<span class="p">:</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>greeting<span class="w">
+</span><span class="w">  </span>image<span class="p">:</span><span class="w"> </span>golang<span class="p">:</span><span class="m">1.13</span><span class="w">
+</span><span class="w">  </span>commands<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>go<span class="w"> </span>build<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>go<span class="w"> </span>test<span class="w">
+</span><span class="w">
+</span><span class="w"></span>...</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Hanggi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-11-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/drone.io/">Drone.io</a>
+          <a href="/tags/docker/">docker</a>
+          <a href="/tags/ci/">CI</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/golang/makefile-for-golang/">
+            <span class="next-text nav-default">用 Makefile 构建 Go 程序</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3918716559292650"
+     data-ad-slot="6364112114"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div class="social-links">
+      <a href="hanggicrown@gemail.com" class="iconfont icon-email" title="email"></a>
+  <a href="http://hanggi.me/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Hanggi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drone.io on Hanggi - NGNL</title>
+    <link>http://hanggi.me/tags/drone.io/</link>
+    <description>Recent content in Drone.io on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 Nov 2019 11:14:23 +0900</lastBuildDate>
+    
+	<atom:link href="http://hanggi.me/tags/drone.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Drone.io - 搭建基于 Docker 的持续集成环境</title>
+      <link>http://hanggi.me/post/deployment/drone-ci/</link>
+      <pubDate>Fri, 15 Nov 2019 11:14:23 +0900</pubDate>
+      
+      <guid>http://hanggi.me/post/deployment/drone-ci/</guid>
+      <description>&lt;p&gt;如果项目有持续集成的需求，对于开源项目直接上 Travis 就好了，还能显示个 build pass。国内的话可能会用 Jenkins，好处是免费、可定制化。最近也有很多公司从 Jenkins 转到 Buildkite，有兴趣的可以上网查查。&lt;/p&gt;
+
+&lt;p&gt;有没有一种部署简单、支持私有仓库，且基于容器的持续集成工具呢？Drone.io 可能是最好的选择。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
