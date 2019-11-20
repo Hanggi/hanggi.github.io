@@ -1,0 +1,118 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>微服务全局唯一 ID - Hanggi - NGNL</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Hanggi"><meta name=description content="ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。
+一种全局唯一的 ID 变得不可或缺。"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.59.1 with even 4.0.0"><link rel=canonical href=http://hanggi.me/post/dev-guide/uid-comparison/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/dist/even.9c148519.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="微服务全局唯一 ID"><meta property="og:description" content="ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。
+
+一种全局唯一的 ID 变得不可或缺。"><meta property="og:type" content="article"><meta property="og:url" content="http://hanggi.me/post/dev-guide/uid-comparison/"><meta property="article:published_time" content="2019-08-27T15:31:57+09:00"><meta property="article:modified_time" content="2019-08-27T15:31:57+09:00"><meta itemprop=name content="微服务全局唯一 ID"><meta itemprop=description content="ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。
+
+一种全局唯一的 ID 变得不可或缺。"><meta itemprop=datePublished content="2019-08-27T15:31:57&#43;09:00"><meta itemprop=dateModified content="2019-08-27T15:31:57&#43;09:00"><meta itemprop=wordCount content="1549"><meta itemprop=keywords content="uid,uuid,xid,snowflake,"><meta name=twitter:card content="summary"><meta name=twitter:title content="微服务全局唯一 ID"><meta name=twitter:description content="ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。
+
+一种全局唯一的 ID 变得不可或缺。"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-128672771-2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-128672771-2');</script><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-3918716559292650",enable_page_level_ads:true});</script><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Hanggi</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Hanggi</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>微服务全局唯一 ID</h1><div class=post-meta><span class=post-time>2019-08-27</span><div class=post-category><a href=/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/>开发手册</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#传统方案>传统方案</a><ul><li><a href=#自增-id>自增 ID</a></li><li><a href=#uuid>UUID</a></li></ul></li><li><a href=#其他方案>其他方案</a><ul><li><a href=#xid>xid</a><ul><li><a href=#安装>安装</a></li><li><a href=#使用>使用</a></li></ul></li><li><a href=#snowflake>Snowflake</a><ul><li><a href=#安装-1>安装</a></li><li><a href=#使用-1>使用</a></li></ul></li></ul></li><li><a href=#总结>总结</a></li></ul></nav></div><br><div style=max-height:270px!important><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:inline-block;width:180px;height:200px data-ad-client=ca-pub-3918716559292650 data-ad-slot=3814804548></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class=post-content><p>ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。</p><p>一种全局唯一的 ID 变得不可或缺。</p><h1 id=传统方案>传统方案</h1><p>通常来说我们会用自增 ID 或 UUID 作为我们的数据库主键。这类选择有什么好处与坏处呢？</p><h2 id=自增-id>自增 ID</h2><p>如 Mysql 的 Increment ID 或 Postgresql 的 serial 都是典型的自增 ID。</p><p>优势：</p><ol><li><p>数据库自动生成，性能好，使用简单，便于理解，直接表示当前数据序号。</p></li><li><p>整型数据结构，占用空间小，索引性能好。</p></li><li><p>单调递增，顺序存放。</p></li></ol><p>劣势：</p><ol><li><p>当 ID 被暴露出来时，容易猜测数据增量及总量。</p></li><li><p>当数据库需要拆分合并时容易出现重复。</p></li><li><p>分布式系统中，全局无法做到唯一。</p></li></ol><blockquote><p>对于防止猜测数据基数还有一种方法是，ID 不从1开始，而是从一个很大的随机数开始，如：5201314、20180808&hellip; 当然这种方法并不能防止他人猜测数据增量。</p></blockquote><p>简单来说就是使用简单、方便，但是对分布式不友好。</p><h2 id=uuid>UUID</h2><p>因为自增 ID 的这些缺陷，诞生了 UUID（Universally Unique Identifier）。</p><p>UUID 大概长这个样：</p><p><code>673246fa-9b8a-480d-85c3-e7878aa441b4</code></p><p>其中第三段的第一个数字表示版本，这个 UUID 是 v4。</p><p>优势：</p><ol><li><p>达成全局唯一。</p></li><li><p>生成简单（如 Postgresql 甚至内部支持 uuid 类型），使用方便。</p></li><li><p>完全无序，基本不用担心 ID 暴露等问题。</p></li></ol><p>劣势：</p><ol><li><p>长度过长，占用 16 字节，36 字符长度，影响空间使用。特别对创建索引。</p></li><li><p>无序，导致数据不可读。</p></li><li><p>影响插入速度和查询速度。</p></li></ol><p>总结来就是做到了全局唯一，但是占用空间大，影响性能（实际性能没做比较不知道，但是占空间大是真的。）</p><p><a href=github.com/satori/go.uuid>go.uuid</a></p><h1 id=其他方案>其他方案</h1><p>综上所述的问题就会发现，我们在分布式系统或者说微服务中需要的 ID 要满足以下特征：</p><ul><li><p>必须是全局唯一的，不会出现重复现象。</p></li><li><p>最好是可排序的，方便各种操作。</p></li><li><p>最好是有时间顺序的，可读性好，</p></li><li><p>不会因为暴露 ID 而担心数据泄漏。</p></li><li><p>使用简单，短而精悍。</p></li></ul><p>基于 Go 语言的替代方案不少，如：</p><p><a href=github.com/segmentio/ksuid>ksuid</a></p><p><a href=github.com/kjk/betterguid>betterguid</a></p><p><a href=github.com/sony/sonyflake>sonyflake</a></p><p><a href=github.com/oklog/ulid>ulid</a></p><p><a href=github.com/chilts/sid>sid</a></p><p>这次主要介绍 xid 和 snowflake。</p><h2 id=xid>xid</h2><p>xid 是一个全球唯一的 ID 生成库，xid 使用 Mongo Object ID 算法生成，并使用不同的序列化确保转换称字符串时足够短。</p><p>xid 结构如下：</p><ul><li><p>4字节：值表示自 Unix 时间以来的秒数，</p></li><li><p>3字节：机器标识符，</p></li><li><p>2字节：进程ID，</p></li><li><p>3字节：计数器，以随机值开始。</p></li></ul><p>他看起来是这样的：</p><p><code>9m4e2mr0ui3e8a215n4g</code></p><h3 id=安装>安装</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ go get github.com/rs/xid</code></pre></td></tr></table></div></div><h3 id=使用>使用</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=nx>guid</span> <span class=o>:=</span> <span class=nx>xid</span><span class=p>.</span><span class=nf>New</span><span class=p>()</span>
+
+<span class=nb>println</span><span class=p>(</span><span class=nx>guid</span><span class=p>.</span><span class=nf>String</span><span class=p>())</span></code></pre></td></tr></table></div></div><p>信息拆分：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=nx>guid</span><span class=p>.</span><span class=nf>Machine</span><span class=p>()</span>
+<span class=nx>guid</span><span class=p>.</span><span class=nf>Pid</span><span class=p>()</span>
+<span class=nx>guid</span><span class=p>.</span><span class=nf>Time</span><span class=p>()</span>
+<span class=nx>guid</span><span class=p>.</span><span class=nf>Counter</span><span class=p>()</span></code></pre></td></tr></table></div></div><p>xid Github地址如下： <a href=https://github.com/rs/xid>xid</a></p><h2 id=snowflake>Snowflake</h2><p>Snowflake，也叫雪花算法，是 Twitter 提出的一种分布式自增 ID 算法，用以生成推文 ID。</p><p>snowflake 大概长这样：</p><p><code>1166604700124975104</code></p><p>下面截取一个 NBA 推文地址：</p><p><code>https://twitter.com/NBA/status/1166266438547427330</code></p><p>会发现他们的 ID 是纯数字的。那是因为 snowflake 结构如下：</p><p><img src=/images/dev-guide/snowflake.jpg alt=Snowflake title=Snowflake></p><ul><li><p>41bit：时间戳段，使用毫秒单位，那么 2 的 41 次方相当于 25452 天，约 70 年。也就是可以用到2139年。</p></li><li><p>工作机器ID：这部分是需要用户自己填的，他占了 10 比特，也就是 1024 个数 0～1023。</p></li><li><p>序列号：这个字段用来标注同一毫秒内产生多个 ID 的情况。这一字段 12 比特，也就是每毫秒 4096 个 ID，一秒钟就是 409.6 万个 ID 应该够用了。</p></li></ul><p>以下是 Twitter 默认格式。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>+--------------------------------------------------------------------------+
+<span class=p>|</span> <span class=m>1</span> Bit Unused <span class=p>|</span> <span class=m>41</span> Bit Timestamp <span class=p>|</span>  <span class=m>10</span> Bit NodeID  <span class=p>|</span>   <span class=m>12</span> Bit Sequence ID <span class=p>|</span>
++--------------------------------------------------------------------------+</code></pre></td></tr></table></div></div><p><a href=https://blog.twitter.com/engineering/en_us/a/2010/announcing-snowflake.html>Slowflake</a> 的算法是公开的，所以任何人都可以使用这套算法生成自己的雪花算法。网上有很多种实现，有些实现还会根据自身需求修改字段长度。</p><p>下面以其中一种比较标准的实现库来说明：</p><h3 id=安装-1>安装</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ go get github.com/bwmarrin/snowflake</code></pre></td></tr></table></div></div><h3 id=使用-1>使用</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kn>import</span> <span class=p>(</span>
+	<span class=s>&#34;fmt&#34;</span>
+
+	<span class=s>&#34;github.com/bwmarrin/snowflake&#34;</span>
+<span class=p>)</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+
+	<span class=c1>// Create a new Node with a Node number of 1
+</span><span class=c1></span>	<span class=nx>node</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>snowflake</span><span class=p>.</span><span class=nf>NewNode</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+		<span class=k>return</span>
+	<span class=p>}</span>
+
+	<span class=c1>// Generate a snowflake ID.
+</span><span class=c1></span>	<span class=nx>id</span> <span class=o>:=</span> <span class=nx>node</span><span class=p>.</span><span class=nf>Generate</span><span class=p>()</span>
+
+	<span class=c1>// Print out the ID in a few different ways.
+</span><span class=c1></span>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;Int64  ID: %d\n&#34;</span><span class=p>,</span> <span class=nx>id</span><span class=p>)</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;String ID: %s\n&#34;</span><span class=p>,</span> <span class=nx>id</span><span class=p>)</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;Base2  ID: %s\n&#34;</span><span class=p>,</span> <span class=nx>id</span><span class=p>.</span><span class=nf>Base2</span><span class=p>())</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;Base64 ID: %s\n&#34;</span><span class=p>,</span> <span class=nx>id</span><span class=p>.</span><span class=nf>Base64</span><span class=p>())</span>
+
+	<span class=c1>// Print out the ID&#39;s timestamp
+</span><span class=c1></span>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;ID Time  : %d\n&#34;</span><span class=p>,</span> <span class=nx>id</span><span class=p>.</span><span class=nf>Time</span><span class=p>())</span>
+
+	<span class=c1>// Print out the ID&#39;s node number
+</span><span class=c1></span>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;ID Node  : %d\n&#34;</span><span class=p>,</span> <span class=nx>id</span><span class=p>.</span><span class=nf>Node</span><span class=p>())</span>
+
+	<span class=c1>// Print out the ID&#39;s sequence number
+</span><span class=c1></span>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;ID Step  : %d\n&#34;</span><span class=p>,</span> <span class=nx>id</span><span class=p>.</span><span class=nf>Step</span><span class=p>())</span>
+
+  <span class=c1>// Generate and print, all in one.
+</span><span class=c1></span>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;ID       : %d\n&#34;</span><span class=p>,</span> <span class=nx>node</span><span class=p>.</span><span class=nf>Generate</span><span class=p>().</span><span class=nf>Int64</span><span class=p>())</span>
+<span class=p>}</span></code></pre></td></tr></table></div></div><p>go snowflake Github 地址： <a href=https://github.com/bwmarrin/snowflake>Snowflake</a></p><h1 id=总结>总结</h1><p>自增 ID 因其数据库默认、使用方便、直观、性能好等优点，依然是使用很广泛数据表的主键。</p><p>如果对数据总量和增量比较敏感或需要全局唯一，UUID 依然是比较常用的选择。</p><p>如果觉得 UUID 太大、无序、性能慢，想要用于分布式切数据生成频繁，Snowflake 或 xid 将是不错的选择。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Hanggi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2019-08-27</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/uid/>uid</a>
+<a href=/tags/uuid/>uuid</a>
+<a href=/tags/xid/>xid</a>
+<a href=/tags/snowflake/>snowflake</a></div><nav class=post-nav><a class=prev href=/post/dev-guide/docker-repository/><i class="iconfont icon-left"></i><span class="prev-text nav-default">将 Docker 镜像传到 Docker Hub 私有仓库</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=/post/microservice/go-micro-guide-1/><span class="next-text nav-default">go-micro 微服务开发手册【1】：介绍</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-3918716559292650 data-ad-slot=6364112114 data-ad-format=auto data-full-width-responsive=true></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div class=social-links><a href=hanggicrown@gemail.com class="iconfont icon-email" title=email></a><a href=http://hanggi.me/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Hanggi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/dist/even.26188efa.min.js></script></body></html>
