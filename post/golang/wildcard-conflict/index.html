@@ -12,7 +12,7 @@ panic: wildcard route &lsquo;:articleID&rsquo; conflicts with existing children 
 panic: wildcard route &lsquo;:articleID&rsquo; conflicts with existing children in path &lsquo;/articles/:articleID&rsquo;
 
 
-如何解决这个问题呢？"><meta itemprop=datePublished content="2019-12-18T13:50:07&#43;09:00"><meta itemprop=dateModified content="2019-12-18T13:50:07&#43;09:00"><meta itemprop=wordCount content="545"><meta itemprop=keywords content="Go,Gin,wildcard,"><meta name=twitter:card content="summary"><meta name=twitter:title content="gin 路由冲突问题解决方法"><meta name=twitter:description content="想必很多人在使用 Gin 编写路由函数的时候遇到过以下问题：
+如何解决这个问题呢？"><meta itemprop=datePublished content="2019-12-18T13:50:07&#43;09:00"><meta itemprop=dateModified content="2019-12-18T13:50:07&#43;09:00"><meta itemprop=wordCount content="571"><meta itemprop=keywords content="Go,Gin,wildcard,"><meta name=twitter:card content="summary"><meta name=twitter:title content="gin 路由冲突问题解决方法"><meta name=twitter:description content="想必很多人在使用 Gin 编写路由函数的时候遇到过以下问题：
 
 
 panic: wildcard route &lsquo;:articleID&rsquo; conflicts with existing children in path &lsquo;/articles/:articleID&rsquo;
@@ -91,7 +91,7 @@ GET /article/:articleId</code></pre></td></tr></table></div></div><p>但是这�
 
     /users/                     action = &#34;&#34;
     /users/somefile.go          action = &#34;somefile.go&#34;
-    /users/subdir/somefile.go   action = &#34;subdir/somefile.go&#34;</pre></td></tr></table></div></div><h2 id=总结>总结</h2><p>httprouter 在提供高性能的同时也确实带来了诸多不便，以上几种方法不能说完美，但应该可以满足大部分 RESTful API 的规范要求。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+    /users/subdir/somefile.go   action = &#34;subdir/somefile.go&#34;</pre></td></tr></table></div></div><h2 id=总结>总结</h2><p>httprouter 在提供高性能的同时也确实带来了诸多不便，以上几种方法不能说完美，但应该可以满足大部分 RESTful API 的规范要求。</p><p>更好等方法其实是————不要用 wildcard。。。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
 <span class=item-content>Hanggi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
 <span class=item-content>2019-12-18</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/go/>Go</a>
 <a href=/tags/gin/>Gin</a>
