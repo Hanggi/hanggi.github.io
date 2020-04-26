@@ -1,0 +1,308 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>在 Kubernetes 上部署 Drone 持续集成环境 - Hanggi - NGNL</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Hanggi"><meta name=description content="之前已经用 Docker 和 Docker-compose 搭建了 Drone 的持续集成/部署环境。
+这次我们将 Drone 部署到 Kubernetes 上。"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.59.1 with even 4.0.0"><link rel=canonical href=http://hanggi.me/post/deployment/drone-ci-k8s/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/dist/even.9c148519.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="在 Kubernetes 上部署 Drone 持续集成环境"><meta property="og:description" content="之前已经用 Docker 和 Docker-compose 搭建了 Drone 的持续集成/部署环境。
+
+这次我们将 Drone 部署到 Kubernetes 上。"><meta property="og:type" content="article"><meta property="og:url" content="http://hanggi.me/post/deployment/drone-ci-k8s/"><meta property="article:published_time" content="2020-04-26T08:28:39+09:00"><meta property="article:modified_time" content="2020-04-26T08:28:39+09:00"><meta itemprop=name content="在 Kubernetes 上部署 Drone 持续集成环境"><meta itemprop=description content="之前已经用 Docker 和 Docker-compose 搭建了 Drone 的持续集成/部署环境。
+
+这次我们将 Drone 部署到 Kubernetes 上。"><meta itemprop=datePublished content="2020-04-26T08:28:39&#43;09:00"><meta itemprop=dateModified content="2020-04-26T08:28:39&#43;09:00"><meta itemprop=wordCount content="1654"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="在 Kubernetes 上部署 Drone 持续集成环境"><meta name=twitter:description content="之前已经用 Docker 和 Docker-compose 搭建了 Drone 的持续集成/部署环境。
+
+这次我们将 Drone 部署到 Kubernetes 上。"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-128672771-2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-128672771-2');</script><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-3918716559292650",enable_page_level_ads:true});</script><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Hanggi</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Hanggi</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>在 Kubernetes 上部署 Drone 持续集成环境</h1><div class=post-meta><span class=post-time>2020-04-26</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#drone-介绍>Drone 介绍</a><ul><li><a href=#drone-server>Drone Server</a></li><li><a href=#drone-runner>Drone Runner</a></li></ul></li><li><a href=#在-kubernetes-上部署-drone>在 Kubernetes 上部署 Drone</a><ul><li><a href=#部署-drone-server>部署 Drone Server</a></li><li><a href=#kubernetes-runner>Kubernetes Runner</a></li><li><a href=#monorepo>Monorepo</a></li></ul></li><li><a href=#总结>总结</a></li></ul></li></ul></nav></div><br><div style=max-height:270px!important><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:inline-block;width:180px;height:200px data-ad-client=ca-pub-3918716559292650 data-ad-slot=3814804548></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class=post-content><p>之前已经用 Docker 和 Docker-compose 搭建了 <a href=/post/deployment/drone-ci>Drone 的持续集成/部署环境</a>。</p><p>这次我们将 Drone 部署到 Kubernetes 上。</p><h2 id=drone-介绍>Drone 介绍</h2><p>在官方介绍中 Drone 介绍自己是一个现代化的持续集成和持续交付平台，是面向繁忙的开发团队的自助式持续交付平台。其实就是想表达 Drone 无需过多复杂的配置，就可以轻松部署和搭建测试环境。</p><p>但尝试使用 Drone 会发现，网络上大部分关于 Drone 的教程都是面向老版本的（v0.8），而现在的版本又与这个老版本有很大出入。所以我们就用截至现在最新版本的 drone 搭建集成测试环境，并部署到 k8s 上。</p><p>Drone 主要分为两个部分：</p><h3 id=drone-server>Drone Server</h3><p>Drone Server 是一个 Drone 的控制管理平台，用于查看现在正在运行中的集成测试结果、终止测试或跳转源码。</p><p>Drone 支持大部分主流代码托管平台（Github, Bitbucket, Gitlab），同时也支持自建平台（Gogs, Gitea）。</p><h3 id=drone-runner>Drone Runner</h3><p>Drone Runner 负责执行实际测试，官方提供了适用于各种运行环境的 Runner。今天要用的就是其中的 Kubernetes Runner。</p><h2 id=在-kubernetes-上部署-drone>在 Kubernetes 上部署 Drone</h2><p>首先你得有个可以被外网访问的 k8s 集群，至于怎么弄，请自行解决。</p><h3 id=部署-drone-server>部署 Drone Server</h3><p>这一步操作的最终目标是将 <code>drone/drone:1.7.0</code> 这个 Docker 镜像部署到 k8s 、暴露出接口并绑定域名（方便 webhook 发送请求）。</p><p>为了达成这个目的我们要创建一个运行 Drone 容器的 Deployment，暴露这个 Deployment 的 Service，以及用于反向代理的 Ingress。配置文件存在 ConfigMap 中。</p><p>所以我们首先需要一个 Ingress 做一个域名解析，内容如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>apiVersion<span class=p>:</span><span class=w> </span>networking.k8s.io/v1beta1<span class=w>
+</span><span class=w></span>kind<span class=p>:</span><span class=w> </span>Ingress<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>drone-ingress<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w></span>spec<span class=p>:</span><span class=w>
+</span><span class=w>  </span>rules<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>host<span class=p>:</span><span class=w> </span>example.com<span class=w>
+</span><span class=w>    </span>http<span class=p>:</span><span class=w>
+</span><span class=w>      </span>paths<span class=p>:</span><span class=w>
+</span><span class=w>      </span>-<span class=w> </span>backend<span class=p>:</span><span class=w>
+</span><span class=w>          </span>serviceName<span class=p>:</span><span class=w> </span>drone-service<span class=w>
+</span><span class=w>          </span>servicePort<span class=p>:</span><span class=w> </span><span class=m>80</span><span class=w>
+</span><span class=w>        </span>path<span class=p>:</span><span class=w> </span>/</code></pre></td></tr></table></div></div><p>我们的所有操作将在 <code>devops</code> 这个命名空间里进行，替换自己的域名，代理指向 <strong>drone-service</strong> 这个服务。</p><p>接下来创建 <strong>drone-service</strong> 服务：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>apiVersion<span class=p>:</span><span class=w> </span>v1<span class=w>
+</span><span class=w></span>kind<span class=p>:</span><span class=w> </span>Service<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>drone-service<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w></span>spec<span class=p>:</span><span class=w>
+</span><span class=w>  </span>selector<span class=p>:</span><span class=w>
+</span><span class=w>    </span>app<span class=p>:</span><span class=w> </span>drone-server<span class=w>
+</span><span class=w>  </span>ports<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>name<span class=p>:</span><span class=w> </span>http<span class=w>
+</span><span class=w>    </span>protocol<span class=p>:</span><span class=w> </span>TCP<span class=w>
+</span><span class=w>    </span>port<span class=p>:</span><span class=w> </span><span class=m>8080</span><span class=w>
+</span><span class=w>    </span>targetPort<span class=p>:</span><span class=w> </span><span class=m>80</span></code></pre></td></tr></table></div></div><p><strong>drone-service</strong> 这个服务将使用 <strong>drone-server</strong> 这个 Deployment，<em>targetPort</em> 将 80 端口暴露给 Ingress，<em>port</em> 的 8080 端口则是为连接 Drone Runner 准备的内部端口。</p><p>最后就是 <strong>drone-server</strong>，用于运行 Drone Server 容器。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>apiVersion<span class=p>:</span><span class=w> </span>apps/v1<span class=w>
+</span><span class=w></span>kind<span class=p>:</span><span class=w> </span>Deployment<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>drone-server<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w></span>spec<span class=p>:</span><span class=w>
+</span><span class=w>  </span>selector<span class=p>:</span><span class=w>
+</span><span class=w>    </span>matchLabels<span class=p>:</span><span class=w>
+</span><span class=w>      </span>app<span class=p>:</span><span class=w> </span>drone-server<span class=w>
+</span><span class=w>  </span>replicas<span class=p>:</span><span class=w> </span><span class=m>1</span><span class=w>
+</span><span class=w>  </span>template<span class=p>:</span><span class=w>
+</span><span class=w>    </span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>      </span>labels<span class=p>:</span><span class=w>
+</span><span class=w>        </span>app<span class=p>:</span><span class=w> </span>drone-server<span class=w>
+</span><span class=w>    </span>spec<span class=p>:</span><span class=w>
+</span><span class=w>      </span>nodeSelector<span class=p>:</span><span class=w>
+</span><span class=w>        </span>node-pool<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w>      </span>containers<span class=p>:</span><span class=w>
+</span><span class=w>      </span>-<span class=w> </span>image<span class=p>:</span><span class=w> </span>drone/drone<span class=p>:</span><span class=m>1.7.0</span><span class=w>
+</span><span class=w>        </span>imagePullPolicy<span class=p>:</span><span class=w> </span>Always<span class=w>
+</span><span class=w>        </span>name<span class=p>:</span><span class=w> </span>drone-server<span class=w>
+</span><span class=w>        </span>volumeMounts<span class=p>:</span><span class=w>
+</span><span class=w>        </span>-<span class=w> </span>name<span class=p>:</span><span class=w> </span>drone-server-sqlite-db<span class=w>
+</span><span class=w>          </span>mountPath<span class=p>:</span><span class=w> </span>/var/lib/drone<span class=w>
+</span><span class=w>        </span>envFrom<span class=p>:</span><span class=w>
+</span><span class=w>        </span>-<span class=w> </span>configMapRef<span class=p>:</span><span class=w>
+</span><span class=w>            </span>name<span class=p>:</span><span class=w> </span>drone-env<span class=w>
+</span><span class=w>      </span>volumes<span class=p>:</span><span class=w>
+</span><span class=w>      </span>-<span class=w> </span>name<span class=p>:</span><span class=w> </span>drone-server-sqlite-db<span class=w>
+</span><span class=w>        </span>hostPath<span class=p>:</span><span class=w>
+</span><span class=w>          </span>path<span class=p>:</span><span class=w> </span>/rc/data/drone</code></pre></td></tr></table></div></div><p><em>nodeSelector</em> 请根据使用的 k8s 情况自行修改，Drone Server 镜像使用最新的 1.7.0，volume 使用节点的本地卷（重启后会丢失所有数据，所以需要的话可以挂在到其他永久卷中）。</p><p>这里最关键的一点就是 <em>envFrom</em> 环境变量，这里面定义了 Drone Server 所需要一些重要参数。以下内容以 github 为例：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>apiVersion<span class=p>:</span><span class=w> </span>v1<span class=w>
+</span><span class=w></span>kind<span class=p>:</span><span class=w> </span>ConfigMap<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>drone-env<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w></span>data<span class=p>:</span><span class=w>
+</span><span class=w>  </span>DRONE_GITHUB_SERVER<span class=p>:</span><span class=w> </span>https<span class=p>:</span>//github.com<span class=w>
+</span><span class=w>  </span>DRONE_GITHUB_CLIENT_ID<span class=p>:</span><span class=w> </span>&lt;github-client-id<span class=sd>&gt;
+</span><span class=sd>  DRONE_GITHUB_CLIENT_SECRET: &lt;github-client-secret&gt;</span><span class=w>
+</span><span class=w>  </span>DRONE_SERVER_HOST<span class=p>:</span><span class=w> </span>&lt;example.com<span class=sd>&gt;
+</span><span class=sd>  DRONE_SERVER_PROTO: http</span><span class=w>
+</span><span class=w>  </span>DRONE_RPC_SECRET<span class=p>:</span><span class=w> </span>&lt;rpc-secret<span class=sd>&gt;
+</span><span class=sd>  DRONE_LOGS_TRACE: &#39;true&#39;</span></code></pre></td></tr></table></div></div><p>其中，<strong>DRONE_SERVER_HOST</strong>、<strong>DRONE_SERVER_PROTO</strong>、<strong>DRONE_RPC_SECRET</strong> 最为关键。</p><p>分别是你的 Drone Server 的域名，以及与 Drone Runner 通讯的 secret，其中 secret 可以存储在 k8s secret 里，再次为了方便演示直接写入配置文件中。</p><h3 id=kubernetes-runner>Kubernetes Runner</h3><p>搭建好 Drone Server 后我们要创建 Drone Runner，并连接 Drone Server。</p><p>与<a href=/post/deployment/drone-ci>上一个教程</a>不同，这次我们要用到 <code>drone/drone-runner-kube</code> 这个官方镜像。Kubernetes Runner 不同于 Docker runner，他会创建 pod，在新建的 pod 上执行完 pipeline 后销毁掉它们。</p><p>因为 Kubernetes Runner 并不需要向外暴露自己的服务，所以我们只需要一个 Deployment。内容如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>apiVersion<span class=p>:</span><span class=w> </span>apps/v1<span class=w>
+</span><span class=w></span>kind<span class=p>:</span><span class=w> </span>Deployment<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>kube-runner<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w>  </span>labels<span class=p>:</span><span class=w>
+</span><span class=w>    </span>app.kubernetes.io/name<span class=p>:</span><span class=w> </span>kube-runner<span class=w>
+</span><span class=w></span>spec<span class=p>:</span><span class=w>
+</span><span class=w>  </span>replicas<span class=p>:</span><span class=w> </span><span class=m>1</span><span class=w>
+</span><span class=w>  </span>selector<span class=p>:</span><span class=w>
+</span><span class=w>    </span>matchLabels<span class=p>:</span><span class=w>
+</span><span class=w>      </span>app.kubernetes.io/name<span class=p>:</span><span class=w> </span>kube-runner<span class=w>
+</span><span class=w>  </span>template<span class=p>:</span><span class=w>
+</span><span class=w>    </span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>      </span>labels<span class=p>:</span><span class=w>
+</span><span class=w>        </span>app.kubernetes.io/name<span class=p>:</span><span class=w> </span>kube-runner<span class=w>
+</span><span class=w>    </span>spec<span class=p>:</span><span class=w>
+</span><span class=w>      </span>nodeSelector<span class=p>:</span><span class=w>
+</span><span class=w>        </span>node-pool<span class=p>:</span><span class=w> </span>dev<span class=w>
+</span><span class=w>      </span>containers<span class=p>:</span><span class=w>
+</span><span class=w>      </span>-<span class=w> </span>name<span class=p>:</span><span class=w> </span>runner<span class=w>
+</span><span class=w>        </span>image<span class=p>:</span><span class=w> </span>drone/drone-runner-kube<span class=p>:</span><span class=m>1.0.0</span>-beta<span class=m>.2</span><span class=w>
+</span><span class=w>        </span>ports<span class=p>:</span><span class=w>
+</span><span class=w>        </span>-<span class=w> </span>containerPort<span class=p>:</span><span class=w> </span><span class=m>3000</span><span class=w>
+</span><span class=w>        </span>envFrom<span class=p>:</span><span class=w>
+</span><span class=w>        </span>-<span class=w> </span>configMapRef<span class=p>:</span><span class=w>
+</span><span class=w>            </span>name<span class=p>:</span><span class=w> </span>kube-runner-env</code></pre></td></tr></table></div></div><p>与 Drone Server 一样，我们要自行替换 <em>nodeSelector</em> ，尴尬的是截至今天 _drone_runner<em>kube</em> 最新版本是 _1.0.0-beta.2，我已我们直接使用它。</p><p>环境变量如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>apiVersion<span class=p>:</span><span class=w> </span>v1<span class=w>
+</span><span class=w></span>kind<span class=p>:</span><span class=w> </span>ConfigMap<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>kube-runner-env<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w></span>data<span class=p>:</span><span class=w>
+</span><span class=w>  </span>DRONE_RPC_PROTO<span class=p>:</span><span class=w> </span>http<span class=w>
+</span><span class=w>  </span>DRONE_RPC_HOST<span class=p>:</span><span class=w> </span>drone-service.devops<span class=p>:</span><span class=m>8080</span><span class=w>
+</span><span class=w>  </span>DRONE_RPC_SECRET<span class=p>:</span><span class=w> </span>&lt;rpc-secret<span class=sd>&gt;
+</span><span class=sd>  DRONE_NAMESPACE_DEFAULT: devops</span><span class=w>
+</span><span class=w>  </span>DRONE_RUNNER_CAPACITY<span class=p>:</span><span class=w> </span><span class=s1>&#39;2&#39;</span><span class=w>
+</span><span class=w>  </span>DRONE_RUNNER_NAME<span class=p>:</span><span class=w> </span>kube-runner</code></pre></td></tr></table></div></div><p>其中， <strong>DRONE_RPC_HOST</strong> 要指向上面创建的 drone-service 地址，<strong>DRONE_RPC_SECRET</strong> 要与 drone-env 中的一致。</p><p>Kubernetes Runner 还有一个很重的东西就是 ServiceAccount，因为 Kubernetes Runner 需要创建新的 pod 执行 pipeline 然后销毁他们，所以它需要一个角色赋予他权限。</p><p>我们的 Drone 角色如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>kind<span class=p>:</span><span class=w> </span>Role<span class=w>
+</span><span class=w></span>apiVersion<span class=p>:</span><span class=w> </span>rbac.authorization.k8s.io/v1<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>kube-runner<span class=w>
+</span><span class=w></span>rules<span class=p>:</span><span class=w>
+</span><span class=w></span>-<span class=w> </span>apiGroups<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
+</span><span class=w>  </span>resources<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>secrets<span class=w>
+</span><span class=w>  </span>verbs<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>create<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>delete<span class=w>
+</span><span class=w></span>-<span class=w> </span>apiGroups<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
+</span><span class=w>  </span>resources<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>pods<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>pods/log<span class=w>
+</span><span class=w>  </span>verbs<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>get<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>create<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>delete<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>list<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>watch<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>update</code></pre></td></tr></table></div></div><p>创建好角色后就要将角色绑定到我们的 ServiceAcount：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yaml data-lang=yaml>kind<span class=p>:</span><span class=w> </span>RoleBinding<span class=w>
+</span><span class=w></span>apiVersion<span class=p>:</span><span class=w> </span>rbac.authorization.k8s.io/v1<span class=w>
+</span><span class=w></span>metadata<span class=p>:</span><span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>kube-runner<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w></span>subjects<span class=p>:</span><span class=w>
+</span><span class=w></span>-<span class=w> </span>kind<span class=p>:</span><span class=w> </span>ServiceAccount<span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>default<span class=w>
+</span><span class=w>  </span>namespace<span class=p>:</span><span class=w> </span>devops<span class=w>
+</span><span class=w></span>roleRef<span class=p>:</span><span class=w>
+</span><span class=w>  </span>kind<span class=p>:</span><span class=w> </span>Role<span class=w>
+</span><span class=w>  </span>name<span class=p>:</span><span class=w> </span>kube-runner<span class=w>
+</span><span class=w>  </span>apiGroup<span class=p>:</span><span class=w> </span>rbac.authorization.k8s.io</code></pre></td></tr></table></div></div><h3 id=monorepo>Monorepo</h3><p>现在很多项目都会采用一种 Monorepo 的组织方式，就是一个库里面有好几个项目。这时候我们希望 Drone 只执行当前目录下的项目而不是其他的。官方为我们提供了一个解决方案： <strong>drone-tree-config</strong>。感兴趣可以看一下。</p><h2 id=总结>总结</h2><p>Drone 给我们带来了简单快速的持续集成部署的方案，在繁忙的工作中可以不必盯着繁杂的配置项苦恼。如果你不想用 Java 系那些强大而笨重的解决方案，想去使用更符合 go 语言风格、更贴近容器化思维的解决方案，那么 Drone 是一个不错的选择。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>Hanggi</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2020-04-26</span></p></div><footer class=post-footer><nav class=post-nav><a class=next href=/post/deployment/lets-encrypt-tutorial/><span class="next-text nav-default">Let&#39;s Encrypt 配合 Nginx 为 Discourse 添加 https 功能</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname==='localhost')return;var dsq=document.createElement('script');dsq.type='text/javascript';dsq.async=true;var disqus_shortname='hanggi';dsq.src='//'+disqus_shortname+'.disqus.com/embed.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script><noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></main><footer id=footer class=footer><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-3918716559292650 data-ad-slot=6364112114 data-ad-format=auto data-full-width-responsive=true></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div class=social-links><a href=hanggicrown@gemail.com class="iconfont icon-email" title=email></a><a href=http://hanggi.me/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019 -
+2020
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Hanggi</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/dist/even.26188efa.min.js></script></body></html>
