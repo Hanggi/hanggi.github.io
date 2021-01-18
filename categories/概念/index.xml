@@ -1,2 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>概念 on Hanggi - NGNL</title><link>http://hanggi.me/categories/%E6%A6%82%E5%BF%B5/</link><description>Recent content in 概念 on Hanggi - NGNL</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 14 Aug 2019 11:21:49 +0900</lastBuildDate><atom:link href="http://hanggi.me/categories/%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml"/><item><title>Web 框架所需基本特性</title><link>http://hanggi.me/post/web-framework-basics/</link><pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate><guid>http://hanggi.me/post/web-framework-basics/</guid><description>&lt;p&gt;整理一个Web框架所需的基本特性。&lt;br /&gt;
-以下为一个Web框架所需的基本功能&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>概念 on Hanggi - NGNL</title>
+    <link>https://hanggi.me/categories/%E6%A6%82%E5%BF%B5/</link>
+    <description>Recent content in 概念 on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Aug 2019 11:21:49 +0900</lastBuildDate><atom:link href="https://hanggi.me/categories/%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web 框架所需基本特性</title>
+      <link>https://hanggi.me/web-framework-basics/</link>
+      <pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate>
+      
+      <guid>https://hanggi.me/web-framework-basics/</guid>
+      <description>&lt;p&gt;整理一个Web框架所需的基本特性。&lt;br&gt;
+以下为一个Web框架所需的基本功能&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

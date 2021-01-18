@@ -1,2 +1,3 @@
 User-agent: *
-Sitemap: http://hanggi.me/sitemap.xml
+Disallow:
+Sitemap: https://hanggi.me/sitemap.xml

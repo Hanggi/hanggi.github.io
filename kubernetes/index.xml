@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Hanggi - NGNL</title>
+    <link>https://hanggi.me/kubernetes/</link>
+    <description>Recent content in Kubernetes on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 09 May 2020 11:55:16 +0900</lastBuildDate><atom:link href="https://hanggi.me/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 Kubernetes 部署 PostgreSQL</title>
+      <link>https://hanggi.me/kubernetes/k8s-postgresql/</link>
+      <pubDate>Sat, 09 May 2020 11:55:16 +0900</pubDate>
+      
+      <guid>https://hanggi.me/kubernetes/k8s-postgresql/</guid>
+      <description>&lt;p&gt;Kubernetes是一个开源容器编排系统，用于自动化容器化应用程序的部署，扩展和管理。 在 Kubernetes 上运行 PostgreSQL 数据库是目前经常会讨论到主题，因为 Kubernetes 提供了使用持久卷，有状态集等来配置有状态容器的方法。&lt;/p&gt;
+&lt;p&gt;本文旨在提供在 Kubernetes 集群上运行 PostgreSQL 数据库的步骤。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

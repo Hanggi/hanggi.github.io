@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deployments on Hanggi - NGNL</title>
+    <link>https://hanggi.me/deployment/</link>
+    <description>Recent content in Deployments on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 26 Apr 2020 08:28:39 +0900</lastBuildDate><atom:link href="https://hanggi.me/deployment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 Kubernetes 上部署 Drone 持续集成环境</title>
+      <link>https://hanggi.me/deployment/drone-ci-k8s/</link>
+      <pubDate>Sun, 26 Apr 2020 08:28:39 +0900</pubDate>
+      
+      <guid>https://hanggi.me/deployment/drone-ci-k8s/</guid>
+      <description>&lt;p&gt;之前已经用 Docker 和 Docker-compose 搭建了 &lt;a href=&#34;https://hanggi.me/post/deployment/drone-ci&#34;&gt;Drone 的持续集成/部署环境&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这次我们将 Drone 部署到 Kubernetes 上。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt 配合 Nginx 为 Discourse 添加 https 功能</title>
+      <link>https://hanggi.me/deployment/lets-encrypt-tutorial/</link>
+      <pubDate>Fri, 24 Apr 2020 10:24:47 +0900</pubDate>
+      
+      <guid>https://hanggi.me/deployment/lets-encrypt-tutorial/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s Encrypt 已经成为免费 https 的标配，与此同时 Nginx 也成为了反向代理的标配，不管是单节点服务还是k8s集群都会默认使用 Nginx。&lt;/p&gt;
+&lt;p&gt;今天就用 Let&amp;rsquo;s Encrypt 配合 Nginx 为我们的 Discourse 添加 https 功能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Drone.io - 搭建基于 Docker 的持续集成环境</title>
+      <link>https://hanggi.me/deployment/drone-ci/</link>
+      <pubDate>Fri, 15 Nov 2019 11:14:23 +0900</pubDate>
+      
+      <guid>https://hanggi.me/deployment/drone-ci/</guid>
+      <description>&lt;p&gt;如果项目有持续集成的需求，对于开源项目直接上 Travis 就好了，还能显示个 build pass。国内的话可能会用 Jenkins，好处是免费、可定制化。最近也有很多公司从 Jenkins 转到 Buildkite，有兴趣的可以上网查查。&lt;/p&gt;
+&lt;p&gt;有没有一种部署简单、支持私有仓库，且基于容器的持续集成工具呢？Drone.io 可能是最好的选择。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vultr搭建CentOS开发环境</title>
+      <link>https://hanggi.me/deployment/vultr-centos-setup/</link>
+      <pubDate>Fri, 09 Aug 2019 15:40:03 +0900</pubDate>
+      
+      <guid>https://hanggi.me/deployment/vultr-centos-setup/</guid>
+      <description>&lt;p&gt;准备在 Vultr 上搭建新的开发环境。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

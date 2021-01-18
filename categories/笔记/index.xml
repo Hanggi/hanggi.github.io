@@ -1,5 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on Hanggi - NGNL</title><link>http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on Hanggi - NGNL</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 18 Dec 2019 13:50:07 +0900</lastBuildDate><atom:link href="http://hanggi.me/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>gin 路由冲突问题解决方法</title><link>http://hanggi.me/post/golang/wildcard-conflict/</link><pubDate>Wed, 18 Dec 2019 13:50:07 +0900</pubDate><guid>http://hanggi.me/post/golang/wildcard-conflict/</guid><description>&lt;p&gt;想必很多人在使用 Gin 编写路由函数的时候遇到过以下问题：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 on Hanggi - NGNL</title>
+    <link>https://hanggi.me/categories/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 18 Dec 2019 13:50:07 +0900</lastBuildDate><atom:link href="https://hanggi.me/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gin 路由冲突问题解决方法</title>
+      <link>https://hanggi.me/golang/wildcard-conflict/</link>
+      <pubDate>Wed, 18 Dec 2019 13:50:07 +0900</pubDate>
+      
+      <guid>https://hanggi.me/golang/wildcard-conflict/</guid>
+      <description>&lt;p&gt;想必很多人在使用 Gin 编写路由函数的时候遇到过以下问题：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;panic: wildcard route &amp;lsquo;:articleID&amp;rsquo; conflicts with existing children in path &amp;lsquo;/articles/:articleID&amp;rsquo;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;如何解决这个问题呢？&lt;/p&gt;</description></item><item><title>用 Makefile 构建 Go 程序</title><link>http://hanggi.me/post/golang/makefile-for-golang/</link><pubDate>Wed, 13 Nov 2019 11:12:54 +0900</pubDate><guid>http://hanggi.me/post/golang/makefile-for-golang/</guid><description>&lt;p&gt;用 Makefile 构建 go 程序&lt;/p&gt;</description></item><item><title>Go Awesome</title><link>http://hanggi.me/post/golang/go-awesome/</link><pubDate>Tue, 28 May 2019 15:40:03 +0900</pubDate><guid>http://hanggi.me/post/golang/go-awesome/</guid><description>&lt;p&gt;Some summary of go awesome projects, personally recommend:&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;如何解决这个问题呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>用 Makefile 构建 Go 程序</title>
+      <link>https://hanggi.me/golang/makefile-for-golang/</link>
+      <pubDate>Wed, 13 Nov 2019 11:12:54 +0900</pubDate>
+      
+      <guid>https://hanggi.me/golang/makefile-for-golang/</guid>
+      <description>&lt;p&gt;用 Makefile 构建 go 程序&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
