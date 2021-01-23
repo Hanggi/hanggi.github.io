@@ -5,7 +5,34 @@
     <link>https://hanggi.me/tags/</link>
     <description>Recent content in Tags on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 18 Dec 2019 13:50:07 +0900</lastBuildDate><atom:link href="https://hanggi.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Apr 2020 08:28:39 +0900</lastBuildDate><atom:link href="https://hanggi.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI</title>
+      <link>https://hanggi.me/tags/ci/</link>
+      <pubDate>Sun, 26 Apr 2020 08:28:39 +0900</pubDate>
+      
+      <guid>https://hanggi.me/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://hanggi.me/tags/docker/</link>
+      <pubDate>Sun, 26 Apr 2020 08:28:39 +0900</pubDate>
+      
+      <guid>https://hanggi.me/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drone.io</title>
+      <link>https://hanggi.me/tags/drone.io/</link>
+      <pubDate>Sun, 26 Apr 2020 08:28:39 +0900</pubDate>
+      
+      <guid>https://hanggi.me/tags/drone.io/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Gin</title>
       <link>https://hanggi.me/tags/gin/</link>
@@ -57,33 +84,6 @@
       <pubDate>Wed, 11 Dec 2019 11:05:27 +0900</pubDate>
       
       <guid>https://hanggi.me/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CI</title>
-      <link>https://hanggi.me/tags/ci/</link>
-      <pubDate>Fri, 15 Nov 2019 11:14:23 +0900</pubDate>
-      
-      <guid>https://hanggi.me/tags/ci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://hanggi.me/tags/docker/</link>
-      <pubDate>Fri, 15 Nov 2019 11:14:23 +0900</pubDate>
-      
-      <guid>https://hanggi.me/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Drone.io</title>
-      <link>https://hanggi.me/tags/drone.io/</link>
-      <pubDate>Fri, 15 Nov 2019 11:14:23 +0900</pubDate>
-      
-      <guid>https://hanggi.me/tags/drone.io/</guid>
       <description></description>
     </item>
     

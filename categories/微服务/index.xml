@@ -8,10 +8,10 @@
     <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate><atom:link href="https://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go-micro 微服务开发手册【1】：介绍</title>
-      <link>https://hanggi.me/microservice/go-micro-guide-1/</link>
+      <link>https://hanggi.me/post/microservice/go-micro-guide-1/</link>
       <pubDate>Wed, 21 Aug 2019 13:51:48 +0900</pubDate>
       
-      <guid>https://hanggi.me/microservice/go-micro-guide-1/</guid>
+      <guid>https://hanggi.me/post/microservice/go-micro-guide-1/</guid>
       <description>&lt;p&gt;微服务开发手册。&lt;/p&gt;</description>
     </item>
     

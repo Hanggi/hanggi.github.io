@@ -8,58 +8,73 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/dev-guide/</loc>
-    <lastmod>2020-06-17T11:32:07+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hanggi.me/</loc>
     <lastmod>2020-06-17T11:32:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hanggi.me/dev-guide/useful-command-line/</loc>
+    <loc>https://hanggi.me/post/</loc>
     <lastmod>2020-06-17T11:32:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hanggi.me/dev-guide/rbac-basic/</loc>
+    <loc>https://hanggi.me/post/dev-guide/useful-command-line/</loc>
+    <lastmod>2020-06-17T11:32:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/post/dev-guide/rbac-basic/</loc>
     <lastmod>2020-06-17T11:00:44+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hanggi.me/kubernetes/</loc>
+    <loc>https://hanggi.me/post/kubernetes/k8s-postgresql/</loc>
     <lastmod>2020-05-09T11:55:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/kubernetes/k8s-postgresql/</loc>
-    <lastmod>2020-05-09T11:55:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/deployment/</loc>
-    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/deployment/drone-ci-k8s/</loc>
-    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/deployment/lets-encrypt-tutorial/</loc>
-    <lastmod>2020-04-24T10:24:47+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/dev-guide/brew-install-anaconda/</loc>
-    <lastmod>2020-04-06T16:36:54+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://hanggi.me/categories/</loc>
-    <lastmod>2019-12-18T13:50:07+09:00</lastmod>
+    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/tags/ci/</loc>
+    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/tags/docker/</loc>
+    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/tags/drone.io/</loc>
+    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/tags/</loc>
+    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/post/deployment/drone-ci-k8s/</loc>
+    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</loc>
+    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/post/deployment/lets-encrypt-tutorial/</loc>
+    <lastmod>2020-04-24T10:24:47+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hanggi.me/post/dev-guide/brew-install-anaconda/</loc>
+    <lastmod>2020-04-06T16:36:54+09:00</lastmod>
   </url>
   
   <url>
@@ -68,22 +83,12 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/golang/wildcard-conflict/</loc>
+    <loc>https://hanggi.me/post/golang/wildcard-conflict/</loc>
     <lastmod>2019-12-18T13:50:07+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://hanggi.me/tags/go/</loc>
-    <lastmod>2019-12-18T13:50:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/golang/</loc>
-    <lastmod>2019-12-18T13:50:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/tags/</loc>
     <lastmod>2019-12-18T13:50:07+09:00</lastmod>
   </url>
   
@@ -98,11 +103,6 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/blacktech/</loc>
-    <lastmod>2019-12-11T11:05:27+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hanggi.me/tags/dualshock4/</loc>
     <lastmod>2019-12-11T11:05:27+09:00</lastmod>
   </url>
@@ -113,7 +113,7 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/blacktech/ds4windows/</loc>
+    <loc>https://hanggi.me/post/blacktech/ds4windows/</loc>
     <lastmod>2019-12-11T11:05:27+09:00</lastmod>
   </url>
   
@@ -128,27 +128,7 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/tags/ci/</loc>
-    <lastmod>2019-11-15T11:14:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/tags/docker/</loc>
-    <lastmod>2019-11-15T11:14:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/tags/drone.io/</loc>
-    <lastmod>2019-11-15T11:14:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/deployment/drone-ci/</loc>
-    <lastmod>2019-11-15T11:14:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hanggi.me/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</loc>
+    <loc>https://hanggi.me/post/deployment/drone-ci/</loc>
     <lastmod>2019-11-15T11:14:23+09:00</lastmod>
   </url>
   
@@ -158,7 +138,7 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/golang/makefile-for-golang/</loc>
+    <loc>https://hanggi.me/post/golang/makefile-for-golang/</loc>
     <lastmod>2019-11-13T11:12:54+09:00</lastmod>
   </url>
   
@@ -188,12 +168,12 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/dev-guide/uid-comparison/</loc>
+    <loc>https://hanggi.me/post/dev-guide/uid-comparison/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hanggi.me/microservice/go-micro-guide-1/</loc>
+    <loc>https://hanggi.me/post/microservice/go-micro-guide-1/</loc>
     <lastmod>2019-08-21T13:51:48+09:00</lastmod>
   </url>
   
@@ -208,11 +188,6 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/microservice/</loc>
-    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2019-08-21T13:51:48+09:00</lastmod>
   </url>
@@ -223,7 +198,7 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/dev-guide/flutter-setup/</loc>
+    <loc>https://hanggi.me/post/dev-guide/flutter-setup/</loc>
     <lastmod>2019-08-18T13:24:00+09:00</lastmod>
   </url>
   
@@ -268,7 +243,7 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/deployment/vultr-centos-setup/</loc>
+    <loc>https://hanggi.me/post/deployment/vultr-centos-setup/</loc>
     <lastmod>2019-08-09T15:40:03+09:00</lastmod>
   </url>
   
@@ -278,12 +253,12 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/dev-guide/docker-notes/</loc>
+    <loc>https://hanggi.me/post/dev-guide/docker-notes/</loc>
     <lastmod>2019-07-10T17:00:01+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hanggi.me/golang/go-json/</loc>
+    <loc>https://hanggi.me/post/golang/go-json/</loc>
     <lastmod>2019-05-29T11:41:03+09:00</lastmod>
   </url>
   
@@ -298,7 +273,7 @@
   </url>
   
   <url>
-    <loc>https://hanggi.me/golang/go-http-request/</loc>
+    <loc>https://hanggi.me/post/golang/go-http-request/</loc>
     <lastmod>2019-05-27T16:55:50+09:00</lastmod>
   </url>
   

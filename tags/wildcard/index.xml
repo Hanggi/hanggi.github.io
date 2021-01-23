@@ -8,10 +8,10 @@
     <lastBuildDate>Wed, 18 Dec 2019 13:50:07 +0900</lastBuildDate><atom:link href="https://hanggi.me/tags/wildcard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gin 路由冲突问题解决方法</title>
-      <link>https://hanggi.me/golang/wildcard-conflict/</link>
+      <link>https://hanggi.me/post/golang/wildcard-conflict/</link>
       <pubDate>Wed, 18 Dec 2019 13:50:07 +0900</pubDate>
       
-      <guid>https://hanggi.me/golang/wildcard-conflict/</guid>
+      <guid>https://hanggi.me/post/golang/wildcard-conflict/</guid>
       <description>&lt;p&gt;想必很多人在使用 Gin 编写路由函数的时候遇到过以下问题：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;panic: wildcard route &amp;lsquo;:articleID&amp;rsquo; conflicts with existing children in path &amp;lsquo;/articles/:articleID&amp;rsquo;&lt;/p&gt;

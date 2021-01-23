@@ -8,19 +8,19 @@
     <lastBuildDate>Wed, 29 May 2019 11:41:03 +0900</lastBuildDate><atom:link href="https://hanggi.me/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Json</title>
-      <link>https://hanggi.me/golang/go-json/</link>
+      <link>https://hanggi.me/post/golang/go-json/</link>
       <pubDate>Wed, 29 May 2019 11:41:03 +0900</pubDate>
       
-      <guid>https://hanggi.me/golang/go-json/</guid>
+      <guid>https://hanggi.me/post/golang/go-json/</guid>
       <description>&lt;p&gt;Golang json demo code.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Go Http Request</title>
-      <link>https://hanggi.me/golang/go-http-request/</link>
+      <link>https://hanggi.me/post/golang/go-http-request/</link>
       <pubDate>Mon, 27 May 2019 16:55:50 +0900</pubDate>
       
-      <guid>https://hanggi.me/golang/go-http-request/</guid>
+      <guid>https://hanggi.me/post/golang/go-http-request/</guid>
       <description>&lt;p&gt;Golang http request demo code.&lt;/p&gt;</description>
     </item>
     
