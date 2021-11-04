@@ -1,2 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>snowflake on Hanggi - NGNL</title><link>http://hanggi.me/tags/snowflake/</link><description>Recent content in snowflake on Hanggi - NGNL</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Aug 2019 15:31:57 +0900</lastBuildDate><atom:link href="http://hanggi.me/tags/snowflake/index.xml" rel="self" type="application/rss+xml"/><item><title>微服务全局唯一 ID</title><link>http://hanggi.me/post/dev-guide/uid-comparison/</link><pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate><guid>http://hanggi.me/post/dev-guide/uid-comparison/</guid><description>&lt;p&gt;ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。&lt;/p&gt;
-&lt;p&gt;一种全局唯一的 ID 变得不可或缺。&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>snowflake on Hanggi - NGNL</title>
+    <link>https://hanggi.me/tags/snowflake/</link>
+    <description>Recent content in snowflake on Hanggi - NGNL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 27 Aug 2019 15:31:57 +0900</lastBuildDate><atom:link href="https://hanggi.me/tags/snowflake/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微服务全局唯一 ID</title>
+      <link>https://hanggi.me/post/dev-guide/uid-comparison/</link>
+      <pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/dev-guide/uid-comparison/</guid>
+      <description>&lt;p&gt;ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。&lt;/p&gt;
+&lt;p&gt;一种全局唯一的 ID 变得不可或缺。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
