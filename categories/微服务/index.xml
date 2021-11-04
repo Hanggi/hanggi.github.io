@@ -5,16 +5,7 @@
     <link>https://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link>
     <description>Recent content in 微服务 on Hanggi - NGNL</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Aug 2019 16:44:37 +0900</lastBuildDate><atom:link href="https://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>go-micro 微服务开发手册【2】：go-micro</title>
-      <link>https://hanggi.me/post/microservice/go-micro-guide-2/</link>
-      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
-      
-      <guid>https://hanggi.me/post/microservice/go-micro-guide-2/</guid>
-      <description>&lt;p&gt;微服务开发框架 - go-micro&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate><atom:link href="https://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go-micro 微服务开发手册【1】：介绍</title>
       <link>https://hanggi.me/post/microservice/go-micro-guide-1/</link>

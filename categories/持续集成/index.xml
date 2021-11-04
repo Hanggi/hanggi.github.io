@@ -17,24 +17,6 @@
     </item>
     
     <item>
-      <title>Virtualbox Install Centos K8s</title>
-      <link>https://hanggi.me/post/deployment/virtualbox-install-centos-k8s/</link>
-      <pubDate>Thu, 09 Jan 2020 16:36:40 +0900</pubDate>
-      
-      <guid>https://hanggi.me/post/deployment/virtualbox-install-centos-k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>使用 Github Actions 自动部署 Hugo 到 Github Pages</title>
-      <link>https://hanggi.me/post/deployment/github-actions-autodeploy-hugo-to-github-pages/</link>
-      <pubDate>Wed, 20 Nov 2019 14:13:46 +0900</pubDate>
-      
-      <guid>https://hanggi.me/post/deployment/github-actions-autodeploy-hugo-to-github-pages/</guid>
-      <description>&lt;p&gt;肯定有很多人发现自己的仓库里多出来了一个 &lt;code&gt;Actions&lt;/code&gt; 选项。 没错这就是 Github Actions.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Drone.io - 搭建基于 Docker 的持续集成环境</title>
       <link>https://hanggi.me/post/deployment/drone-ci/</link>
       <pubDate>Fri, 15 Nov 2019 11:14:23 +0900</pubDate>
