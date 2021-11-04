@@ -7,20 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 17 Jun 2020 11:32:07 +0900</lastBuildDate><atom:link href="https://hanggi.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>https://hanggi.me/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
-      
-      <guid>https://hanggi.me/about/</guid>
-      <description>联系方式 Email：hanggicrown@gmail.com
-Focus On Frontend   Angular: One framework. Mobile &amp;amp; desktop.
-[官网] [Github]
- CLI  A command line interface for Angular [官网] [Github]   Angular Material: UI Component  [官网] [Github]   ngx-admin: 后台框架  [官网]      Backend   Node.js: Node.js® is a JavaScript runtime built on Chrome&amp;rsquo;s V8 JavaScript engine.
-[官网] [Github]
- Nest:  [官网] [Github]   Koa:  Expressive middleware for node.</description>
-    </item>
-    
-    <item>
       <title>你应该知道的命令行使用技巧</title>
       <link>https://hanggi.me/post/dev-guide/useful-command-line/</link>
       <pubDate>Wed, 17 Jun 2020 11:32:07 +0900</pubDate>
@@ -148,16 +134,6 @@ Anaconda的包使用软件包管理系统Conda进行管理。超过1200万人使
       
       <guid>https://hanggi.me/post/dev-guide/flutter-setup/</guid>
       <description>&lt;p&gt;Flutter是一个由谷歌开发的开源移动应用软件开发工具包，用于为Android和iOS开发应用，同时也将是Google Fuchsia下开发应用的主要工具。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Web 框架所需基本特性</title>
-      <link>https://hanggi.me/web-framework-basics/</link>
-      <pubDate>Wed, 14 Aug 2019 11:21:49 +0900</pubDate>
-      
-      <guid>https://hanggi.me/web-framework-basics/</guid>
-      <description>&lt;p&gt;整理一个Web框架所需的基本特性。&lt;br&gt;
-以下为一个Web框架所需的基本功能&lt;/p&gt;</description>
     </item>
     
     <item>
