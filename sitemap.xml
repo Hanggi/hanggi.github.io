@@ -2,11 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hanggi.me/post/dev-guide/programming-language-framework-recommendation/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/framework/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/go/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
     <loc>https://hanggi.me/</loc>
-    <lastmod>2020-06-17T11:32:07+09:00</lastmod>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/javascript/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/kotlin/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/post/</loc>
-    <lastmod>2020-06-17T11:32:07+09:00</lastmod>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/programing-language/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/python/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/rust/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/tags/typescript/</loc>
+    <lastmod>2022-02-08T10:24:47+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/post/dev-guide/useful-command-line/</loc>
     <lastmod>2020-06-17T11:32:07+09:00</lastmod>
@@ -27,9 +57,6 @@
     <lastmod>2020-04-26T08:28:39+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/tags/drone.io/</loc>
-    <lastmod>2020-04-26T08:28:39+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/</loc>
     <lastmod>2020-04-26T08:28:39+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/post/deployment/drone-ci-k8s/</loc>
@@ -60,9 +87,6 @@
     <lastmod>2019-12-18T13:50:07+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/post/golang/wildcard-conflict/</loc>
-    <lastmod>2019-12-18T13:50:07+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/go/</loc>
     <lastmod>2019-12-18T13:50:07+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/tags/wildcard/</loc>

@@ -9,7 +9,18 @@
       <link>https://hanggi.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 17 Jun 2020 11:32:07 +0900</lastBuildDate><atom:link href="https://hanggi.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 10:24:47 +0900</lastBuildDate><atom:link href="https://hanggi.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 选择属于自己的编程语言与框架</title>
+      <link>https://hanggi.me/post/dev-guide/programming-language-framework-recommendation/</link>
+      <pubDate>Tue, 08 Feb 2022 10:24:47 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/dev-guide/programming-language-framework-recommendation/</guid>
+      <description>&lt;p&gt;选择什么编程语言与框架一直都是容易引起争论的话题。&lt;/p&gt;
+&lt;p&gt;因为编程语言与框架数量众多，每一种热门语言与框架都有各自的特点与一众忠实的追随者。&lt;/p&gt;
+&lt;p&gt;如果一不小心触及到别人的饭碗，只要喊一句万能的 “PHP是世界上最好的语言！” 就能全身而退。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>你应该知道的命令行使用技巧</title>
       <link>https://hanggi.me/post/dev-guide/useful-command-line/</link>
