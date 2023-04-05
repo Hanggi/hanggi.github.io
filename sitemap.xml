@@ -71,18 +71,6 @@
     <loc>https://hanggi.me/post/dev-guide/brew-install-anaconda/</loc>
     <lastmod>2020-04-06T16:36:54+09:00</lastmod>
   </url><url>
-    <loc>https://hanggi.me/tags/github-actions/</loc>
-    <lastmod>2020-01-09T16:36:40+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/github-pages/</loc>
-    <lastmod>2020-01-09T16:36:40+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/hugo/</loc>
-    <lastmod>2020-01-09T16:36:40+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/post/deployment/virtualbox-install-centos-k8s/</loc>
-    <lastmod>2020-01-09T16:36:40+09:00</lastmod>
-  </url><url>
     <loc>https://hanggi.me/tags/gin/</loc>
     <lastmod>2019-12-18T13:50:07+09:00</lastmod>
   </url><url>
@@ -110,9 +98,6 @@
     <loc>https://hanggi.me/categories/%E9%BB%91%E7%A7%91%E6%8A%80/</loc>
     <lastmod>2019-12-11T11:05:27+09:00</lastmod>
   </url><url>
-    <loc>https://hanggi.me/post/deployment/github-actions-autodeploy-hugo-to-github-pages/</loc>
-    <lastmod>2019-11-20T14:13:46+09:00</lastmod>
-  </url><url>
     <loc>https://hanggi.me/post/deployment/drone-ci/</loc>
     <lastmod>2019-11-15T11:14:23+09:00</lastmod>
   </url><url>
@@ -121,18 +106,6 @@
   </url><url>
     <loc>https://hanggi.me/post/golang/makefile-for-golang/</loc>
     <lastmod>2019-11-13T11:12:54+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/gorilla/</loc>
-    <lastmod>2019-10-15T18:29:35+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/post/dev-guide/gorilla-websocket/</loc>
-    <lastmod>2019-10-15T18:29:35+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/websocket/</loc>
-    <lastmod>2019-10-15T18:29:35+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2019-10-15T18:29:35+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/tags/snowflake/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
@@ -146,35 +119,23 @@
     <loc>https://hanggi.me/tags/xid/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
   </url><url>
-    <loc>https://hanggi.me/post/dev-guide/uid-comparison/</loc>
+    <loc>https://hanggi.me/categories/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2019-08-27T15:31:57+09:00</lastmod>
   </url><url>
-    <loc>https://hanggi.me/post/microservice/go-micro-guide-2/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/micro/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/microservice/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2019-08-22T16:44:37+09:00</lastmod>
+    <loc>https://hanggi.me/post/dev-guide/uid-comparison/</loc>
+    <lastmod>2019-08-27T15:31:57+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/post/microservice/go-micro-guide-1/</loc>
     <lastmod>2019-08-21T13:51:48+09:00</lastmod>
   </url><url>
-    <loc>https://hanggi.me/post/golang/grpc-tutorial/</loc>
-    <lastmod>2019-08-19T16:53:12+09:00</lastmod>
+    <loc>https://hanggi.me/tags/micro/</loc>
+    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
   </url><url>
-    <loc>https://hanggi.me/tags/grpc/</loc>
-    <lastmod>2019-08-19T16:53:12+09:00</lastmod>
+    <loc>https://hanggi.me/tags/microservice/</loc>
+    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
   </url><url>
-    <loc>https://hanggi.me/tags/protobuf/</loc>
-    <lastmod>2019-08-19T16:53:12+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2019-08-19T16:53:12+09:00</lastmod>
+    <loc>https://hanggi.me/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2019-08-21T13:51:48+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/tags/flutter/</loc>
     <lastmod>2019-08-18T13:24:00+09:00</lastmod>
@@ -184,18 +145,6 @@
   </url><url>
     <loc>https://hanggi.me/tags/mobile/</loc>
     <lastmod>2019-08-18T13:24:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/idea/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/post/dev-guide/idea-java-springdraft/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/java/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
-  </url><url>
-    <loc>https://hanggi.me/tags/spring/</loc>
-    <lastmod>2019-08-10T15:40:03+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/tags/centos/</loc>
     <lastmod>2019-08-09T15:40:03+09:00</lastmod>
@@ -216,6 +165,9 @@
     <lastmod>2019-05-29T11:41:03+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/tags/json/</loc>
+    <lastmod>2019-05-29T11:41:03+09:00</lastmod>
+  </url><url>
+    <loc>https://hanggi.me/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2019-05-29T11:41:03+09:00</lastmod>
   </url><url>
     <loc>https://hanggi.me/post/golang/go-http-request/</loc>
