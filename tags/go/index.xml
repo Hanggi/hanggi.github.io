@@ -45,12 +45,30 @@
     </item>
     
     <item>
+      <title>go-micro 微服务开发手册【2】：go-micro</title>
+      <link>https://hanggi.me/post/microservice/go-micro-guide-2/</link>
+      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/microservice/go-micro-guide-2/</guid>
+      <description>&lt;p&gt;微服务开发框架 - go-micro&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>go-micro 微服务开发手册【1】：介绍</title>
       <link>https://hanggi.me/post/microservice/go-micro-guide-1/</link>
       <pubDate>Wed, 21 Aug 2019 13:51:48 +0900</pubDate>
       
       <guid>https://hanggi.me/post/microservice/go-micro-guide-1/</guid>
       <description>&lt;p&gt;微服务开发手册。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GO GRPC 教程</title>
+      <link>https://hanggi.me/post/golang/grpc-tutorial/</link>
+      <pubDate>Mon, 19 Aug 2019 16:53:12 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/golang/grpc-tutorial/</guid>
+      <description>&lt;p&gt;The Go language implementation of gRPC. HTTP/2 based RPC&lt;/p&gt;</description>
     </item>
     
     <item>
