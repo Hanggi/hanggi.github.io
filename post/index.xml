@@ -83,6 +83,15 @@ Anaconda的包使用软件包管理系统Conda进行管理。超过1200万人使
     </item>
     
     <item>
+      <title>Virtualbox Install Centos K8s</title>
+      <link>https://hanggi.me/post/deployment/virtualbox-install-centos-k8s/</link>
+      <pubDate>Thu, 09 Jan 2020 16:36:40 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/deployment/virtualbox-install-centos-k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>gin 路由冲突问题解决方法</title>
       <link>https://hanggi.me/post/golang/wildcard-conflict/</link>
       <pubDate>Wed, 18 Dec 2019 13:50:07 +0900</pubDate>
@@ -106,6 +115,15 @@ Anaconda的包使用软件包管理系统Conda进行管理。超过1200万人使
     </item>
     
     <item>
+      <title>使用 Github Actions 自动部署 Hugo 到 Github Pages</title>
+      <link>https://hanggi.me/post/deployment/github-actions-autodeploy-hugo-to-github-pages/</link>
+      <pubDate>Wed, 20 Nov 2019 14:13:46 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/deployment/github-actions-autodeploy-hugo-to-github-pages/</guid>
+      <description>&lt;p&gt;肯定有很多人发现自己的仓库里多出来了一个 &lt;code&gt;Actions&lt;/code&gt; 选项。 没错这就是 Github Actions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Drone.io - 搭建基于 Docker 的持续集成环境</title>
       <link>https://hanggi.me/post/deployment/drone-ci/</link>
       <pubDate>Fri, 15 Nov 2019 11:14:23 +0900</pubDate>
@@ -125,6 +143,15 @@ Anaconda的包使用软件包管理系统Conda进行管理。超过1200万人使
     </item>
     
     <item>
+      <title>Gorilla Websocket</title>
+      <link>https://hanggi.me/post/dev-guide/gorilla-websocket/</link>
+      <pubDate>Tue, 15 Oct 2019 18:29:35 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/dev-guide/gorilla-websocket/</guid>
+      <description>&lt;p&gt;基于 Gorilla Websocket 的开发手册&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>微服务全局唯一 ID</title>
       <link>https://hanggi.me/post/dev-guide/uid-comparison/</link>
       <pubDate>Tue, 27 Aug 2019 15:31:57 +0900</pubDate>
@@ -132,6 +159,15 @@ Anaconda的包使用软件包管理系统Conda进行管理。超过1200万人使
       <guid>https://hanggi.me/post/dev-guide/uid-comparison/</guid>
       <description>&lt;p&gt;ID 是数据库的重要组成部分，但是随着分布式服务的流行传统的自增主键已经无法满足我们的需求。&lt;/p&gt;
 &lt;p&gt;一种全局唯一的 ID 变得不可或缺。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go-micro 微服务开发手册【2】：go-micro</title>
+      <link>https://hanggi.me/post/microservice/go-micro-guide-2/</link>
+      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/microservice/go-micro-guide-2/</guid>
+      <description>&lt;p&gt;微服务开发框架 - go-micro&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -144,12 +180,31 @@ Anaconda的包使用软件包管理系统Conda进行管理。超过1200万人使
     </item>
     
     <item>
+      <title>GO GRPC 教程</title>
+      <link>https://hanggi.me/post/golang/grpc-tutorial/</link>
+      <pubDate>Mon, 19 Aug 2019 16:53:12 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/golang/grpc-tutorial/</guid>
+      <description>&lt;p&gt;The Go language implementation of gRPC. HTTP/2 based RPC&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Flutter 安装手册</title>
       <link>https://hanggi.me/post/dev-guide/flutter-setup/</link>
       <pubDate>Sun, 18 Aug 2019 13:24:00 +0900</pubDate>
       
       <guid>https://hanggi.me/post/dev-guide/flutter-setup/</guid>
       <description>&lt;p&gt;Flutter是一个由谷歌开发的开源移动应用软件开发工具包，用于为Android和iOS开发应用，同时也将是Google Fuchsia下开发应用的主要工具。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>IDEA Java Spring 开发环境搭建</title>
+      <link>https://hanggi.me/post/dev-guide/idea-java-springdraft/</link>
+      <pubDate>Sat, 10 Aug 2019 15:40:03 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/dev-guide/idea-java-springdraft/</guid>
+      <description>&lt;p&gt;尝试一下在IDEA开发Java Spring。
+Spring 整个架构虽然强大，但确实比较重。&lt;/p&gt;</description>
     </item>
     
     <item>

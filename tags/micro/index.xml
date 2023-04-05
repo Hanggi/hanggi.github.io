@@ -10,7 +10,16 @@
       <link>https://cdn.discordapp.com/attachments/989268300473192561/1089919441812324482/Hanggi_web3_pioneer_935fecf9-5d1a-4f33-b95f-980a705c45b6.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Aug 2019 13:51:48 +0900</lastBuildDate><atom:link href="https://hanggi.me/tags/micro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Aug 2019 16:44:37 +0900</lastBuildDate><atom:link href="https://hanggi.me/tags/micro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go-micro 微服务开发手册【2】：go-micro</title>
+      <link>https://hanggi.me/post/microservice/go-micro-guide-2/</link>
+      <pubDate>Thu, 22 Aug 2019 16:44:37 +0900</pubDate>
+      
+      <guid>https://hanggi.me/post/microservice/go-micro-guide-2/</guid>
+      <description>&lt;p&gt;微服务开发框架 - go-micro&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>go-micro 微服务开发手册【1】：介绍</title>
       <link>https://hanggi.me/post/microservice/go-micro-guide-1/</link>
